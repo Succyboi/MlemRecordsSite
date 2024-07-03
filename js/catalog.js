@@ -18,21 +18,22 @@ function ProcessReleases(json) {
     release_parent.innerHTML = "";
 
     json.releases.forEach(release => {
+        const cat_id = release.cat_id;
         const cat_no = release.cat_no;
         const name = release.name;
         const artist = release.artist;
         const bandcamp_link = release.bandcamp_link;
         const downloadable = release.downloadable;
 
-        const cover_path = `releases/${cat_no}/cover.png`;
+        const cover_path = `releases/${cat_id}${cat_no}/cover.png`;
+        const download_path = `releases/${cat_id}${cat_no}/[${cat_id}${cat_no}] ${artist} - ${name}.zip`;
 
         var download_html = "";
-        var image_html = "";
 
-        if (downloadable){
+        if (downloadable) {
             download_html = `
                 <div class="download"><p>
-                    <a><span style="font-weight: 900;">↓</span> download</a>
+                    <a href="${download_path}"><span style="font-weight: 900;">↓</span> download</a>
                 </p></div>
             `;
         }
@@ -43,10 +44,11 @@ function ProcessReleases(json) {
                 <div class="game_thumb" style="background-color:#c2c2d1;"><a class="title game_link"
                     href="${bandcamp_link}"><img
                             height="315" width="315"
-                            src="${cover_path}"></a></div>
+                            src="${cover_path}">
+                    <span class="catalog_number">${cat_no}</span></a></div>
                 <div class="game_cell_data">
                     <div class="game_title"><a class="title game_link"
-                            href="${bandcamp_link}" data-action="game_grid"><span class="catalog_number">[${cat_no}]</span> ${name}</a></div>
+                            href="${bandcamp_link}" data-action="game_grid">${name}</a></div>
                     <div class="author">
                         <i>by ${artist}</i>
                     </div>
