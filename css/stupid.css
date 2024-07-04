@@ -77,18 +77,9 @@ body {
 :Root {
     --textColor: #2b2b26;
     --linkColor: #f2ab37;
-    --loveColor: #FF3B30;
-    --musicColor: #34C759;
     --highlightColor: #2b2b26;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
-
-    --color0: #FF3B30;
-    --color1: #FF9500;
-    --color2: #FFCC00;
-    --color3: #34C759;
-    --color4: #007AFF;
-    --color5: #FF2D55;
 
     --rounding: 15px;
 }
@@ -129,15 +120,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-img {
-    border-radius: 10px;
-}
-
-strong>img {
-    border-radius: 10px;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.game_cell img {
+    border-radius: var(--rounding);
 }
 
 .header {
@@ -193,11 +177,10 @@ blockquote {
 
 .game_cell {
     border-radius: var(--rounding);
-    padding: calc(var(--rounding) / 2);
 }
 
 .game_grid_widget .game_cell .game_thumb, .game_grid_widget .game_cell .gif_overlay {
-    border-radius: calc(var(--rounding) / 2);
+    border-radius: var(--rounding);
 }
 
 .mode_grid .user_game_grid {
@@ -261,11 +244,20 @@ blockquote {
     padding-bottom: 4px;
     border-radius: 0 var(--rounding) 0 0;
 
+
     font-weight: 900;
     position: absolute;
     display: inline;
     left: -3px;
     bottom: 0px;
+}
+
+.download a {
+    text-decoration: none;
+}
+
+.download a:hover {
+    text-decoration: underline;
 }
 
 .inline_icon {
