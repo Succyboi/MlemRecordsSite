@@ -11,16 +11,16 @@ function LoadCatalog(get_cat_from_url) {
             specific_release_to_load = url_params.get("release");
         }
     }
+    
+    fetch(artists_path)
+        .then(response => response.json())
+        .then(json => ProcessArtists(json));
 
     fetch(releases_path)
         .then(response => response.json())
         .then(json => ProcessReleases(json, specific_release_to_load));
 
-    fetch(artists_path)
-        .then(response => response.json())
-        .then(json => ProcessArtists(json));
-
-    window.setInterval(SwapArtistName, 3000);
+    window.setInterval(SwapArtistName, 1000);
 }
 
 function ProcessReleases(json, specific_release_to_load) {
@@ -28,22 +28,28 @@ function ProcessReleases(json, specific_release_to_load) {
     release_parent.innerHTML = "";
 
     json.releases.forEach(release => {
-        var release_result = GetReleaseHTML(release, specific_release_to_load);
+        var release_result = ProcessRelease(release, specific_release_to_load);
 
-        if (specific_release_to_load == null || release_result.match) {
+        if (release_result.match) {
                 release_parent.innerHTML += release_result.release_html;
         }
+
+        release.contributors.forEach(contributor => {
+            AddArtist(contributor);            
+        });
     });
 }
 
-function GetReleaseHTML(release, match_release_cat) {
+function ProcessRelease(release, match_release_cat) {
     const cat_id = release.cat_id;
     const cat_no = release.cat_no;
     const name = release.name;
     const artist = release.artist;
+    const contributors = release.contributors;
     const info_release_date = release.info_release_date;
     const info_about = release.info_about;
     const info_credits = release.info_credits;
+    const visible = release.visible;
     const downloadable = release.downloadable;
     const streamable = release.streamable;
     const link_bandcamp = release.link_bandcamp;
@@ -53,7 +59,10 @@ function GetReleaseHTML(release, match_release_cat) {
     const small = match_release_cat == null; 
 
     if (match_release_cat != null && match_release_cat != `${cat_id}${cat_no}`) {
-         return { match: false } 
+         return { match: false, contributors: contributors } 
+    }
+    if (!visible) {
+        return { match: false };
     }
 
     const cover_path = `releases/${cat_id}${cat_no}/cover.png`;
@@ -67,6 +76,13 @@ function GetReleaseHTML(release, match_release_cat) {
     var streamable_html = "";
     if (streamable) {
         streamable_html = `<a href="stream?release=${cat_id}${cat_no}"><span style="font-weight: 900;">→</span> stream</a> / `;
+    }
+
+    var contributors_html = "";
+    for (let c = 0; c < contributors.length; c++) {
+        var addComma = c < contributors.length - 1;
+        contributors_html += `${contributors[c]}`;
+        contributors_html += addComma ? ", " : "";
     }
 
     var release_links = "";
@@ -126,7 +142,7 @@ function GetReleaseHTML(release, match_release_cat) {
                 <div class="game_title"><a class="title game_link"
                         href="${link_bandcamp}" data-action="game_grid">${name}</a></div>
                 <div class="author">
-                    <i>by ${artist}</i>
+                    <i>by ${contributors_html}</i>
                 </div>
                 ${release_links}
                 ${info}
@@ -134,13 +150,25 @@ function GetReleaseHTML(release, match_release_cat) {
         </div>
         `;
 
-    return { match: true, release_html: release_html };
+    return { match: true, release_html: release_html, contributors: contributors };
 }
 
-let artists;
+var artists;
 function ProcessArtists(json) {
     artists = json.artists;
     SwapArtistName();
+}
+
+function AddArtist(artist) {
+    for (let a = 0; a < artists.length; a++){
+        if (artists[a].name == artist) { 
+            return;
+        }
+    }
+
+    artists.push({
+        name: artist
+    });
 }
 
 function SwapArtistName() {
