@@ -49,6 +49,8 @@ function ProcessRelease(release, match_release_cat) {
     const info_release_date = release.info_release_date;
     const info_about = release.info_about;
     const info_credits = release.info_credits;
+    const info_license = release.info_license;
+    const info_license_link = release.info_license_link;
     const visible = release.visible;
     const downloadable = release.downloadable;
     const streamable = release.streamable;
@@ -125,7 +127,7 @@ function ProcessRelease(release, match_release_cat) {
         });
 
         info += `
-            <p><i>Released ${info_release_date}.</i></p>    
+            <p><i>Released ${info_release_date} under <a href="${info_license_link}">${info_license}</a>.</i></p>    
             </div>
         `;
     }
