@@ -1,6 +1,7 @@
 function LoadCatalog(get_cat_from_url) {
     const releases_path = "releases/releases.json";
     const artists_path = "releases/artists.json";
+    const people_path = "releases/people.json";
 
     var specific_release_to_load = null;
     if (get_cat_from_url) {
@@ -11,32 +12,43 @@ function LoadCatalog(get_cat_from_url) {
             specific_release_to_load = url_params.get("release");
         }
     }
-    
-    fetch(artists_path)
-        .then(response => response.json())
-        .then(json => ProcessArtists(json));
 
     fetch(releases_path)
         .then(response => response.json())
         .then(json => ProcessReleases(json, specific_release_to_load));
 
-    window.setInterval(SwapArtistName, 1000);
+    fetch(artists_path)
+        .then(response => response.json())
+        .then(json => ProcessArtists(json));
+
+    fetch(people_path)
+        .then(response => response.json())
+        .then(json => ProcessPeople(json));
+
+    window.setInterval(SwapHeader, 1000);
 }
 
 function ProcessReleases(json, specific_release_to_load) {
     const release_parent = document.getElementById("release_parent");
-    release_parent.innerHTML = "";
-
+    if (release_parent != null){
+        release_parent.innerHTML = "";
+    }
+    
     json.releases.forEach(release => {
         var release_result = ProcessRelease(release, specific_release_to_load);
 
-        if (release_result.match) {
+        if (release_parent != null && release_result.match) {
                 release_parent.innerHTML += release_result.release_html;
         }
 
         release.contributors.forEach(contributor => {
             AddArtist(contributor);            
         });
+
+        if (release.icon != null) {
+            const icon_path = `releases/${release.cat_id}${release.cat_no}/${release.icon}`;
+            AddIcon(icon_path);
+        }
     });
 }
 
@@ -49,6 +61,7 @@ function ProcessRelease(release, match_release_cat) {
     const info_release_date = release.info_release_date;
     const info_about = release.info_about;
     const info_credits = release.info_credits;
+    const info_special_thanks_to = release.info_special_thanks_to;
     const info_license = release.info_license;
     const info_license_link = release.info_license_link;
     const visible = release.visible;
@@ -115,21 +128,37 @@ function ProcessRelease(release, match_release_cat) {
     }
 
     var info = "";
-    if (!small) {
-        info = `
-            <div class="release_info">
-                <hr>
-                <p>${info_about}</p>
-        `;
+    info = `
+    <div class="release_info">
+        <hr>
+        <p>${info_about}</p>
+    `;
 
-        info_credits.forEach(credit => {
-            info += `<p>${credit}</p>`;
-        });
+    info_credits.forEach(credit => {
+        info += `<p>${credit}</p>`;
+    });
 
-        info += `
-            <p><i>Released ${info_release_date} under <a href="${info_license_link}">${info_license}</a>.</i></p>    
-            </div>
-        `;
+    info += "<p> Special thanks to:<br>";
+    var first = true;
+    info_special_thanks_to.forEach(person => {
+        if (!first) {
+            info += ", ";
+        }
+        info += `${person}`;
+
+        first = false;
+        
+        AddPerson(person);
+    });
+    info += ".</p>";
+
+    info += `
+        <p><i>Released ${info_release_date} under <a href="${info_license_link}">${info_license}</a>.</i></p>    
+        </div>
+    `;
+    
+    if (small) {
+        info = "";
     }
 
     release_html = `
@@ -155,7 +184,7 @@ function ProcessRelease(release, match_release_cat) {
     return { match: true, release_html: release_html, contributors: contributors };
 }
 
-var artists;
+var artists = [];
 function ProcessArtists(json) {
     artists = json.artists;
     SwapArtistName();
@@ -171,6 +200,55 @@ function AddArtist(artist) {
     artists.push({
         name: artist
     });
+
+    AddPerson(artist);
+}
+
+function ProcessPeople(json) {
+    json.people.forEach(person => {
+        AddPerson(person);
+    });
+}
+
+function AddPerson(person) { 
+    setTimeout(() => {
+        const target = document.getElementById("people");
+
+        if (target == null) { return; }
+
+        if (people.innerHTML.length > 0) {
+            people.innerHTML += ", ";
+        }
+        people.innerHTML += person;        
+    }, 100 + Math.random() * 900);
+}
+
+var icons = [];
+var current_icon = -1;
+function AddIcon(icon) {
+    icons.push({
+        icon: icon
+    });
+}
+
+function SwapHeader() {
+    //SwapIcon();
+    SwapArtistName();
+}
+
+function SwapIcon() {
+    const target = document.getElementById("icon");
+
+    if (target == null) { return; }
+    if (current_icon < 0) {
+        current_icon = Math.floor(Math.random() * artists.length);
+        var icon = icons[current_icon];
+
+        target.src = icon.icon;
+    } else {
+        current_icon = -1;
+        target.src = "images/_icon.svg";
+    }
 }
 
 function SwapArtistName() {
