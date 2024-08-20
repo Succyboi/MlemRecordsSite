@@ -30,7 +30,7 @@ function LoadCatalog(get_cat_from_url) {
 
 function ProcessReleases(json, specific_release_to_load) {
     const release_parent = document.getElementById("release_parent");
-    if (release_parent != null){
+    if (release_parent != null) {
         release_parent.innerHTML = "";
     }
     
