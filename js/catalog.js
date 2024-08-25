@@ -67,6 +67,7 @@ function ProcessRelease(release, match_release_cat) {
     const visible = release.visible;
     const downloadable = release.downloadable;
     const streamable = release.streamable;
+    const link_stream = `stream?release=${cat_id}${cat_no}`
     const link_bandcamp = release.link_bandcamp;
     const link_youtube = release.link_youtube;
     const link_spotify = release.link_spotify;
@@ -90,7 +91,7 @@ function ProcessRelease(release, match_release_cat) {
 
     var streamable_html = "";
     if (streamable) {
-        streamable_html = `<a href="stream?release=${cat_id}${cat_no}"><span style="font-weight: 900;">→</span> stream</a> / `;
+        streamable_html = `<a href="${link_bandcamp}"><span style="font-weight: 900;">→</span> bandcamp</a> / `;
     }
 
     var contributors_html = "";
@@ -165,13 +166,13 @@ function ProcessRelease(release, match_release_cat) {
         <!--Release ${cat_id}${cat_no}-->
         <div class="game_cell has_cover" dir="auto">
             <div class="game_thumb" style="background-color:#c2c2d1;"><a class="title game_link"
-                href="${link_bandcamp}"><img
+                href="${link_stream}"><img
                         height="315" width="315"
                         src="${cover_path}">
-                <span class="catalog_number">${cat_no}</span></a></div>
+                </a></div>
             <div class="game_cell_data">
                 <div class="game_title"><a class="title game_link"
-                        href="${link_bandcamp}" data-action="game_grid">${name}</a></div>
+                        href="${link_stream}" data-action="game_grid">${name}</a> <span class="catalog_number">${cat_no}</span></div>
                 <div class="author">
                     <i>by ${contributors_html}</i>
                 </div>
