@@ -38,7 +38,11 @@ function ProcessReleases(json, specific_release_to_load) {
         var release_result = ProcessRelease(release, specific_release_to_load);
 
         if (release_parent != null && release_result.match) {
-                release_parent.innerHTML += release_result.release_html;
+            release_parent.innerHTML += release_result.release_html;
+
+            if (specific_release_to_load != null){
+                document.title = `Mlem Records - Stream ${release_result.name}`;
+            }
         }
 
         release.contributors.forEach(contributor => {
@@ -182,7 +186,11 @@ function ProcessRelease(release, match_release_cat) {
         </div>
         `;
 
-    return { match: true, release_html: release_html, contributors: contributors };
+    return { match: true, 
+        release_html: release_html, 
+        contributors: contributors, 
+        name: name
+    };
 }
 
 var artists = [];
