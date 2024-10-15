@@ -42,7 +42,7 @@ function ProcessReleases(json, specific_release_to_load) {
             release_parent.innerHTML += release_result.release_html;
 
             if (specific_release_to_load != null){
-                document.title = `Mlem Records - Stream ${release_result.name}`;
+                document.title = `Stream ${release_result.name} by ${release.artist}`;
 
                 const cat_id_parent = document.getElementById("cat_id");
                 cat_id_parent.innerHTML = `${release_result.cat_id}`;
@@ -223,9 +223,10 @@ function ProcessRelease(release, match_release_cat) {
         `;
 
     return { match: true, 
-        release_html: release_html, 
+        release_html: release_html,
         contributors: contributors, 
         name: name,
+        artist: artist,
         cat_id: cat_id,
         cat_no: cat_no
     };
