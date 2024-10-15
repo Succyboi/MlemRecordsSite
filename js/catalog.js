@@ -4,10 +4,11 @@ function LoadCatalog(get_cat_from_url) {
     const people_path = "releases/people.json";
 
     var specific_release_to_load = null;
-    if (get_cat_from_url) {
-        const url = new URL(window.location.href);
-        const url_params = new URLSearchParams(url.search);
 
+    const url = new URL(window.location.href);
+    const url_params = new URLSearchParams(url.search);
+        
+    if (get_cat_from_url) {
         if (url_params.has("release")) {
             specific_release_to_load = url_params.get("release");
         }
@@ -62,9 +63,11 @@ function ProcessRelease(release, match_release_cat) {
     const name = release.name;
     const artist = release.artist;
     const contributors = release.contributors;
+    const cover = release.cover;
     const info_release_date = release.info_release_date;
     const info_about = release.info_about;
     const info_credits = release.info_credits;
+    const info_special_thanks_header = release.info_special_thanks_header;
     const info_special_thanks_to = release.info_special_thanks_to;
     const info_license = release.info_license;
     const info_license_link = release.info_license_link;
@@ -81,11 +84,11 @@ function ProcessRelease(release, match_release_cat) {
     if (match_release_cat != null && match_release_cat != `${cat_id}${cat_no}`) {
          return { match: false, contributors: contributors } 
     }
-    if (!visible) {
+    if (match_release_cat == null && !visible) {
         return { match: false };
     }
 
-    const cover_path = `releases/${cat_id}${cat_no}/cover.png`;
+    const cover_path = `releases/${cat_id}${cat_no}/${cover}`;
     const download_path = `releases/${cat_id}${cat_no}/[${cat_id}${cat_no}] ${artist} - ${name}.zip`;
 
     var download_html = "";
@@ -136,14 +139,17 @@ function ProcessRelease(release, match_release_cat) {
     info = `
     <div class="release_info">
         <hr>
-        <p>${info_about}</p>
     `;
+
+    if (info_about != null){
+        info += `<p>${info_about}</p>`;
+    }
 
     info_credits.forEach(credit => {
         info += `<p>${credit}</p>`;
     });
 
-    info += "<p> Special thanks to:<br>";
+    info += `<p>${info_special_thanks_header}<br>`;
     var first = true;
     info_special_thanks_to.forEach(person => {
         if (!first) {
