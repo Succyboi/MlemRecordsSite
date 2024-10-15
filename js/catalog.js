@@ -43,6 +43,12 @@ function ProcessReleases(json, specific_release_to_load) {
 
             if (specific_release_to_load != null){
                 document.title = `Mlem Records - Stream ${release_result.name}`;
+
+                const cat_id_parent = document.getElementById("cat_id");
+                cat_id_parent.innerHTML = `${release_result.cat_id}`;
+
+                const cat_no_parent = document.getElementById("cat_no");
+                cat_no_parent.innerHTML = `${release_result.cat_no}`;
             }
         }
 
@@ -219,7 +225,9 @@ function ProcessRelease(release, match_release_cat) {
     return { match: true, 
         release_html: release_html, 
         contributors: contributors, 
-        name: name
+        name: name,
+        cat_id: cat_id,
+        cat_no: cat_no
     };
 }
 
