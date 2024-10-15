@@ -64,6 +64,7 @@ function ProcessRelease(release, match_release_cat) {
     const artist = release.artist;
     const contributors = release.contributors;
     const cover = release.cover;
+
     const info_release_date = release.info_release_date;
     const info_about = release.info_about;
     const info_credits = release.info_credits;
@@ -71,9 +72,15 @@ function ProcessRelease(release, match_release_cat) {
     const info_special_thanks_to = release.info_special_thanks_to;
     const info_license = release.info_license;
     const info_license_link = release.info_license_link;
+
+    const style_text = release.style_text;
+    const style_background = release.style_background;
+    const style_highlight = release.style_highlight;
+
     const visible = release.visible;
     const downloadable = release.downloadable;
     const streamable = release.streamable;
+
     const link_stream = `stream?release=${cat_id}${cat_no}`
     const link_bandcamp = release.link_bandcamp;
     const link_youtube = release.link_youtube;
@@ -81,9 +88,26 @@ function ProcessRelease(release, match_release_cat) {
     const link_itunes = release.link_itunes;
     const small = match_release_cat == null; 
 
-    if (match_release_cat != null && match_release_cat != `${cat_id}${cat_no}`) {
-         return { match: false, contributors: contributors } 
+    if (match_release_cat != null) {
+        if (match_release_cat != `${cat_id}${cat_no}`) {
+            return { match: false, contributors: contributors } 
+        }
+
+        if (style_text != null){
+            document.documentElement.style.setProperty('--textColor', style_text);
+            document.documentElement.style.setProperty('--highlightColor', style_text);
+        }
+
+        if (style_background != null){
+            document.documentElement.style.setProperty('--backgroundColor', style_background);
+            document.documentElement.style.setProperty('--semiBackgroundColor', style_background);
+        }
+
+        if (style_highlight != null){
+            document.documentElement.style.setProperty('--linkColor', style_highlight);
+        }
     }
+    
     if (match_release_cat == null && !visible) {
         return { match: false };
     }
@@ -111,9 +135,9 @@ function ProcessRelease(release, match_release_cat) {
     var release_links = "";
     if (small) {
         release_links = `
-        <div class="release_links"><p>
-            ${streamable_html}${download_html}
-        </p></div>`;
+            <div class="release_links"><p>
+                ${streamable_html}${download_html}
+            </p></div>`;
     } else {
         release_links = `
             <div class="release_links"><p>
