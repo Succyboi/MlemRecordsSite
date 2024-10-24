@@ -11,6 +11,8 @@ function LoadCatalog(get_cat_from_url) {
     if (get_cat_from_url) {
         if (url_params.has("release")) {
             specific_release_to_load = url_params.get("release");
+        } else {
+            specific_release_to_load = "???";
         }
     }
 
@@ -31,14 +33,17 @@ function LoadCatalog(get_cat_from_url) {
 
 function ProcessReleases(json, specific_release_to_load) {
     const release_parent = document.getElementById("release_parent");
-    if (release_parent != null) {
-        release_parent.innerHTML = "";
-    }
+    var cleared = false;
     
     json.releases.forEach(release => {
         var release_result = ProcessRelease(release, specific_release_to_load);
 
         if (release_parent != null && release_result.match) {
+            if (!cleared && release_parent != null) {
+                release_parent.innerHTML = "";
+                cleared = true;
+            }
+
             release_parent.innerHTML += release_result.release_html;
 
             if (specific_release_to_load != null){
@@ -119,7 +124,7 @@ function ProcessRelease(release, match_release_cat) {
     }
 
     const cover_path = `releases/${cat_id}${cat_no}/${cover}`;
-    const download_path = `releases/${cat_id}${cat_no}/[${cat_id}${cat_no}] ${artist} - ${name}.zip`;
+    const download_path = `music/[${cat_id}${cat_no}] ${artist} - ${name}.zip`;
 
     var download_html = "";
     if (downloadable) {
