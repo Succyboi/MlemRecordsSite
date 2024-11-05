@@ -81,6 +81,8 @@ function ProcessRelease(release, match_release_cat) {
     const info_credits = release.info_credits;
     const info_special_thanks_header = release.info_special_thanks_header;
     const info_special_thanks_to = release.info_special_thanks_to;
+    const info_special_thanks_mode = release.info_special_thanks_mode;
+
     const info_license = release.info_license;
     const info_license_link = release.info_license_link;
 
@@ -180,23 +182,42 @@ function ProcessRelease(release, match_release_cat) {
         info += `<p>${info_about}</p>`;
     }
 
-    info_credits.forEach(credit => {
-        info += `<p>${credit}</p>`;
-    });
+    info += "<hr>";
 
-    info += `<p>${info_special_thanks_header}<br>`;
-    var first = true;
-    info_special_thanks_to.forEach(person => {
-        if (!first) {
-            info += ", ";
-        }
-        info += `${person}`;
+    if (info_credits != null && info_credits.length > 0){
+        info += "<p>Credits:</p><ul>";
+        info_credits.forEach(credit => {
+            info += `<li>${credit}</li>`;
+        });
+        info += "</ul>";
+    }
 
-        first = false;
+    switch(info_special_thanks_mode) {
+        case "paragraph":
+            info += `<p>${info_special_thanks_header}<br>`;
+            var first = true;
+            info_special_thanks_to.forEach(person => {
+                if (!first) {
+                    info += ", ";
+                }
+                info += `${person}`;
         
-        AddPerson(person);
-    });
-    info += ".</p>";
+                first = false;
+                
+                AddPerson(person);
+            });
+            info += ".</p>";
+            break;
+
+        case "list":
+            info += `<p>${info_special_thanks_header}</p><ul>`;
+            info_special_thanks_to.forEach(person => {
+                info += `<li>${person}.</li>`;
+            });
+            info += "</ul>";
+            break;
+    }
+
 
     info += `
         <p><i>Released ${info_release_date} under <a href="${info_license_link}">${info_license}</a>.</i></p>    
