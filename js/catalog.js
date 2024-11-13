@@ -99,6 +99,7 @@ function ProcessRelease(release, match_release_cat) {
     const link_youtube = release.link_youtube;
     const link_spotify = release.link_spotify;
     const link_itunes = release.link_itunes;
+    const link_physical = release.link_physical;
     const small = match_release_cat == null; 
 
     if (match_release_cat != null) {
@@ -168,8 +169,13 @@ function ProcessRelease(release, match_release_cat) {
             release_links += `<br><a href="${link_itunes}"><span style="font-weight: 900;">→</span> itunes</a>`;
         }
         
-        release_links += `<br><a href="${download_path}"><span style="font-weight: 900;">↓</span> download</a>
-            </p></div>`;
+        release_links += `<br><a href="${download_path}"><span style="font-weight: 900;">↓</span> download</a>`;
+    
+        if (link_physical != null) {
+            release_links += `<br><a href="${link_physical}"><span style="font-weight: 900;">♥</span> physical</a>`;
+        }
+
+        release_links += `</p></div>`;
     }
 
     var info = "";
