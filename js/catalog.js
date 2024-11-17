@@ -166,7 +166,7 @@ function ProcessRelease(release, match_release_cat) {
         }
 
         if (link_itunes != null) {
-            release_links += `<br><a href="${link_itunes}"><span style="font-weight: 900;">→</span> itunes</a>`;
+            release_links += `<br><a href="${link_itunes}"><span style="font-weight: 900;">→</span> apple music</a>`;
         }
         
         release_links += `<br><a href="${download_path}"><span style="font-weight: 900;">↓</span> download</a>`;
@@ -191,7 +191,7 @@ function ProcessRelease(release, match_release_cat) {
     info += "<hr>";
 
     if (info_credits != null && info_credits.length > 0){
-        info += "<p>Credits:</p><ul>";
+        info += "<h3>Credits</h3><ul>";
         info_credits.forEach(credit => {
             info += `<li>${credit}</li>`;
         });
@@ -200,7 +200,7 @@ function ProcessRelease(release, match_release_cat) {
 
     switch(info_special_thanks_mode) {
         case "paragraph":
-            info += `<p>${info_special_thanks_header}<br>`;
+            info += `<h3>${info_special_thanks_header}</h3><p>`;
             var first = true;
             info_special_thanks_to.forEach(person => {
                 if (!first) {
@@ -216,7 +216,7 @@ function ProcessRelease(release, match_release_cat) {
             break;
 
         case "list":
-            info += `<p>${info_special_thanks_header}</p><ul>`;
+            info += `<h3>${info_special_thanks_header}</h3><ul>`;
             info_special_thanks_to.forEach(person => {
                 info += `<li>${person}.</li>`;
             });
@@ -241,10 +241,10 @@ function ProcessRelease(release, match_release_cat) {
                 href="${link_stream}"><img
                         height="315" width="315"
                         src="${cover_path}">
-                </a></div>
+                </a><span class="catalog_number">${cat_no}</span></div>
             <div class="game_cell_data">
-                <div class="game_title"><a class="title game_link"
-                        href="${link_stream}" data-action="game_grid">${name}</a> <span class="catalog_number">${cat_no}</span></div>
+                <div class="game_title"> <a class="title game_link"
+                        href="${link_stream}" data-action="game_grid">${name}</a></div>
                 <div class="author">
                     <i>by ${contributors_html}</i>
                 </div>
