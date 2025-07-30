@@ -212,7 +212,7 @@
   .release-container {
     display: grid;
     grid-template-columns: repeat(2, calc(50% - 10px));
-    margin-top: 1em;
+    margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
   }
@@ -228,11 +228,19 @@
     text-transform: lowercase;
   }
 
+  .events-container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    margin-top: 0em;
+    margin-bottom: 1em;
+    gap: 3em;
+  }
+
   @media only screen and (max-width: 768px) {
     .release-container {
       display: grid;
       grid-template-columns: repeat(1, 100%);
-      margin-top: 1em;
+      margin-top: 0em;
       margin-bottom: 1em;
       gap: 1em;
     }
@@ -281,30 +289,32 @@
 <content><h1>Show</h1>
 
 
-  
-  <a href="/blog">Remove filter</a>
-  
-  <ul class="blog-posts">
-    
-    <li>
-      
-      <span class="time">
-        <i>
-          <time datetime='2025-08-09' pubdate>
-            09 Aug, 2025
-          </time>
-        </i>
-      </span>
-      
-      <a class="page-title" href="https://mlemrecords.com/events/juiced-out-breakz-night/">Juiced Out Breakz Night</a>
-      <i></i>
-    </li>
-    
-  </ul>
-  
-  
 
-  </content>
+  
+  <a href="/events">Remove filter</a>
+    
+  <div class="events-container">
+    
+    <div class="event">
+      
+        
+        <span class="time">
+          <i>
+            <time datetime='2025-08-09' pubdate>
+              09 Aug, 2025
+            </time>
+          </i>
+        </span>
+        
+        <a href="https://mlemrecords.com/events/juiced-out-breakz-night/"><img style="width: 100%;" src="/events/juiced-out-breakz-night/cover.png"></a>
+      
+      <h2 style="margin: 0;"><a class="page-title" href="https://mlemrecords.com/events/juiced-out-breakz-night/">Juiced Out Breakz Night</a></h2>
+      <i></i>
+    </div>
+    
+  </div>
+
+</content>
 
   </main>
   <footer></footer>
