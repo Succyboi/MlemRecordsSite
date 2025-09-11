@@ -1,0 +1,79 @@
+{{ define "main" }}
+
+{{ if ne .Type "release" }}
+  {{- partial "title.html" . -}}
+{{ end }}
+
+{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<p>
+  <i>
+    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+    </time>
+  </i>
+</p>
+{{ end }}{{ end }}
+
+<content>
+  {{ if eq .Type "release" }}
+    {{ with .Page }}
+      <style>
+        :root {
+          {{ with .Params.style_text }}
+            --textColor: {{ . }};
+            --semiTextColor: {{ . }};
+          {{ end }}
+
+          {{ with .Params.style_highlight }}
+            --linkColor: {{ . }};
+            --semiLinkColor: {{ . }};
+          {{ end }}
+          
+          {{ with .Params.style_background }}
+            --backgroundColor: {{ . }};
+            --semiBackgroundColor: {{ . }};
+          {{ end }}
+        }
+
+      </style>
+    {{ end}}
+  
+    <div class="release-single">
+      <img src="{{ with .Page }}{{ .Permalink }}{{ .Params.cover }}{{ end }}">
+      <h2 style="margin-bottom: 0;">{{ .Title }}</h2>by {{ with .Page }}{{ .Params.artist }}{{ end }}
+    
+      <p>
+        {{ with .Params.bandcamp_url }}<a href="{{ . }}">→ Bandcamp</a>{{ end }}
+        {{ with .Params.youtube_url }}<br><a href="{{ . }}">→ Youtube</a>{{ end }}
+        {{ with .Params.spotify_url }}<br><a href="{{ . }}">→ Spotify</a>{{ end }}
+        {{ with .Params.apple_url }}<br><a href="{{ . }}">→ Apple Music</a>{{ end }}
+        {{ with .Params.archive_url }}<br><a href="{{ . }}">↘ Archive.org</a>{{ end }}
+        {{ if .Params.downloadable }}<br><a href="/downloads/[{{ .Params.cat_id }}{{ .Params.cat_no }}] {{ .Params.artist }} - {{ .Title }}.zip">↓ Download</a>{{ end }}
+      </p>
+
+      {{ .Content }}
+
+      {{ with .Page }}
+        <hr>
+        <p>
+          {{ .Params.cat_id }}{{ .Params.cat_no }}
+          is a <span style="text-transform: lowercase;">{{ delimit .Params.genres " / " }}</span> {{ .Params.type }} released on
+          <i>
+            <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+              {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+            </time>
+          </i>
+          under <a href="{{ .Params.license_url }}">{{ .Params.license_name }}</a>.
+        </p>
+      {{ end }}
+    </div>
+  {{ else }}
+    {{ .Content }}
+  {{ end }}
+</content>
+<p>
+  {{ range (.GetTerms "tags") }}
+    <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ end }}

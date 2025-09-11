@@ -1,0 +1,12 @@
+<p>
+    {{ range .Site.Menus.release.Reverse }}
+        {{ with .Page }}
+            {{ range .Params.people}}
+                {{ . }}, 
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    you ♥.
+</p>
+
+<!-- TODO Add scoreboard for frequent mentions -->

@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+<content>
+    {{ .Content }}
+
+    <div class="release-container">
+        {{ range .Site.Menus.release.Reverse }}
+            {{ with .Page }}
+                <div class="release">
+                    <small class="release-header">
+                        {{ .Params.cat_id }}{{ .Params.cat_no }}
+                    </small>
+                    <a href="{{ .Permalink }}"><img src="{{ .Permalink }}{{ .Params.cover }}"></a>
+                    <h2 style="margin: 0;"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>by {{ with .Page }}{{ .Params.artist }}{{ end }}
+                    <br><a href="{{ .Params.bandcamp_url }}">→ Bandcamp</a> / {{ if .Params.downloadable }}<a href="/downloads/[{{ .Params.cat_id }}{{ .Params.cat_no }}] {{ .Params.artist }} - {{ .Title }}.zip">↓ Download</a>{{ end }}
+                </div>
+            {{ end }}
+        {{ end }}
+    </div>
+</content>
+
+<footer>
+    <p>
+        {{ len (where .Site.Pages "Type" "==" "release") }} releases by aliens who can't stop making stuff
+        <br>Last updated {{ .Site.Lastmod | time.Format ":date_medium" }}.
+    </p>
+
+    <p><a href="/secret" style="color: var(--textColor); text-decoration: none;">.</a></p>
+</footer>
+
+{{ end }}
