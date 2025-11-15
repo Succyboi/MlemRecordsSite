@@ -47,7 +47,7 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
 Netlabel? Yeah!
 Netlabels are record labels that distribute music online. To us, being a netlabel means we love making music and we love giving that music to friends. So we prioritise accessibility, independence and fun.
 Any Mlem release is yours now! We’ve already given it to you, friend! Please share stuff with more friends if you think they might like it. Sharing is caring! ♥">
-  <meta itemprop="wordCount" content="557">
+  <meta itemprop="wordCount" content="587">
   <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -55,8 +55,8 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
   :root {
     --textColor: #2b2b26;
     --semiTextColor: #2b2b26;
-    --linkColor: #f2ab37;
-    --semiLinkColor: #f2ab37;
+    --linkColor: #8E8E93;
+    --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
   }
@@ -142,6 +142,10 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
     max-width: 100%;
   }
 
+  p {
+    margin: 1em 0;
+  }
+
   p > em img {
     display: block;
     max-width: 75%;
@@ -168,6 +172,10 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
     border-top: 1px solid var(--textColor);
   }
 
+  footer {
+    text-align: center;
+  }
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -187,7 +195,7 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
 
   footer {
     padding: 25px;
-    text-align: center;
+    justify-content: center;
   }
 
   .helptext {
@@ -218,7 +226,7 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
     margin-right: 1ch;
   }
 
-  .inline_icon {
+  .inline {
     height: 1em;
     vertical-align: baseline;
   }
@@ -257,6 +265,81 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
 
   .catalogue-container {
     font-size: smaller;
+    list-style-type: none;
+  }
+
+  .audio {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 1em 0;
+    background-color: var(--backgroundColor);
+  }
+
+  .audio-controls {
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1ch;
+  }
+
+  .audio-button {
+    width: 2ch;
+    min-width: 2ch;
+    max-width: 2ch;
+    padding: 0;
+    font-size: 1.5em;
+    color: var(--linkColor);
+    background: none;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  .audio-title {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+    font-style: italic;
+  }
+
+  .audio-time {
+    min-width: 4.5ch;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .audio-preview {
+    position: relative;
+    padding: 0;
+    width: 9ch;
+    margin-right: 1ch;
+  }
+
+  .audio-preview-controls {
+    display: inline-block;
+    background-color: var(--textColor);
+    min-width: 7.5ch;
+  }
+
+  .audio-preview-button {
+    user-select: none;
+    padding: 0 0.5ch;
+    font-size: 1em;
+    color: var(--backgroundColor);
+    background: none;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  .audio-preview-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--backgroundColor);
   }
 
   @media only screen and (max-width: 768px) {
@@ -276,7 +359,6 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
 
 </style>
 
-
   <script type="text/javascript">
     var specific_release_to_redirect = null;
 
@@ -289,6 +371,11 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
     }
   </script>
 
+  
+  <audio id="page-audio" preload="auto">
+      <source id="page-audio-source"></source>
+  </audio>
+
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -298,7 +385,10 @@ Any Mlem release is yours now! We’ve already given it to you, friend! Please s
   <header><a href="/" class="title">
   <h1><span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span></h1>
 </a>
-<nav><a href="/">Releases</a>
+<nav>
+    <a href="/">Releases</a>
+
+
 <a href="https://mlemrecords.bandcamp.com/merch">Merch</a>
 
 <a href="/events/">Events</a>
@@ -332,7 +422,7 @@ Please share stuff with more friends if you think they might like it. Sharing is
 <h2 id="talk">Talk</h2>
 <p>Got a question? Wanna talk to a person? Wanna release something?</p>
 <p>Send a message to <a href="https://indieweb.social/@mlemrecords">@mlemrecords</a> on indieweb.social.
-Or send an electronic mail to <a href="mailto:hi@mlemrecords.com">hi@mlemrecords.com</a>.</p>
+Or send an electronic mail to <a href="mailto:hi@mlemrecords.com">hi@mlemrecords.com</a> or <a href="mailto:support@mlemrecords.com">support@mlemrecords.com</a>.</p>
 <h2 id="donate">Donate</h2>
 <p>Mlem is entirely financed by its artists. If you like the things Mlem does and want to support its activities, please listen to the music, come to the shows and/or <a href="https://donate.stripe.com/7sYcN6cRReaB7Nbay7eME00">donate</a>. All proceeds go towards making more music and we appreciate every bit of your patronage.</p>
 <p><em>Ps: Send your receipt to <a href="mailto:hi@mlemrecords.com">hi@mlemrecords.com</a> and DJ ZITwerK will send you some cool audio files as a thank you. &lt;3</em></p>
@@ -345,6 +435,40 @@ Or send an electronic mail to <a href="mailto:hi@mlemrecords.com">hi@mlemrecords
 <h2 id="people">People</h2>
 <p>Mlem runs on the love between these people:
 <p>
+    
+        
+            
+                Damian Been, 
+            
+                Maxx Been, 
+            
+                DJ ZITwerK, 
+            
+                Sytse Vledder, 
+            
+                Robin van Ulft, 
+            
+                Zoë de Boer, 
+            
+                Dylan Hokstam, 
+            
+                Puk Bruinsma, 
+            
+                Benjamin Burger, 
+            
+                Lucas Veerkamp, 
+            
+                the birds, 
+            
+                Roos, 
+            
+                Fleur, 
+            
+                Robert, 
+            
+                Jacqueline, 
+            
+        
     
         
             

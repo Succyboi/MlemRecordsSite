@@ -2,14 +2,14 @@
 <html lang="en-US">
 
 <head>
-	<meta name="generator" content="Hugo 0.142.0">
+	<meta name="generator" content="Hugo 0.147.8">
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mlem Records</title>
 <meta name="title" content="Mlem Records" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="after,release party,show," />
+<meta name="keywords" content="ambient,club,idm,pop,punk,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/">
@@ -33,7 +33,7 @@
 
   <meta itemprop="name" content="Mlem Records">
   <meta itemprop="description" content="Mlem Records is a netlabel and artist collective run by aliens in cyberspace.">
-  <meta itemprop="datePublished" content="2025-10-27T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2025-11-15T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-11-15T00:00:00+00:00">
   <meta itemprop="wordCount" content="13">
   <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
@@ -44,8 +44,8 @@
   :root {
     --textColor: #2b2b26;
     --semiTextColor: #2b2b26;
-    --linkColor: #f2ab37;
-    --semiLinkColor: #f2ab37;
+    --linkColor: #8E8E93;
+    --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
   }
@@ -131,6 +131,10 @@
     max-width: 100%;
   }
 
+  p {
+    margin: 1em 0;
+  }
+
   p > em img {
     display: block;
     max-width: 75%;
@@ -157,6 +161,10 @@
     border-top: 1px solid var(--textColor);
   }
 
+  footer {
+    text-align: center;
+  }
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -176,7 +184,7 @@
 
   footer {
     padding: 25px;
-    text-align: center;
+    justify-content: center;
   }
 
   .helptext {
@@ -207,7 +215,7 @@
     margin-right: 1ch;
   }
 
-  .inline_icon {
+  .inline {
     height: 1em;
     vertical-align: baseline;
   }
@@ -246,6 +254,81 @@
 
   .catalogue-container {
     font-size: smaller;
+    list-style-type: none;
+  }
+
+  .audio {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 1em 0;
+    background-color: var(--backgroundColor);
+  }
+
+  .audio-controls {
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1ch;
+  }
+
+  .audio-button {
+    width: 2ch;
+    min-width: 2ch;
+    max-width: 2ch;
+    padding: 0;
+    font-size: 1.5em;
+    color: var(--linkColor);
+    background: none;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  .audio-title {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+    font-style: italic;
+  }
+
+  .audio-time {
+    min-width: 4.5ch;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .audio-preview {
+    position: relative;
+    padding: 0;
+    width: 9ch;
+    margin-right: 1ch;
+  }
+
+  .audio-preview-controls {
+    display: inline-block;
+    background-color: var(--textColor);
+    min-width: 7.5ch;
+  }
+
+  .audio-preview-button {
+    user-select: none;
+    padding: 0 0.5ch;
+    font-size: 1em;
+    color: var(--backgroundColor);
+    background: none;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  .audio-preview-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--backgroundColor);
   }
 
   @media only screen and (max-width: 768px) {
@@ -265,7 +348,6 @@
 
 </style>
 
-
   <script type="text/javascript">
     var specific_release_to_redirect = null;
 
@@ -278,6 +360,11 @@
     }
   </script>
 
+  
+  <audio id="page-audio" preload="auto">
+      <source id="page-audio-source"></source>
+  </audio>
+
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -287,7 +374,10 @@
   <header><a href="/" class="title">
   <h1><span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span></h1>
 </a>
-<nav><a href="/">Releases</a>
+<nav>
+    <a href="/releases">Catalogue</a>
+
+
 <a href="https://mlemrecords.bandcamp.com/merch">Merch</a>
 
 <a href="/events/">Events</a>
@@ -303,153 +393,1467 @@
     <p>Mlem Records is a netlabel and artist collective run by aliens in cyberspace.</p>
 
 
-    <span><h1 style="display: inline-block;">Releases</h1> <small><a href="/releases">See all</a></small></span>
+    <h1 style="display: inline-block; margin-bottom: 0;">Releases</h1>
+
+    <p style="margin-top: 0;">
+        Filter by 
+        
+        
+            <a href="https://mlemrecords.com/categories/ambient/">Ambient</a>
+            <a href="https://mlemrecords.com/categories/club/">Club</a>
+            <a href="https://mlemrecords.com/categories/idm/">IDM</a>
+            <a href="https://mlemrecords.com/categories/pop/">Pop</a>
+            <a href="https://mlemrecords.com/categories/punk/">Punk</a>
+    </p>
 
     <div class="release-container">
         
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem012
-                    </small>
-                    <a href="https://mlemrecords.com/mlem012/"><img src="https://mlemrecords.com/mlem012/cover.png"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem012/">Elektronische Meuk Vol. 1</a></h2>by WivWav
-                    <br><a href="https://mlemrecords.bandcamp.com/album/elektronische-meuk-vol-1">→ Bandcamp</a> / <a href="/downloads/[mlem012] WivWav - Elektronische%20Meuk%20Vol.%201.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem011
-                    </small>
-                    <a href="https://mlemrecords.com/mlem011/"><img src="https://mlemrecords.com/mlem011/cover.jpg"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem011/">Dino’s in Mijn Hoofd</a></h2>by KINDERPUNK
-                    <br><a href="https://mlemrecords.bandcamp.com/album/dino-s-in-mijn-hoofd">→ Bandcamp</a> / <a href="/downloads/[mlem011] KINDERPUNK - Dino%e2%80%99s%20in%20Mijn%20Hoofd.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem010
-                    </small>
-                    <a href="https://mlemrecords.com/mlem010/"><img src="https://mlemrecords.com/mlem010/cover.png"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem010/">Juiced Out Trakz</a></h2>by Mlem
-                    <br><a href="https://mlemrecords.bandcamp.com/album/juiced-out-trakz">→ Bandcamp</a> / <a href="/downloads/[mlem010] Mlem - Juiced%20Out%20Trakz.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem009
-                    </small>
-                    <a href="https://mlemrecords.com/mlem009/"><img src="https://mlemrecords.com/mlem009/cover.jpg"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem009/">WTR (Runnin’)</a></h2>by M2ND
-                    <br><a href="https://mlemrecords.bandcamp.com/track/wtr-runnin">→ Bandcamp</a> / <a href="/downloads/[mlem009] M2ND - WTR%20%28Runnin%e2%80%99%29.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem008
-                    </small>
-                    <a href="https://mlemrecords.com/mlem008/"><img src="https://mlemrecords.com/mlem008/cover.png"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem008/">All my best friends don’t pass the turing test (AlmabuenA Remix)</a></h2>by love sella, AlmabuenA
-                    <br><a href="https://mlemrecords.bandcamp.com/album/all-my-best-friends-don-t-pass-the-turing-test-almabuena-remix">→ Bandcamp</a> / <a href="/downloads/[mlem008] love%20sella,%20AlmabuenA - All%20my%20best%20friends%20don%e2%80%99t%20pass%20the%20turing%20test%20%28AlmabuenA%20Remix%29.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem007
-                    </small>
-                    <a href="https://mlemrecords.com/mlem007/"><img src="https://mlemrecords.com/mlem007/cover.png"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem007/">The Alan Watts Theme (love sella Remix)</a></h2>by AlmabuenA, love sella
-                    <br><a href="https://mlemrecords.bandcamp.com/album/the-alan-watts-theme-love-sella-remix">→ Bandcamp</a> / <a href="/downloads/[mlem007] AlmabuenA,%20love%20sella - The%20Alan%20Watts%20Theme%20%28love%20sella%20Remix%29.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem006
-                    </small>
-                    <a href="https://mlemrecords.com/mlem006/"><img src="https://mlemrecords.com/mlem006/cover.jpg"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem006/">indigo chamber</a></h2>by indigo chamber
-                    <br><a href="https://mlemrecords.bandcamp.com/album/indigo-chamber">→ Bandcamp</a> / <a href="/downloads/[mlem006] indigo%20chamber - indigo%20chamber.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem005
-                    </small>
-                    <a href="https://mlemrecords.com/mlem005/"><img src="https://mlemrecords.com/mlem005/cover.jpg"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem005/">Denken Aan Een Ander Is Niet Van Deze Tijd</a></h2>by Ulf Ten Aar
-                    <br><a href="https://mlemrecords.bandcamp.com/album/denken-aan-een-ander-is-niet-van-deze-tijd">→ Bandcamp</a> / <a href="/downloads/[mlem005] Ulf%20Ten%20Aar - Denken%20Aan%20Een%20Ander%20Is%20Niet%20Van%20Deze%20Tijd.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem004
-                    </small>
-                    <a href="https://mlemrecords.com/mlem004/"><img src="https://mlemrecords.com/mlem004/cover.png"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem004/">Wacko_</a></h2>by Cage.Log
-                    <br><a href="https://mlemrecords.bandcamp.com/album/wacko">→ Bandcamp</a> / <a href="/downloads/[mlem004] Cage.Log - Wacko_.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem003
-                    </small>
-                    <a href="https://mlemrecords.com/mlem003/"><img src="https://mlemrecords.com/mlem003/cover.jpg"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem003/">Pieces of Peace</a></h2>by Jørgen Valdemar
-                    <br><a href="https://mlemrecords.bandcamp.com/album/pieces-of-peace">→ Bandcamp</a> / <a href="/downloads/[mlem003] J%c3%b8rgen%20Valdemar - Pieces%20of%20Peace.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem002
-                    </small>
-                    <a href="https://mlemrecords.com/mlem002/"><img src="https://mlemrecords.com/mlem002/cover.jpeg"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem002/">Up in Flames</a></h2>by Aching Hands
-                    <br><a href="https://mlemrecords.bandcamp.com/album/up-in-flames">→ Bandcamp</a> / <a href="/downloads/[mlem002] Aching%20Hands - Up%20in%20Flames.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem001
-                    </small>
-                    <a href="https://mlemrecords.com/mlem001/"><img src="https://mlemrecords.com/mlem001/cover.png"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem001/">Amersfoort Tracks</a></h2>by DJ ZITwerK
-                    <br><a href="https://mlemrecords.bandcamp.com/album/amersfoort-tracks/">→ Bandcamp</a> / <a href="/downloads/[mlem001] DJ%20ZITwerK - Amersfoort%20Tracks.zip">↓ Download</a>
-                </div>
-            
-        
-            
-                <div class="release">
-                    <small class="release-header">
-                        mlem000
-                    </small>
-                    <a href="https://mlemrecords.com/mlem000/"><img src="https://mlemrecords.com/mlem000/cover.png"></a>
-                    <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem000/">slob life nu dada</a></h2>by love sella
-                    <br><a href="https://mlemrecords.bandcamp.com/album/slob-life-nu-dada">→ Bandcamp</a> / <a href="/downloads/[mlem000] love%20sella - slob%20life%20nu%20dada.zip">↓ Download</a>
-                </div>
-            
-        
+    <div class="release">
+        <small class="release-header">
+            mlem013
+        </small>
+        <a href="https://mlemrecords.com/mlem013/"><img src="https://mlemrecords.com/mlem013/cover.png"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem013/">Bird Sounds Vol. 1</a></h2>by Birdhouse Emporium
+        <br><span id="mlem013-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem013] Birdhouse Emporium - Bird Sounds Vol. 1";
+            var audioSrcs = [
+                "1. I'll Be There in Just a Moment", 
+                "2. Lonely as Can Be", 
+                "3. Ask Me Again Tomorrow", 
+                "4. Birds of Paradise", 
+                "5. Out of Sight", 
+                "6. 240815 (bird sounds)", 
+                "7. Alright for a While", 
+                
+            ];
+
+            var currentAudio = parseInt("5") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem013-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem013-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem013-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem013/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem012
+        </small>
+        <a href="https://mlemrecords.com/mlem012/"><img src="https://mlemrecords.com/mlem012/cover.png"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem012/">Elektronische Meuk Vol. 1</a></h2>by WivWav
+        <br><span id="mlem012-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem012] WivWav - Elektronische Meuk Vol. 1";
+            var audioSrcs = [
+                "1. Intro", 
+                "2. Baksteen", 
+                "3. Momentum", 
+                "4. Voordat Hij Crasht", 
+                "5. Yoghurtsaus", 
+                "6. Nog Even", 
+                "7. Zinnen", 
+                "8. Huh_", 
+                "9. DYBIS", 
+                "10. Het Komt Wel Goed", 
+                "11. Opvulling", 
+                
+            ];
+
+            var currentAudio = parseInt("6") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem012-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem012-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem012-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem012/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem011
+        </small>
+        <a href="https://mlemrecords.com/mlem011/"><img src="https://mlemrecords.com/mlem011/cover.jpg"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem011/">Dino’s in Mijn Hoofd</a></h2>by KINDERPUNK
+        <br><span id="mlem011-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem011] KINDERPUNK - Dino’s in Mijn Hoofd";
+            var audioSrcs = [
+                "1. ADHD", 
+                "2. Herfsttafels", 
+                "3. Oorlog _ Watergevecht", 
+                "4. Superman", 
+                "5. Trommel", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem011-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem011-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem011-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem011/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem010
+        </small>
+        <a href="https://mlemrecords.com/mlem010/"><img src="https://mlemrecords.com/mlem010/cover.png"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem010/">Juiced Out Trakz</a></h2>by Mlem
+        <br><span id="mlem010-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem010] Mlem - Juiced Out Trakz";
+            var audioSrcs = [
+                "1. THEY SHOT UP THE INTRO TRACK!!!", 
+                "2. ILoveMyGrandmother", 
+                "3. Kombutcha Zdarder", 
+                "4. Wath The Hell David", 
+                "5. audio jungle", 
+                "6. Red car #9", 
+                "7. ASTRA", 
+                "8. YouWouldn'tDownloadASaxophone", 
+                "9. Skr1llBw0i D34lZ (FxxxIN DIEZ MIXXX)", 
+                "10. fuck u lil Wayne and Kanye", 
+                "11. oUtofJuice", 
+                "Bonus. Continuous Mix", 
+                "Bonus. Grape Escape", 
+                "Bonus. Reverse Gunshot SFX.mp3 [FREE DOWNLOAD]", 
+                
+            ];
+
+            var currentAudio = parseInt("5") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem010-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem010-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem010-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem010/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem009
+        </small>
+        <a href="https://mlemrecords.com/mlem009/"><img src="https://mlemrecords.com/mlem009/cover.jpg"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem009/">WTR (Runnin’)</a></h2>by M2ND
+        <br><span id="mlem009-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem009] M2ND - WTR (Runnin’)";
+            var audioSrcs = [
+                "1. WTR (Runnin’)", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem009-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem009-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem009-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem009/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem008
+        </small>
+        <a href="https://mlemrecords.com/mlem008/"><img src="https://mlemrecords.com/mlem008/cover.png"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem008/">All my best friends don’t pass the turing test (AlmabuenA Remix)</a></h2>by love sella x AlmabuenA
+        <br><span id="mlem008-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem008] love sella x AlmabuenA - All my best friends don’t pass the turing test (AlmabuenA Remix)";
+            var audioSrcs = [
+                "1. All my best friends don’t pass the turing test", 
+                "2. All my best friends don’t pass the turing test - AlmabuenA Remix", 
+                
+            ];
+
+            var currentAudio = parseInt("2") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem008-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem008-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem008-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem008/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem007
+        </small>
+        <a href="https://mlemrecords.com/mlem007/"><img src="https://mlemrecords.com/mlem007/cover.png"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem007/">The Alan Watts Theme (love sella Remix)</a></h2>by AlmabuenA x love sella
+        <br><span id="mlem007-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem007] AlmabuenA x love sella - The Alan Watts Theme (love sella Remix)";
+            var audioSrcs = [
+                "1. The Alan Watts Theme (love sella Remix)", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem007-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem007-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem007-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem007/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem006
+        </small>
+        <a href="https://mlemrecords.com/mlem006/"><img src="https://mlemrecords.com/mlem006/cover.jpg"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem006/">indigo chamber</a></h2>by indigo chamber
+        <br><span id="mlem006-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem006] indigo chamber - indigo chamber";
+            var audioSrcs = [
+                "1. everyday nostalgia", 
+                "2. a losing game", 
+                "3. drifting", 
+                "4. oceanic feeling", 
+                "5. always you", 
+                "6. where'd you go", 
+                "7. the ballroom song", 
+                "Bonus. unfazed", 
+                
+            ];
+
+            var currentAudio = parseInt("2") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem006-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem006-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem006-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem006/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem005
+        </small>
+        <a href="https://mlemrecords.com/mlem005/"><img src="https://mlemrecords.com/mlem005/cover.jpg"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem005/">Denken Aan Een Ander Is Niet Van Deze Tijd</a></h2>by Ulf Ten Aar
+        <br><span id="mlem005-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem005] Ulf Ten Aar - Denken Aan Een Ander Is Niet Van Deze Tijd";
+            var audioSrcs = [
+                "1. Snelle Fietser", 
+                "2. Postlude", 
+                "3. Afscheid", 
+                "4. 17 Aug 24", 
+                "5. De Witte Prins op het Zwart Gele Paard", 
+                "6. Nu is Alles dat je Hebt", 
+                "7. Ik Kan Niks meer Aan", 
+                "8. 17 Okt", 
+                "9. Jammer dat het Niet Echt is", 
+                "10. De Wereld Draait", 
+                "11. 9 Mei", 
+                "12. Ik denk dat je me Haat", 
+                "13. Alles Gaat Door", 
+                "14. Eerste Lente Dag", 
+                "Bonus. Ik heb me Niet Geknipt Vandaag", 
+                "Bonus. Ik zag Twee Zwanen Slapen", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem005-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem005-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem005-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem005/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem004
+        </small>
+        <a href="https://mlemrecords.com/mlem004/"><img src="https://mlemrecords.com/mlem004/cover.png"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem004/">Wacko_</a></h2>by Cage.Log
+        <br><span id="mlem004-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem004] Cage.Log - Wacko_";
+            var audioSrcs = [
+                "1. Crowded_23apr", 
+                "2. InorOut", 
+                "3. Roman", 
+                "4. Love Under", 
+                "5. Cs1x", 
+                "6. ___._______", 
+                "7. Second #1", 
+                
+            ];
+
+            var currentAudio = parseInt("3") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem004-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem004-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem004-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem004/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem003
+        </small>
+        <a href="https://mlemrecords.com/mlem003/"><img src="https://mlemrecords.com/mlem003/cover.jpg"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem003/">Pieces of Peace</a></h2>by Jørgen Valdemar
+        <br><span id="mlem003-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem003] Jørgen Valdemar - Pieces of Peace";
+            var audioSrcs = [
+                "1. Deep Red", 
+                "2. A Small Cabin In The Woods", 
+                "3. Worries Pt. 1", 
+                "4. It Isn't True", 
+                "5. I Thought About Pain", 
+                "6. Pinned Away", 
+                "7. Worries Pt. 2", 
+                "8. Touch", 
+                "9. Pieces Of Peace", 
+                "10. Three Words", 
+                "11. Worries Pt. 3", 
+                "12. No Self", 
+                "13. Nude", 
+                "14. Is It Ever True", 
+                "15. Worries Pt. 4", 
+                "16. Poking Holes", 
+                "17. Lieke", 
+                
+            ];
+
+            var currentAudio = parseInt("2") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem003-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem003-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem003-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem003/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem002
+        </small>
+        <a href="https://mlemrecords.com/mlem002/"><img src="https://mlemrecords.com/mlem002/cover.jpeg"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem002/">Up in Flames</a></h2>by Aching Hands
+        <br><span id="mlem002-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem002] Aching Hands - Up in Flames";
+            var audioSrcs = [
+                "tape1", 
+                "tape2", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem002-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem002-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem002-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem002/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem001
+        </small>
+        <a href="https://mlemrecords.com/mlem001/"><img src="https://mlemrecords.com/mlem001/cover.png"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem001/">Amersfoort Tracks</a></h2>by DJ ZITwerK
+        <br><span id="mlem001-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem001] DJ ZITwerK - Amersfoort Tracks";
+            var audioSrcs = [
+                "1. Utrecht Centraal, Track 7 (0V3RStimmD Mix)", 
+                "2. Whaaaat Stretch (Zwolle to Groningen Mix)", 
+                "3. Amsterdam Amstel (Day Old Cinnamon Bun Mix)", 
+                "4. Check the Shoezz (Zuid GVB Mix)", 
+                "5. (O-O) (Isolatorweg Mix)", 
+                "6. ZITwerK LIVE @ Nijmegen (~230 KPH Mix)", 
+                
+            ];
+
+            var currentAudio = parseInt("2") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem001-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem001-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem001-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem001/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
+            mlem000
+        </small>
+        <a href="https://mlemrecords.com/mlem000/"><img src="https://mlemrecords.com/mlem000/cover.png"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem000/">slob life nu dada</a></h2>by love sella
+        <br><span id="mlem000-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem000] love sella - slob life nu dada";
+            var audioSrcs = [
+                "1. Unilacunarily yours", 
+                "2. All my best friends don't pass the turing test", 
+                "3. Edgebug Lebowski", 
+                "4. Let me into the scene", 
+                "5. Your virtue is predispositioned", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem000-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem000-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem000-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem000/">More...</a>
+    </div>
+
     </div>
 </content>
 

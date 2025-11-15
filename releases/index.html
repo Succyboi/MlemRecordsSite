@@ -8,13 +8,13 @@
   <title>Catalogue | Mlem Records</title>
 <meta name="title" content="Catalogue" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="after,release party,show," />
+<meta name="keywords" content="ambient,club,idm,pop,punk,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/releases/">
   <meta property="og:site_name" content="Mlem Records">
   <meta property="og:title" content="Catalogue">
-  <meta property="og:description" content="This is the complete Mlem Records catalogue consisting of 14 releases. You’re free to download any individual release or Download All.">
+  <meta property="og:description" content="This is the complete Mlem Records catalogue consisting of 15 releases. You’re free to download any individual release or Download All.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
     <meta property="og:image" content="https://mlemrecords.com/images/share.png">
@@ -25,14 +25,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
   <meta name="twitter:title" content="Catalogue">
-  <meta name="twitter:description" content="This is the complete Mlem Records catalogue consisting of 14 releases. You’re free to download any individual release or Download All.">
+  <meta name="twitter:description" content="This is the complete Mlem Records catalogue consisting of 15 releases. You’re free to download any individual release or Download All.">
 
 
 
 
   <meta itemprop="name" content="Catalogue">
-  <meta itemprop="description" content="This is the complete Mlem Records catalogue consisting of 14 releases. You’re free to download any individual release or Download All.">
-  <meta itemprop="datePublished" content="2025-10-27T00:00:00+00:00">
+  <meta itemprop="description" content="This is the complete Mlem Records catalogue consisting of 15 releases. You’re free to download any individual release or Download All.">
+  <meta itemprop="datePublished" content="2025-11-15T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-11-15T00:00:00+00:00">
   <meta itemprop="wordCount" content="21">
   <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
@@ -43,8 +43,8 @@
   :root {
     --textColor: #2b2b26;
     --semiTextColor: #2b2b26;
-    --linkColor: #f2ab37;
-    --semiLinkColor: #f2ab37;
+    --linkColor: #8E8E93;
+    --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
   }
@@ -130,6 +130,10 @@
     max-width: 100%;
   }
 
+  p {
+    margin: 1em 0;
+  }
+
   p > em img {
     display: block;
     max-width: 75%;
@@ -156,6 +160,10 @@
     border-top: 1px solid var(--textColor);
   }
 
+  footer {
+    text-align: center;
+  }
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -175,7 +183,7 @@
 
   footer {
     padding: 25px;
-    text-align: center;
+    justify-content: center;
   }
 
   .helptext {
@@ -206,7 +214,7 @@
     margin-right: 1ch;
   }
 
-  .inline_icon {
+  .inline {
     height: 1em;
     vertical-align: baseline;
   }
@@ -245,6 +253,81 @@
 
   .catalogue-container {
     font-size: smaller;
+    list-style-type: none;
+  }
+
+  .audio {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 1em 0;
+    background-color: var(--backgroundColor);
+  }
+
+  .audio-controls {
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1ch;
+  }
+
+  .audio-button {
+    width: 2ch;
+    min-width: 2ch;
+    max-width: 2ch;
+    padding: 0;
+    font-size: 1.5em;
+    color: var(--linkColor);
+    background: none;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  .audio-title {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+    font-style: italic;
+  }
+
+  .audio-time {
+    min-width: 4.5ch;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .audio-preview {
+    position: relative;
+    padding: 0;
+    width: 9ch;
+    margin-right: 1ch;
+  }
+
+  .audio-preview-controls {
+    display: inline-block;
+    background-color: var(--textColor);
+    min-width: 7.5ch;
+  }
+
+  .audio-preview-button {
+    user-select: none;
+    padding: 0 0.5ch;
+    font-size: 1em;
+    color: var(--backgroundColor);
+    background: none;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  .audio-preview-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--backgroundColor);
   }
 
   @media only screen and (max-width: 768px) {
@@ -264,7 +347,6 @@
 
 </style>
 
-
   <script type="text/javascript">
     var specific_release_to_redirect = null;
 
@@ -277,6 +359,11 @@
     }
   </script>
 
+  
+  <audio id="page-audio" preload="auto">
+      <source id="page-audio-source"></source>
+  </audio>
+
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -286,7 +373,10 @@
   <header><a href="/" class="title">
   <h1><span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span></h1>
 </a>
-<nav><a href="/">Releases</a>
+<nav>
+    <a href="/">Releases</a>
+
+
 <a href="https://mlemrecords.bandcamp.com/merch">Merch</a>
 
 <a href="/events/">Events</a>
@@ -300,7 +390,7 @@
 
 <content><h1>Catalogue</h1>
 
-<p>This is the complete Mlem Records catalogue consisting of 14 releases. You&rsquo;re free to download any individual release or <script type="text/javascript">
+<p>This is the complete Mlem Records catalogue consisting of 15 releases. You&rsquo;re free to download any individual release or <script type="text/javascript">
     function download_files(files) {
         function download_next(i) {
             if (i >= files.length) {
@@ -336,6 +426,10 @@
         download_files([
             
                 
+                    "/downloads/[mlem013] Birdhouse Emporium - Bird Sounds Vol. 1.zip",
+                
+            
+                
                     "/downloads/[mlem012] WivWav - Elektronische Meuk Vol. 1.zip",
                 
             
@@ -352,11 +446,11 @@
                 
             
                 
-                    "/downloads/[mlem008] love sella, AlmabuenA - All my best friends don’t pass the turing test (AlmabuenA Remix).zip",
+                    "/downloads/[mlem008] love sella x AlmabuenA - All my best friends don’t pass the turing test (AlmabuenA Remix).zip",
                 
             
                 
-                    "/downloads/[mlem007] AlmabuenA, love sella - The Alan Watts Theme (love sella Remix).zip",
+                    "/downloads/[mlem007] AlmabuenA x love sella - The Alan Watts Theme (love sella Remix).zip",
                 
             
                 
@@ -398,6 +492,12 @@
     
       <li class="catalogue-item">
         
+          <b>mlem013</b> <a href="https://mlemrecords.com/mlem013/">Bird Sounds Vol. 1</a> - Birdhouse Emporium | <a href="/downloads/[mlem013] Birdhouse%20Emporium - Bird%20Sounds%20Vol.%201.zip">↓</a>
+        
+      </li>
+    
+      <li class="catalogue-item">
+        
           <b>mlem012</b> <a href="https://mlemrecords.com/mlem012/">Elektronische Meuk Vol. 1</a> - WivWav | <a href="/downloads/[mlem012] WivWav - Elektronische%20Meuk%20Vol.%201.zip">↓</a>
         
       </li>
@@ -422,13 +522,13 @@
     
       <li class="catalogue-item">
         
-          <b>mlem008</b> <a href="https://mlemrecords.com/mlem008/">All my best friends don’t pass the turing test (AlmabuenA Remix)</a> - love sella, AlmabuenA | <a href="/downloads/[mlem008] love%20sella,%20AlmabuenA - All%20my%20best%20friends%20don%e2%80%99t%20pass%20the%20turing%20test%20%28AlmabuenA%20Remix%29.zip">↓</a>
+          <b>mlem008</b> <a href="https://mlemrecords.com/mlem008/">All my best friends don’t pass the turing test (AlmabuenA Remix)</a> - love sella x AlmabuenA | <a href="/downloads/[mlem008] love%20sella%20x%20AlmabuenA - All%20my%20best%20friends%20don%e2%80%99t%20pass%20the%20turing%20test%20%28AlmabuenA%20Remix%29.zip">↓</a>
         
       </li>
     
       <li class="catalogue-item">
         
-          <b>mlem007</b> <a href="https://mlemrecords.com/mlem007/">The Alan Watts Theme (love sella Remix)</a> - AlmabuenA, love sella | <a href="/downloads/[mlem007] AlmabuenA,%20love%20sella - The%20Alan%20Watts%20Theme%20%28love%20sella%20Remix%29.zip">↓</a>
+          <b>mlem007</b> <a href="https://mlemrecords.com/mlem007/">The Alan Watts Theme (love sella Remix)</a> - AlmabuenA x love sella | <a href="/downloads/[mlem007] AlmabuenA%20x%20love%20sella - The%20Alan%20Watts%20Theme%20%28love%20sella%20Remix%29.zip">↓</a>
         
       </li>
     
