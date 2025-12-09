@@ -8,7 +8,7 @@
   <title>Pop | Mlem Records</title>
 <meta name="title" content="Pop" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="ambient,club,idm,pop,punk,after,release party,show," />
+<meta name="keywords" content="ambient,club,folk,idm,pop,punk,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/categories/pop/">
@@ -242,7 +242,16 @@
     display: block;
   }
 
+
   .events-container {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 10px));
+    margin-top: 0em;
+    margin-bottom: 1em;
+    gap: 1em;
+  }
+
+  .events-archive-container {
     display: grid;
     grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
@@ -260,9 +269,9 @@
     gap: 1ch;
   }
   
-    .catalogue-item-no {
-      min-width: 7ch;
-    }
+  .catalogue-item-no {
+    min-width: 7ch;
+  }
 
   .catalogue-item-name {
     display: block;
@@ -396,7 +405,9 @@
 
 <body id="body">
   <header><a href="/" class="title">
-  <h1><span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span></h1>
+  <h1>
+    <span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span>
+  </h1>
 </a>
 <nav>
     <a href="/">Releases</a>
@@ -420,7 +431,7 @@
 
   <p>
     
-    Mlem has released 5 Pop records by    
+    Mlem has released 3 Pop records by    
 
     
       
@@ -428,17 +439,11 @@
       Birdhouse Emporium,
       
       
-      indigo chamber,
-      
-      
-      Ulf Ten Aar,
-      
-      
-      Cage.Log
+      indigo chamber
         and
       
       
-      Jørgen Valdemar.
+      Cage.Log.
   </p>
 
   <div class="release-container">
@@ -652,118 +657,6 @@
 
     <div class="release">
         <small class="release-header">
-            mlem005
-        </small>
-        <a href="https://mlemrecords.com/mlem005/"><img src="https://mlemrecords.com/mlem005/cover.jpg"></a>
-        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem005/">Denken Aan Een Ander Is Niet Van Deze Tijd</a></h2>by Ulf Ten Aar
-        <br><span id="mlem005-audio-container" class="audio-preview" style="display: none;">
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            var audioBasePath = "/downloads/[mlem005] Ulf Ten Aar - Denken Aan Een Ander Is Niet Van Deze Tijd";
-            var audioSrcs = [
-                "1. Snelle Fietser", 
-                "2. Postlude", 
-                "3. Afscheid", 
-                "4. 17 Aug 24", 
-                "5. De Witte Prins op het Zwart Gele Paard", 
-                "6. Nu is Alles dat je Hebt", 
-                "7. Ik Kan Niks meer Aan", 
-                "8. 17 Okt", 
-                "9. Jammer dat het Niet Echt is", 
-                "10. De Wereld Draait", 
-                "11. 9 Mei", 
-                "12. Ik denk dat je me Haat", 
-                "13. Alles Gaat Door", 
-                "14. Eerste Lente Dag", 
-                "Bonus. Ik heb me Niet Geknipt Vandaag", 
-                "Bonus. Ik zag Twee Zwanen Slapen", 
-                
-            ];
-
-            var currentAudio = parseInt("1") - 1;
-            var currentAudioPath = "";
-            var audioContainer = document.getElementById('mlem005-audio-container');
-            var audio = document.getElementById('page-audio');
-            var audioSource = document.getElementById('page-audio-source');
-            var playButton = document.getElementById('mlem005-play');
-            var playing = false;
-
-            playButton.addEventListener('click', function() {
-                audio.pause();
-
-                if (playing) {
-                    playing = false;
-                } else {
-                    loadAudio();
-                    audio.currentTime = 0;
-                    audio.play();
-                    playing = true;
-                }
-
-                updateButtons();
-            });
-
-            audio.addEventListener('ended', function() {
-                audio.pause();
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('timeupdate', function() {                
-                updateButtons();
-            });
-
-            audio.addEventListener('play', function() {
-                if (audioSource.src.includes(currentAudioPath)) { return; }
-                
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('pause', function() {
-                playing = false;
-                
-                updateButtons();
-            });
-
-            function updateButtons() {
-                if (playing) {
-                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
-                } else {
-                    playButton.textContent = '► Preview';
-                }
-            }
-
-            function loadAudio() {
-                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
-                audio.load();
-                audio.volume = 0.75;
-            }
-
-            function formatTime(seconds) {
-                var minutes = Math.floor(seconds / 60);
-                var seconds = Math.floor(seconds % 60);
-                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
-
-            loadAudio();
-            updateButtons();
-
-            audioContainer.style.display = "inline-block";
-        });
-    </script>
-
-    <span class="audio-preview-controls">
-        <a id="mlem005-play" class="audio-preview-button"></a>
-    </span>
-    
-</span><a href="https://mlemrecords.com/mlem005/">More...</a>
-    </div>
-
-    <div class="release">
-        <small class="release-header">
             mlem004
         </small>
         <a href="https://mlemrecords.com/mlem004/"><img src="https://mlemrecords.com/mlem004/cover.png"></a>
@@ -863,119 +756,6 @@
     </span>
     
 </span><a href="https://mlemrecords.com/mlem004/">More...</a>
-    </div>
-
-    <div class="release">
-        <small class="release-header">
-            mlem003
-        </small>
-        <a href="https://mlemrecords.com/mlem003/"><img src="https://mlemrecords.com/mlem003/cover.jpg"></a>
-        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem003/">Pieces of Peace</a></h2>by Jørgen Valdemar
-        <br><span id="mlem003-audio-container" class="audio-preview" style="display: none;">
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            var audioBasePath = "/downloads/[mlem003] Jørgen Valdemar - Pieces of Peace";
-            var audioSrcs = [
-                "1. Deep Red", 
-                "2. A Small Cabin In The Woods", 
-                "3. Worries Pt. 1", 
-                "4. It Isn't True", 
-                "5. I Thought About Pain", 
-                "6. Pinned Away", 
-                "7. Worries Pt. 2", 
-                "8. Touch", 
-                "9. Pieces Of Peace", 
-                "10. Three Words", 
-                "11. Worries Pt. 3", 
-                "12. No Self", 
-                "13. Nude", 
-                "14. Is It Ever True", 
-                "15. Worries Pt. 4", 
-                "16. Poking Holes", 
-                "17. Lieke", 
-                
-            ];
-
-            var currentAudio = parseInt("2") - 1;
-            var currentAudioPath = "";
-            var audioContainer = document.getElementById('mlem003-audio-container');
-            var audio = document.getElementById('page-audio');
-            var audioSource = document.getElementById('page-audio-source');
-            var playButton = document.getElementById('mlem003-play');
-            var playing = false;
-
-            playButton.addEventListener('click', function() {
-                audio.pause();
-
-                if (playing) {
-                    playing = false;
-                } else {
-                    loadAudio();
-                    audio.currentTime = 0;
-                    audio.play();
-                    playing = true;
-                }
-
-                updateButtons();
-            });
-
-            audio.addEventListener('ended', function() {
-                audio.pause();
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('timeupdate', function() {                
-                updateButtons();
-            });
-
-            audio.addEventListener('play', function() {
-                if (audioSource.src.includes(currentAudioPath)) { return; }
-                
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('pause', function() {
-                playing = false;
-                
-                updateButtons();
-            });
-
-            function updateButtons() {
-                if (playing) {
-                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
-                } else {
-                    playButton.textContent = '► Preview';
-                }
-            }
-
-            function loadAudio() {
-                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
-                audio.load();
-                audio.volume = 0.75;
-            }
-
-            function formatTime(seconds) {
-                var minutes = Math.floor(seconds / 60);
-                var seconds = Math.floor(seconds % 60);
-                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
-
-            loadAudio();
-            updateButtons();
-
-            audioContainer.style.display = "inline-block";
-        });
-    </script>
-
-    <span class="audio-preview-controls">
-        <a id="mlem003-play" class="audio-preview-button"></a>
-    </span>
-    
-</span><a href="https://mlemrecords.com/mlem003/">More...</a>
     </div>
 
   </div>

@@ -248,7 +248,16 @@
     display: block;
   }
 
+
   .events-container {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 10px));
+    margin-top: 0em;
+    margin-bottom: 1em;
+    gap: 1em;
+  }
+
+  .events-archive-container {
     display: grid;
     grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
@@ -266,9 +275,9 @@
     gap: 1ch;
   }
   
-    .catalogue-item-no {
-      min-width: 7ch;
-    }
+  .catalogue-item-no {
+    min-width: 7ch;
+  }
 
   .catalogue-item-name {
     display: block;
@@ -402,7 +411,9 @@
 
 <body id="body">
   <header><a href="/" class="title">
-  <h1><span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span></h1>
+  <h1>
+    <span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span>
+  </h1>
 </a>
 <nav>
     <a href="/">Releases</a>
