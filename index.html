@@ -448,6 +448,117 @@
         
     <div class="release">
         <small class="release-header">
+            mlem014
+        </small>
+        <a href="https://mlemrecords.com/mlem014/"><img src="https://mlemrecords.com/mlem014/cover.png"></a>
+        <h2 style="margin: 0;"><a href="https://mlemrecords.com/mlem014/">Pick of the Litter</a></h2>by 
+     <a href="https://mlemrecords.com/artists/mlem/">Mlem</a>
+<br><span id="mlem014-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "/downloads/[mlem014] Mlem - Pick of the Litter";
+            var audioSrcs = [
+                "1. 26jan (Orange Cat)", 
+                "2. Gift_V13.0", 
+                "3. Fungi fuck the pigs i ball (RUN IT BACK, RUN IT BACK YOU FUUUUUUCK)", 
+                "4. 8 mar dianzi ()1apr.5", 
+                "5. Playhop_TrueFinal", 
+                "6. lbr", 
+                "7. expiriment 19 tet rap", 
+                "8. 4jun IDCaltending", 
+                "9. amen break stretch ja ja (zeist)", 
+                "10. infinite consciousness(remix 29apr)", 
+                "11. teers", 
+                "12. uuuussuu", 
+                "13. 24Jul20241257PMNormandie", 
+                "14. zonsopgangaanhetgardameer_mix1", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem014-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem014-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem014-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem014/">More...</a>
+    </div>
+
+    <div class="release">
+        <small class="release-header">
             mlem013
         </small>
         <a href="https://mlemrecords.com/mlem013/"><img src="https://mlemrecords.com/mlem013/cover.png"></a>
