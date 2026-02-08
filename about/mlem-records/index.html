@@ -33,7 +33,7 @@
 
   <meta itemprop="name" content="Label">
   <meta itemprop="description" content="About us">
-  <meta itemprop="wordCount" content="625">
+  <meta itemprop="wordCount" content="626">
   <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -302,7 +302,8 @@
     position: sticky;
     top: 0;
     text-align: center;
-    padding: 1em 0;
+    padding-top: 0;
+    padding-bottom: 1em;
     background-color: var(--backgroundColor);
   }
 
@@ -343,7 +344,50 @@
   }
 
   .audio-position {
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
+    height: 0px;
+    background: none;
+    padding: 1em;
+    padding-top: 2.5em;
+    margin: -1em;
+    margin-bottom: 0em;
+  }
+
+  .audio-position::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+  .audio-position::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+   
+  .audio-position::-webkit-slider-runnable-track {
+    height: 1px;
+    -webkit-appearance: none;
+    background-color: var(--linkColor);
+    margin-top: -1px;
+  }
+
+   
+  .audio-position::-moz-range-progress {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-moz-range-track {  
+    background-color: var(--textColor);
+  }
+   
+  .audio-position::-ms-fill-lower {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-ms-fill-upper {  
+    background-color: var(--textColor);
   }
 
   .audio-preview {
@@ -464,6 +508,12 @@
             if (highlightContainer == null) { return; }
 
             var people = [
+            
+                
+                    
+                        "TODO", 
+                    
+                
             
                 
                     
@@ -981,7 +1031,7 @@
         document.addEventListener('DOMContentLoaded', function() { reroll_highlight(); });
     </script>
 
-    <span id="people-highlight" style="display: none; cursor:pointer; user-select: none;" onclick="reroll_highlight()"></span>
+    <i id="people-highlight" style="display: none; cursor:pointer; user-select: none;" onclick="reroll_highlight()"></i>
 </span></p>
 <h2 id="netlabel">Netlabel?</h2>
 <p>Yeah!</p>
@@ -1007,6 +1057,12 @@ Please share stuff with more friends if you think they might like it. Sharing is
 <h2 id="people">People</h2>
 <p>Mlem runs on the love between these people:
 <p>
+    
+        
+            
+                TODO, 
+            
+        
     
         
             

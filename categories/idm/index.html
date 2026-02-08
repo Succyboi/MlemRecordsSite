@@ -8,7 +8,7 @@
   <title>IDM | Mlem Records</title>
 <meta name="title" content="IDM" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/categories/idm/">
@@ -303,7 +303,8 @@
     position: sticky;
     top: 0;
     text-align: center;
-    padding: 1em 0;
+    padding-top: 0;
+    padding-bottom: 1em;
     background-color: var(--backgroundColor);
   }
 
@@ -344,7 +345,50 @@
   }
 
   .audio-position {
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
+    height: 0px;
+    background: none;
+    padding: 1em;
+    padding-top: 2.5em;
+    margin: -1em;
+    margin-bottom: 0em;
+  }
+
+  .audio-position::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+  .audio-position::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+   
+  .audio-position::-webkit-slider-runnable-track {
+    height: 1px;
+    -webkit-appearance: none;
+    background-color: var(--linkColor);
+    margin-top: -1px;
+  }
+
+   
+  .audio-position::-moz-range-progress {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-moz-range-track {  
+    background-color: var(--textColor);
+  }
+   
+  .audio-position::-ms-fill-lower {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-ms-fill-upper {  
+    background-color: var(--textColor);
   }
 
   .audio-preview {
@@ -462,241 +506,32 @@
 
   <p>
     
-    Mlem has released 2 IDM records by    
-
-    
-      
-      
-      WivWav,
-      
-      
-      love sella.
+    Mlem has released 2 IDM records.
   </p>
 
-  <div class="release-container">
+  <div class="catalogue-container">
+    <hr>
     
-    <div class="release">
-        <small class="release-header">
-            mlem012
-        </small>
-        <a href="https://mlemrecords.com/mlem012/"><img src="https://mlemrecords.com/mlem012/cover.png"></a>
-        <h2 class="release-title-small">
-            <a href="https://mlemrecords.com/mlem012/">Elektronische Meuk Vol. 1</a>
-        </h2>by 
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem012</b> <a href="https://mlemrecords.com/mlem012/" class="catalogue-item-name">Elektronische Meuk Vol. 1</a> <span class="catalogue-item-artist">by 
      <a href="https://mlemrecords.com/artists/wivwav/">WivWav</a>
-<br><span id="mlem012-audio-container" class="audio-preview" style="display: none;">
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            var audioBasePath = "/downloads/[mlem012] WivWav - Elektronische Meuk Vol. 1";
-            var audioSrcs = [
-                "1. Intro", 
-                "2. Baksteen", 
-                "3. Momentum", 
-                "4. Voordat Hij Crasht", 
-                "5. Yoghurtsaus", 
-                "6. Nog Even", 
-                "7. Zinnen", 
-                "8. Huh_", 
-                "9. DYBIS", 
-                "10. Het Komt Wel Goed", 
-                "11. Opvulling", 
-                
-            ];
-
-            var currentAudio = parseInt("6") - 1;
-            var currentAudioPath = "";
-            var audioContainer = document.getElementById('mlem012-audio-container');
-            var audio = document.getElementById('page-audio');
-            var audioSource = document.getElementById('page-audio-source');
-            var playButton = document.getElementById('mlem012-play');
-            var playing = false;
-
-            playButton.addEventListener('click', function() {
-                audio.pause();
-
-                if (playing) {
-                    playing = false;
-                } else {
-                    loadAudio();
-                    audio.currentTime = 0;
-                    audio.play();
-                    playing = true;
-                }
-
-                updateButtons();
-            });
-
-            audio.addEventListener('ended', function() {
-                audio.pause();
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('timeupdate', function() {                
-                updateButtons();
-            });
-
-            audio.addEventListener('play', function() {
-                if (audioSource.src.includes(currentAudioPath)) { return; }
-                
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('pause', function() {
-                playing = false;
-                
-                updateButtons();
-            });
-
-            function updateButtons() {
-                if (playing) {
-                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
-                } else {
-                    playButton.textContent = '► Preview';
-                }
-            }
-
-            function loadAudio() {
-                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
-                audio.load();
-                audio.volume = 0.75;
-            }
-
-            function formatTime(seconds) {
-                var minutes = Math.floor(seconds / 60);
-                var seconds = Math.floor(seconds % 60);
-                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
-
-            loadAudio();
-            updateButtons();
-
-            audioContainer.style.display = "inline-block";
-        });
-    </script>
-
-    <span class="audio-preview-controls">
-        <a id="mlem012-play" class="audio-preview-button"></a>
-    </span>
+</span>  <a href="/downloads/[mlem012] WivWav - Elektronische%20Meuk%20Vol.%201.zip">↓</a>
+          
+        </span>
     
-</span><a href="https://mlemrecords.com/mlem012/">More...</a>
-    </div>
-
-    <div class="release">
-        <small class="release-header">
-            mlem000
-        </small>
-        <a href="https://mlemrecords.com/mlem000/"><img src="https://mlemrecords.com/mlem000/cover.png"></a>
-        <h2 class="release-title">
-            <a href="https://mlemrecords.com/mlem000/">slob life nu dada</a>
-        </h2>by 
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem000</b> <a href="https://mlemrecords.com/mlem000/" class="catalogue-item-name">slob life nu dada</a> <span class="catalogue-item-artist">by 
      <a href="https://mlemrecords.com/artists/love-sella/">love sella</a>
-<br><span id="mlem000-audio-container" class="audio-preview" style="display: none;">
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            var audioBasePath = "/downloads/[mlem000] love sella - slob life nu dada";
-            var audioSrcs = [
-                "1. Unilacunarily yours", 
-                "2. All my best friends don't pass the turing test", 
-                "3. Edgebug Lebowski", 
-                "4. Let me into the scene", 
-                "5. Your virtue is predispositioned", 
-                
-            ];
-
-            var currentAudio = parseInt("1") - 1;
-            var currentAudioPath = "";
-            var audioContainer = document.getElementById('mlem000-audio-container');
-            var audio = document.getElementById('page-audio');
-            var audioSource = document.getElementById('page-audio-source');
-            var playButton = document.getElementById('mlem000-play');
-            var playing = false;
-
-            playButton.addEventListener('click', function() {
-                audio.pause();
-
-                if (playing) {
-                    playing = false;
-                } else {
-                    loadAudio();
-                    audio.currentTime = 0;
-                    audio.play();
-                    playing = true;
-                }
-
-                updateButtons();
-            });
-
-            audio.addEventListener('ended', function() {
-                audio.pause();
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('timeupdate', function() {                
-                updateButtons();
-            });
-
-            audio.addEventListener('play', function() {
-                if (audioSource.src.includes(currentAudioPath)) { return; }
-                
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('pause', function() {
-                playing = false;
-                
-                updateButtons();
-            });
-
-            function updateButtons() {
-                if (playing) {
-                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
-                } else {
-                    playButton.textContent = '► Preview';
-                }
-            }
-
-            function loadAudio() {
-                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
-                audio.load();
-                audio.volume = 0.75;
-            }
-
-            function formatTime(seconds) {
-                var minutes = Math.floor(seconds / 60);
-                var seconds = Math.floor(seconds % 60);
-                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
-
-            loadAudio();
-            updateButtons();
-
-            audioContainer.style.display = "inline-block";
-        });
-    </script>
-
-    <span class="audio-preview-controls">
-        <a id="mlem000-play" class="audio-preview-button"></a>
-    </span>
+</span>  <a href="/downloads/[mlem000] love%20sella - slob%20life%20nu%20dada.zip">↓</a>
+          
+        </span>
     
-</span><a href="https://mlemrecords.com/mlem000/">More...</a>
-    </div>
-
   </div>
 </content>
 
-<footer>
-  <p>
-    Last updated Jan 16, 2026.
-  </p>
-</footer>
+<footer><a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated Feb 28, 2026.</small></a></footer>
 
 
   </main>

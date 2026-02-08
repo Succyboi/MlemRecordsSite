@@ -8,7 +8,7 @@
   <title>Ambient | Mlem Records</title>
 <meta name="title" content="Ambient" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/categories/ambient/">
@@ -303,7 +303,8 @@
     position: sticky;
     top: 0;
     text-align: center;
-    padding: 1em 0;
+    padding-top: 0;
+    padding-bottom: 1em;
     background-color: var(--backgroundColor);
   }
 
@@ -344,7 +345,50 @@
   }
 
   .audio-position {
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
+    height: 0px;
+    background: none;
+    padding: 1em;
+    padding-top: 2.5em;
+    margin: -1em;
+    margin-bottom: 0em;
+  }
+
+  .audio-position::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+  .audio-position::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+   
+  .audio-position::-webkit-slider-runnable-track {
+    height: 1px;
+    -webkit-appearance: none;
+    background-color: var(--linkColor);
+    margin-top: -1px;
+  }
+
+   
+  .audio-position::-moz-range-progress {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-moz-range-track {  
+    background-color: var(--textColor);
+  }
+   
+  .audio-position::-ms-fill-lower {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-ms-fill-upper {  
+    background-color: var(--textColor);
   }
 
   .audio-preview {
@@ -462,125 +506,24 @@
 
   <p>
     
-    Mlem has released 1 Ambient record by    
-
-    
-      
-      
-      .
+    Mlem has released 1 Ambient record.
   </p>
 
-  <div class="release-container">
+  <div class="catalogue-container">
+    <hr>
     
-    <div class="release">
-        <small class="release-header">
-            mlem002
-        </small>
-        <a href="https://mlemrecords.com/mlem002/"><img src="https://mlemrecords.com/mlem002/cover.jpeg"></a>
-        <h2 class="release-title">
-            <a href="https://mlemrecords.com/mlem002/">Up in Flames</a>
-        </h2>by 
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem002</b> <a href="https://mlemrecords.com/mlem002/" class="catalogue-item-name">Up in Flames</a> <span class="catalogue-item-artist">by 
      <a href="https://mlemrecords.com/artists/aching-hands/">Aching Hands</a>
-<br><span id="mlem002-audio-container" class="audio-preview" style="display: none;">
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            var audioBasePath = "/downloads/[mlem002]  - Up in Flames";
-            var audioSrcs = [
-                "tape1", 
-                "tape2", 
-                
-            ];
-
-            var currentAudio = parseInt("1") - 1;
-            var currentAudioPath = "";
-            var audioContainer = document.getElementById('mlem002-audio-container');
-            var audio = document.getElementById('page-audio');
-            var audioSource = document.getElementById('page-audio-source');
-            var playButton = document.getElementById('mlem002-play');
-            var playing = false;
-
-            playButton.addEventListener('click', function() {
-                audio.pause();
-
-                if (playing) {
-                    playing = false;
-                } else {
-                    loadAudio();
-                    audio.currentTime = 0;
-                    audio.play();
-                    playing = true;
-                }
-
-                updateButtons();
-            });
-
-            audio.addEventListener('ended', function() {
-                audio.pause();
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('timeupdate', function() {                
-                updateButtons();
-            });
-
-            audio.addEventListener('play', function() {
-                if (audioSource.src.includes(currentAudioPath)) { return; }
-                
-                playing = false;
-                
-                updateButtons();
-            });
-
-            audio.addEventListener('pause', function() {
-                playing = false;
-                
-                updateButtons();
-            });
-
-            function updateButtons() {
-                if (playing) {
-                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
-                } else {
-                    playButton.textContent = '► Preview';
-                }
-            }
-
-            function loadAudio() {
-                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
-                audio.load();
-                audio.volume = 0.75;
-            }
-
-            function formatTime(seconds) {
-                var minutes = Math.floor(seconds / 60);
-                var seconds = Math.floor(seconds % 60);
-                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
-
-            loadAudio();
-            updateButtons();
-
-            audioContainer.style.display = "inline-block";
-        });
-    </script>
-
-    <span class="audio-preview-controls">
-        <a id="mlem002-play" class="audio-preview-button"></a>
-    </span>
+</span>  <a href="/downloads/[mlem002] Aching%20Hands - Up%20in%20Flames.zip">↓</a>
+          
+        </span>
     
-</span><a href="https://mlemrecords.com/mlem002/">More...</a>
-    </div>
-
   </div>
 </content>
 
-<footer>
-  <p>
-    Last updated Jan 16, 2026.
-  </p>
-</footer>
+<footer><a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated Feb 28, 2026.</small></a></footer>
 
 
   </main>

@@ -26,7 +26,6 @@
     Thanks for downloading! If you liked this Album please consider donating. That way Ulf Ten Aar can make more!
 
 
-
     
     
     
@@ -34,7 +33,7 @@
     
 
     
-        
+    
         
         
         
@@ -362,7 +361,8 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
     position: sticky;
     top: 0;
     text-align: center;
-    padding: 1em 0;
+    padding-top: 0;
+    padding-bottom: 1em;
     background-color: var(--backgroundColor);
   }
 
@@ -403,7 +403,50 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
   }
 
   .audio-position {
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
+    height: 0px;
+    background: none;
+    padding: 1em;
+    padding-top: 2.5em;
+    margin: -1em;
+    margin-bottom: 0em;
+  }
+
+  .audio-position::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+  .audio-position::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+   
+  .audio-position::-webkit-slider-runnable-track {
+    height: 1px;
+    -webkit-appearance: none;
+    background-color: var(--linkColor);
+    margin-top: -1px;
+  }
+
+   
+  .audio-position::-moz-range-progress {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-moz-range-track {  
+    background-color: var(--textColor);
+  }
+   
+  .audio-position::-ms-fill-lower {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-ms-fill-upper {  
+    background-color: var(--textColor);
   }
 
   .audio-preview {
@@ -564,15 +607,14 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
     
         <a href="https://archive.org/details/ulf-ten-aar-denken-aan-een-ander-is-niet-van-deze-tijd">→ Archive</a><br>
     
-    <a id="download" href="/downloads/[mlem005] Ulf%20Ten%20Aar - Denken%20Aan%20Een%20Ander%20Is%20Niet%20Van%20Deze%20Tijd.zip">↓ Download</a>
+    <a id="download" href="/downloads/[mlem005]%20Ulf%20Ten%20Aar%20-%20Denken%20Aan%20Een%20Ander%20Is%20Niet%20Van%20Deze%20Tijd.zip">↓ Download</a>
 
     <i id="release-donate" style="display: none;">Thanks for downloading! If you liked this Album please consider <a href="https://donate.stripe.com/7sYcN6cRReaB7Nbay7eME00">donating</a>. That way Ulf Ten Aar can make more!</i>
 </p>
-<hr>
 <div id="release-audio-container" class="audio" style="display: none;">
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
-            var audioBasePath = "/downloads/[mlem005] Ulf Ten Aar - Denken Aan Een Ander Is Niet Van Deze Tijd";
+            var audioBasePath = "\/downloads\/[mlem005] Ulf Ten Aar - Denken Aan Een Ander Is Niet Van Deze Tijd";
             var audioSrcs = [
                 "1. Snelle Fietser", 
                 "2. Postlude", 
@@ -602,6 +644,7 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
             var nextButton = document.getElementById('release-next');
             var currentTime = document.getElementById('release-time');
             var title = document.getElementById('release-title');
+            var audioPosition = document.getElementById('audio-position');
 
             audio.volume = 0.5;
 
@@ -647,6 +690,21 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
                 updateButtons();
             });
 
+            audioPosition.addEventListener('pointerdown', () => {
+                audio.pause();
+                updateButtons();
+            });
+
+            audioPosition.addEventListener('change', () => {
+                audio.currentTime = audioPosition.value;
+                audio.play();
+                updateButtons();
+            });
+
+            audioPosition.addEventListener('input', () => {
+                currentTime.innerHTML = formatTime(audioPosition.value);
+            });
+
             audio.addEventListener('timeupdate', function() {
                 updateTime();
             });
@@ -666,7 +724,10 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
             });
 
             function updateTime() {
+                if (audio.paused) { return; }
+
                 currentTime.innerHTML = formatTime(audio.currentTime);
+                audioPosition.value = audio.currentTime;
             }
 
             function formatTime(seconds) {
@@ -697,12 +758,17 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
                 } else {
                     nextButton.textContent = "→";
                 }
+
+                audioPosition.max = Math.floor(audio.duration);
             }
 
             function loadAudio() {
                 console.log(`Playing ${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
                 audioSource.src = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
                 audio.load();
+
+                audioPosition.value = 0;
+                currentTime.innerHTML = formatTime(0);
             }
 
             loadAudio();
@@ -718,13 +784,13 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
         <source id="release-audio-source"></source>
     </audio>
 
+    <input type="range" id="audio-position" class="audio-position" value="0">
     <div class="audio-controls">
         <button id="release-play" class="audio-button"></button>
         <span id="release-time" class="audio-time"></span>
         <button id="release-previous" class="audio-button"></button>
         <span id="release-title" class="audio-title"></span>
         <button id="release-next" class="audio-button"></button>
-        
     </div>
     
 </div>

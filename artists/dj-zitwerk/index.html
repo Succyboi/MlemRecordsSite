@@ -8,7 +8,7 @@
   <title>DJ ZITwerK | Mlem Records</title>
 <meta name="title" content="DJ ZITwerK" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/artists/dj-zitwerk/">
@@ -33,7 +33,7 @@
   <meta itemprop="name" content="DJ ZITwerK">
   <meta itemprop="description" content="DJ ZITwerK is a jungle and experimental hip hop project. 1000 massive dubplates, yet we still ponder “who run tings”.">
   <meta itemprop="datePublished" content="2024-05-20T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-05-20T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-28T00:00:00+00:00">
   <meta itemprop="wordCount" content="20">
   <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -304,7 +304,8 @@
     position: sticky;
     top: 0;
     text-align: center;
-    padding: 1em 0;
+    padding-top: 0;
+    padding-bottom: 1em;
     background-color: var(--backgroundColor);
   }
 
@@ -345,7 +346,50 @@
   }
 
   .audio-position {
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
+    height: 0px;
+    background: none;
+    padding: 1em;
+    padding-top: 2.5em;
+    margin: -1em;
+    margin-bottom: 0em;
+  }
+
+  .audio-position::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+  .audio-position::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+   
+  .audio-position::-webkit-slider-runnable-track {
+    height: 1px;
+    -webkit-appearance: none;
+    background-color: var(--linkColor);
+    margin-top: -1px;
+  }
+
+   
+  .audio-position::-moz-range-progress {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-moz-range-track {  
+    background-color: var(--textColor);
+  }
+   
+  .audio-position::-ms-fill-lower {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-ms-fill-upper {  
+    background-color: var(--textColor);
   }
 
   .audio-preview {
@@ -462,10 +506,113 @@
   <p>DJ ZITwerK is a jungle and experimental hip hop project. 1000 massive dubplates, yet we still ponder &ldquo;who run tings&rdquo;.</p>
 
   
-  <p>DJ ZITwerK has released 1 record with Mlem.</p>
+  <p>DJ ZITwerK has released 2 records with Mlem.</p>
 
   <div class="release-container">
     
+    <div class="release">
+        <small class="release-header">
+            mlem015
+        </small>
+        <a href="https://mlemrecords.com/mlem015/"><img src="https://mlemrecords.com/mlem015/cover.png"></a>
+        <h2 class="release-title-smaller">
+            <a href="https://mlemrecords.com/mlem015/">Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri / Yaoi Solidarity</a>
+        </h2>by 
+     <a href="https://mlemrecords.com/artists/keepittoyourselfnexttime/">keepittoyourselfnexttime</a> / <a href="https://mlemrecords.com/artists/dj-zitwerk/">DJ ZITwerK</a>
+<br><span id="mlem015-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "\/downloads\/[mlem015] keepittoyourselfnexttime x DJ ZITwerK - Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri _ Yaoi Solidarity";
+            var audioSrcs = [
+                "1. Oh My God I Don’t Know You Think of a Plan Asshole", 
+                "2. Tailwag Lebowski", 
+                "3. Tailwag Lebowski (KITYNT Yaoi Remix)", 
+                "4. Oh My God I Don’t Know You Think of a Plan Asshole (DJ ZITwerK Yuri Remix)", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem015-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem015-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem015-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem015/">More...</a>
+    </div>
+
     <div class="release">
         <small class="release-header">
             mlem001
@@ -478,7 +625,7 @@
 <br><span id="mlem001-audio-container" class="audio-preview" style="display: none;">
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
-            var audioBasePath = "/downloads/[mlem001] DJ ZITwerK - Amersfoort Tracks";
+            var audioBasePath = "\/downloads\/[mlem001] DJ ZITwerK - Amersfoort Tracks";
             var audioSrcs = [
                 "1. Utrecht Centraal, Track 7 (0V3RStimmD Mix)", 
                 "2. Whaaaat Stretch (Zwolle to Groningen Mix)", 
@@ -576,7 +723,7 @@
 
 <footer>
   <p>
-    Last updated Jan 16, 2026.
+    Last updated Feb 28, 2026.
   </p>
 </footer>
 
