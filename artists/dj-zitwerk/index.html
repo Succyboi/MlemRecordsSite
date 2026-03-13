@@ -36,7 +36,7 @@
   <meta itemprop="name" content="DJ ZITwerK">
   <meta itemprop="description" content="DJ ZITwerK is a jungle and experimental hip hop project. 1000 massive dubplates, yet we still ponder “who run tings”.">
   <meta itemprop="datePublished" content="2026-02-28T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-02-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-03-14T00:00:00+00:00">
   <meta itemprop="wordCount" content="20">
   <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -509,10 +509,126 @@
   <p>DJ ZITwerK is a jungle and experimental hip hop project. 1000 massive dubplates, yet we still ponder &ldquo;who run tings&rdquo;.</p>
 
   
-  <p>DJ ZITwerK has 2 Mlem releases.</p>
+  <p>DJ ZITwerK has 3 Mlem releases.</p>
 
   <div class="release-container">
     
+    
+    
+
+    <div class="release">
+        <small class="release-header">
+            mlem016
+        </small>
+        
+            <a href="https://mlemrecords.com/mlem016/">
+                
+                <img src="/mlem016/cover_hu_e9df55910f3b0679.png" loading="lazy" alt="The cover for Autogynephilic Lesbian Zero Forever.">
+                
+            </a>
+        
+        <h2 class="release-title-small">
+            <a href="https://mlemrecords.com/mlem016/">Autogynephilic Lesbian Zero Forever</a>
+        </h2>by 
+     <a href="https://mlemrecords.com/artists/dj-zitwerk/">DJ ZITwerK</a>
+<br><span id="mlem016-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "\/downloads\/[mlem016] DJ ZITwerK - Autogynephilic Lesbian Zero Forever";
+            var audioSrcs = [
+                "1. Gaping initiatory scars adorned with glittering silicon implants", 
+                "2. S-Deception Transfembarkation (VIZ VERSION)", 
+                "3. The girl has a mechanical body However she is still an adolescent child", 
+                "4. SOUNDCLASH AT DEMONHEAD (W0Rldz M1N3 Stretch)", 
+                "5. Tailwag Lebowski", 
+                "6. About It", 
+                "7. My ganjaman’s called Damian and xe’s white", 
+                "8. S-Deception Transfembarkation (CHARLI’S VERSION)", 
+                
+            ];
+
+            var currentAudio = parseInt("3") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem016-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem016-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem016-play" class="audio-preview-button"></a>
+    </span>
+    
+</span><a href="https://mlemrecords.com/mlem016/">More...</a>
+    </div>
+
     
     
 
