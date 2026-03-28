@@ -12,7 +12,7 @@
   <title>Mlem Records</title>
 <meta name="title" content="Mlem Records" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/">
@@ -546,6 +546,14 @@
                         "Ma3ke", 
                     
                         "Jørgen Bruinsma", 
+                    
+                
+            
+                
+                    
+                        "keepittoyourselfnexttime", 
+                    
+                        "DJ ZITwerK", 
                     
                 
             
@@ -3242,13 +3250,132 @@
     <hr>
 
     <h1 id="software" style="display: inline-block; margin-bottom: 0;">Software</h1>
-    
-    <p>
-        <i>Currently empty. I'm coding rn.</i>
-    </p>
 
     <div class="release-container">
         
+    
+    
+
+    <div class="release">
+        <small class="release-header">
+            soft000<i> Sample Pack</i>
+        </small>
+        
+            <a href="https://mlemrecords.com/soft000/">
+                
+                <img src="/soft000/cover1_hu_18fe41853c780dc3.png" loading="lazy" alt="The cover for Breakcore Makes You Gay Sample Pack.">
+                
+            </a>
+        
+        <h2 class="release-title-small">
+            <a href="https://mlemrecords.com/soft000/">Breakcore Makes You Gay Sample Pack</a>
+        </h2>by 
+     <a href="https://mlemrecords.com/artists/keepittoyourselfnexttime/">keepittoyourselfnexttime</a> / <a href="https://mlemrecords.com/artists/dj-zitwerk/">DJ ZITwerK</a>
+<br>
+        <span id="soft000-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "\/downloads\/[soft000] keepittoyourselfnexttime x DJ ZITwerK - Breakcore Makes You Gay Sample Pack";
+            var audioSrcs = [
+                "38_kity_holy_longest_break_chop_in_recorded_history", 
+                "30_zit_divine_glitch_out", 
+                "02_zit_lick", 
+                "08_kity_jumpup_bass", 
+                "13_kity_hard", 
+                "19_kity_hard", 
+                "17_kity_press", 
+                "24_zit_divine_paracetamol", 
+                "25_kity_gabber", 
+                "25_kity_hella_stabs", 
+                "35_zit_vomit", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('soft000-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('soft000-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="soft000-play" class="audio-preview-button"></a>
+    </span>
+    
+</span> 
+        
+            <a href="https://mlemrecords.com/soft000/">More...</a>
+        
+    </div>
+
     </div>
 
 </content>
