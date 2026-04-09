@@ -5,16 +5,19 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Releases | Mlem Records</title>
-<meta name="title" content="Releases" />
+
+  
+
+  <title>Catalogue | Mlem Records</title>
+<meta name="title" content="Catalogue" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="release party," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/releases/">
   <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="Releases">
-  <meta property="og:description" content="Mlem Records is a netlabel in cyberspace.">
+  <meta property="og:title" content="Catalogue">
+  <meta property="og:description" content="This is the complete Mlem Records catalogue consisting of 19 releases. You’re free to download any individual release or Download All.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
     <meta property="og:image" content="https://mlemrecords.com/images/share.png">
@@ -24,16 +27,17 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
-  <meta name="twitter:title" content="Releases">
-  <meta name="twitter:description" content="Mlem Records is a netlabel in cyberspace.">
+  <meta name="twitter:title" content="Catalogue">
+  <meta name="twitter:description" content="This is the complete Mlem Records catalogue consisting of 19 releases. You’re free to download any individual release or Download All.">
 
 
 
 
-  <meta itemprop="name" content="Releases">
-  <meta itemprop="description" content="Mlem Records is a netlabel in cyberspace.">
-  <meta itemprop="datePublished" content="2025-02-21T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-04-18T00:00:00+00:00">
+  <meta itemprop="name" content="Catalogue">
+  <meta itemprop="description" content="This is the complete Mlem Records catalogue consisting of 19 releases. You’re free to download any individual release or Download All.">
+  <meta itemprop="datePublished" content="2026-04-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-04-09T00:00:00+00:00">
+  <meta itemprop="wordCount" content="21">
   <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -42,8 +46,8 @@
   :root {
     --textColor: #2b2b26;
     --semiTextColor: #2b2b26;
-    --linkColor: #f2ab37;
-    --semiLinkColor: #f2ab37;
+    --linkColor: #8E8E93;
+    --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
   }
@@ -129,6 +133,10 @@
     max-width: 100%;
   }
 
+  p {
+    margin: 1em 0;
+  }
+
   p > em img {
     display: block;
     max-width: 75%;
@@ -155,6 +163,10 @@
     border-top: 1px solid var(--textColor);
   }
 
+  footer {
+    text-align: center;
+  }
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -174,7 +186,7 @@
 
   footer {
     padding: 25px;
-    text-align: center;
+    justify-content: center;
   }
 
   .helptext {
@@ -198,14 +210,14 @@
   }
 
   ul.blog-posts li .time {
-    width: 11ch;
+    min-width: 11ch;
   }
 
   ul.blog-posts li a {
     margin-right: 1ch;
   }
 
-  .inline_icon {
+  .inline {
     height: 1em;
     vertical-align: baseline;
   }
@@ -213,11 +225,11 @@
   .release-container {
     display: grid;
     grid-template-columns: repeat(2, calc(50% - 10px));
-    margin-top: 1em;
+    margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
   }
-  
+
   .release-single {
     margin-top: 2em;
     margin-bottom: 2em;
@@ -225,11 +237,209 @@
     margin-right: 4em;
   }
 
+  .release-header {
+    text-transform: lowercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: inherit;
+    display: block;
+  }
+
+  .release-title {
+    margin: 0;
+  }
+
+  .release-title-small {
+    margin: 0;
+    font-size: 1.25em;
+  }
+
+  .release-title-smaller {
+    margin: 0;
+    font-size: 1em;
+  }
+
+  .release-single img {
+    display: block;
+    margin: auto;
+  }
+
+  .release img {
+    display: block;
+    margin: auto;
+  }
+
+  .events-container {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 10px));
+    margin-top: 0em;
+    margin-bottom: 1em;
+    gap: 1em;
+  }
+
+  .events-archive-container {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 10px));
+    margin-top: 0em;
+    margin-bottom: 1em;
+    gap: 1em;
+  }
+
+  .catalogue-container {
+    font-size: smaller;
+    list-style-type: none;
+  }
+
+  .catalogue-item {
+    display: flex;
+    gap: 1ch;
+  }
+  
+  .catalogue-item-no {
+    min-width: 7ch;
+  }
+
+  .catalogue-item-name {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+
+  .catalogue-item-artist {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .audio {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 1em;
+    background-color: var(--backgroundColor);
+  }
+
+  .audio-controls {
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1ch;
+  }
+
+  .audio-button {
+    width: 2ch;
+    min-width: 2ch;
+    max-width: 2ch;
+    padding: 0;
+    font-size: 1.5em;
+    color: var(--linkColor);
+    background: none;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  .audio-title {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+    font-style: italic;
+  }
+
+  .audio-time {
+    min-width: 4.5ch;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .audio-position {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 0px;
+    background: none;
+    padding: 1em;
+    padding-top: 2.5em;
+    margin: -1em;
+    margin-bottom: 0em;
+  }
+
+  .audio-position::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+  .audio-position::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+   
+  .audio-position::-webkit-slider-runnable-track {
+    height: 1px;
+    -webkit-appearance: none;
+    background-color: var(--linkColor);
+    margin-top: -1px;
+  }
+
+   
+  .audio-position::-moz-range-progress {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-moz-range-track {  
+    background-color: var(--textColor);
+  }
+   
+  .audio-position::-ms-fill-lower {
+    background-color: var(--linkColor);
+  }
+  .audio-position::-ms-fill-upper {  
+    background-color: var(--textColor);
+  }
+
+  .audio-preview {
+    position: relative;
+    padding: 0;
+    width: 9ch;
+    margin-right: 1ch;
+  }
+
+  .audio-preview-controls {
+    display: inline-block;
+    background-color: var(--textColor);
+    min-width: 7.5ch;
+  }
+
+  .audio-preview-button {
+    user-select: none;
+    padding: 0 0.5ch;
+    font-size: 1em;
+    color: var(--backgroundColor);
+    background: none;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  .audio-preview-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--backgroundColor);
+  }
+
   @media only screen and (max-width: 768px) {
     .release-container {
       display: grid;
       grid-template-columns: repeat(1, 100%);
-      margin-top: 1em;
+      margin-top: 0em;
       margin-bottom: 1em;
       gap: 1em;
     }
@@ -238,10 +448,29 @@
       margin-left: 0;
       margin-right: 0;
     }
+
+    .catalogue-item-artist {
+      display: none;
+    }
+
+    .events-container {
+      display: grid;
+      grid-template-columns: repeat(1, 100%);
+      margin-top: 0em;
+      margin-bottom: 1em;
+      gap: 1em;
+    }
+
+    .events-archive-container {
+      display: grid;
+      grid-template-columns: repeat(1, 100%);
+      margin-top: 0em;
+      margin-bottom: 1em;
+      gap: 3em;
+    }
   }
 
 </style>
-
 
   <script type="text/javascript">
     var specific_release_to_redirect = null;
@@ -255,220 +484,341 @@
     }
   </script>
 
+  
+  
+    <style>
+      :root {
+        
+
+        
+        
+        
+      }
+    </style>
+  
+
+  
+  <audio id="page-audio" preload="auto">
+      <source id="page-audio-source"></source>
+  </audio>
+
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/inter/inter.css">
 </head>
 
 <body id="body">
   <header><a href="/" class="title">
-  <h1><span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span></h1>
+  <h1>
+    <span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span>
+  </h1>
 </a>
-<nav><a href="/">Releases</a>
+<nav>
+    <a href="/">Releases</a>
+
+
 <a href="https://mlemrecords.bandcamp.com/merch">Merch</a>
 
-<a href="/aliens/">Aliens</a>
 
-<a href="/about/">About</a>
+    <a href="/events/">Events</a>
+
+    <a href="/about/">About</a>
 
 
-</nav>
-</header>
+
+</nav></header>
   <main>
-<content><h1>Releases</h1>
+
+<content><h1>Catalogue</h1>
+
+<p>This is the complete Mlem Records catalogue consisting of 19 releases. You&rsquo;re free to download any individual release or <script type="text/javascript">
+    function download_files(files) {
+        function download_next(i) {
+            if (i >= files.length) {
+            return;
+            }
+            var a = document.createElement('a');
+            a.href = files[i];
+            a.target = '_parent';
+            
+            if ('download' in a) {
+            a.download = files[i].replace(/^.*[\\/]/, '');
+            }
+            
+            (document.body || document.documentElement).appendChild(a);
+            if (a.click) {
+            a.click(); 
+            } else {
+            $(a).click(); 
+            }
+            
+            a.parentNode.removeChild(a);
+            
+            
+            setTimeout(function() {
+            download_next(i + 1);
+            }, 500);
+        }
+        
+        download_next(0);
+    }
+
+    function download_all_releases() {
+        download_files([
+            
+                
+                    "\/downloads\/[mlem000] love sella - slob life nu dada.zip",
+                
+            
+                
+                    "\/downloads\/[soft000] keepittoyourselfnexttime x DJ ZITwerK - Breakcore Makes You Gay Sample Pack.zip",
+                
+            
+                
+                    "\/downloads\/[mlem001] DJ ZITwerK - Amersfoort Tracks.zip",
+                
+            
+                
+                    "\/downloads\/[mlem002] Aching Hands - Up in Flames.zip",
+                
+            
+                
+                    "\/downloads\/[mlem003] Jørgen Valdemar - Pieces of Peace.zip",
+                
+            
+                
+                    "\/downloads\/[mlem004] Cage.Log - Wacko_.zip",
+                
+            
+                
+                    "\/downloads\/[mlem005] Ulf Ten Aar - Denken Aan Een Ander Is Niet Van Deze Tijd.zip",
+                
+            
+                
+                    "\/downloads\/[mlem006] indigo chamber - indigo chamber.zip",
+                
+            
+                
+                    "\/downloads\/[mlem007] AlmabuenA x love sella - The Alan Watts Theme (love sella Remix).zip",
+                
+            
+                
+                    "\/downloads\/[mlem008] love sella x AlmabuenA - All my best friends don’t pass the turing test (AlmabuenA Remix).zip",
+                
+            
+                
+                    "\/downloads\/[mlem009] M2ND - WTR (Runnin’).zip",
+                
+            
+                
+                    "\/downloads\/[mlem010] Mlem - Juiced Out Trakz.zip",
+                
+            
+                
+                    "\/downloads\/[mlem011] KINDERPUNK - Dino’s in Mijn Hoofd.zip",
+                
+            
+                
+                    "\/downloads\/[mlem012] WivWav - Elektronische Meuk Vol. 1.zip",
+                
+            
+                
+                    "\/downloads\/[mlem013] Birdhouse Emporium - Bird Sounds Vol. 1.zip",
+                
+            
+                
+                    "\/downloads\/[mlem014] Mlem - Pick of the Litter.zip",
+                
+            
+                
+                    "\/downloads\/[mlem015] keepittoyourselfnexttime x DJ ZITwerK - Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri _ Yaoi Solidarity.zip",
+                
+            
+                
+                    "\/downloads\/[mlem016] DJ ZITwerK - Autogynephilic Lesbian Zero Forever.zip",
+                
+            
+                
+                    "\/downloads\/[mlem017] Ulf Ten Aar - Alle Opgedroogde Tranen.zip",
+                
+             
+        ]);
+    }
+</script>
+
+<a onclick="download_all_releases()" href="#">Download All</a>.</p>
 
 
-  
-  <ul class="blog-posts">
+  <div class="catalogue-container">
     
-    <li>
+      <hr style="margin-top: 2em;">
+      <h2 style="margin: 0;">2026 <span style="font-weight: normal;">(4)</span></h2>
       
-      <span class="time">
-        <i>
-          <time datetime='2024-02-13' pubdate>
-            13 Feb, 2024
-          </time>
-        </i>
-      </span>
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem017</b> <a href="https://mlemrecords.com/mlem017/" class="catalogue-item-name">Alle Opgedroogde Tranen</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/ulf-ten-aar/">Ulf Ten Aar</a>
+</span>  <a href="/downloads/[mlem017] Ulf%20Ten%20Aar - Alle%20Opgedroogde%20Tranen.zip">⤓</a>
+          
+        </span>
       
-      <a class="page-title" href="https://mlemrecords.com/mlem000/">slob life nu dada</a>
-      <i><hr>
-<p>The entirely unanticipated EP by love sella. 44.1 KHz compositions for cyberwitches/-bitches. Kill all money: Your virtue is predispositioned.</p>
-<hr>
-<h2 id="credits">Credits</h2>
-<ul>
-<li>All tracks composed, performed, recorded, engineered, enchanted, bounced, bit-flipped, posted and abandoned by love sella.</li>
-<li>Track 2: Kalimba played by Damian Been. Title based on a post by Ma3ke.</li>
-<li>Track 4: Vocals sang by Jørgen Bruinsma</li>
-</ul>
-<h2 id="special-thanks-to">Special thanks to</h2>
-<p>Damian Been, Ma3ke, Jørgen, Discogs, Plato Groningen.</p></i>
-    </li>
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem016</b> <a href="https://mlemrecords.com/mlem016/" class="catalogue-item-name">Autogynephilic Lesbian Zero Forever</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/dj-zitwerk/">DJ ZITwerK</a>
+</span>  <a href="/downloads/[mlem016] DJ%20ZITwerK - Autogynephilic%20Lesbian%20Zero%20Forever.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem015</b> <a href="https://mlemrecords.com/mlem015/" class="catalogue-item-name">Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri / Yaoi Solidarity</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/keepittoyourselfnexttime/">keepittoyourselfnexttime</a> / <a href="https://mlemrecords.com/artists/dj-zitwerk/">DJ ZITwerK</a>
+</span>  <a href="/downloads/[mlem015] keepittoyourselfnexttime%20x%20DJ%20ZITwerK - Dextroamphetamine%20Estradiol%20Valerate%20Sertraline%20Overdose%20Fueled%20Toxic%20Yuri%20/%20Yaoi%20Solidarity.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">soft000</b> <a href="https://mlemrecords.com/soft000/" class="catalogue-item-name">Breakcore Makes You Gay Sample Pack</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/keepittoyourselfnexttime/">keepittoyourselfnexttime</a> / <a href="https://mlemrecords.com/artists/dj-zitwerk/">DJ ZITwerK</a>
+</span>  <a href="/downloads/[soft000] keepittoyourselfnexttime%20x%20DJ%20ZITwerK - Breakcore%20Makes%20You%20Gay%20Sample%20Pack.zip">⤓</a>
+          
+        </span>
+      
     
-    <li>
+      <hr style="margin-top: 2em;">
+      <h2 style="margin: 0;">2025 <span style="font-weight: normal;">(10)</span></h2>
       
-      <span class="time">
-        <i>
-          <time datetime='2024-05-20' pubdate>
-            20 May, 2024
-          </time>
-        </i>
-      </span>
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem014</b> <a href="https://mlemrecords.com/mlem014/" class="catalogue-item-name">Pick of the Litter</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/mlem/">Mlem</a>
+</span>  <a href="/downloads/[mlem014] Mlem - Pick%20of%20the%20Litter.zip">⤓</a>
+          
+        </span>
       
-      <a class="page-title" href="https://mlemrecords.com/mlem001/">Amersfoort Tracks</a>
-      <i><hr>
-<p>Jungle Tracks created on the Dutch National Railways. Composed, recorded and mixed on trains connected to Amersfoort Central Station between April 1st, 2024 and May 20th, 2024.</p>
-<hr>
-<h2 id="credits">Credits</h2>
-<ul>
-<li>All tracks composed, performed, recorded, engineered, licked, youtube-to-mp3 downloaded and decimated by DJ ZITwerK.</li>
-</ul>
-<h2 id="special-thanks-to">Special thanks to</h2>
-<p>Bille, Gay Bitches, NS Personnel, My SP404MkII.</p></i>
-    </li>
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem013</b> <a href="https://mlemrecords.com/mlem013/" class="catalogue-item-name">Bird Sounds Vol. 1</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/birdhouse-emporium/">Birdhouse Emporium</a>
+</span>  <a href="/downloads/[mlem013] Birdhouse%20Emporium - Bird%20Sounds%20Vol.%201.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem012</b> <a href="https://mlemrecords.com/mlem012/" class="catalogue-item-name">Elektronische Meuk Vol. 1</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/wivwav/">WivWav</a>
+</span>  <a href="/downloads/[mlem012] WivWav - Elektronische%20Meuk%20Vol.%201.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem011</b> <a href="https://mlemrecords.com/mlem011/" class="catalogue-item-name">Dino’s in Mijn Hoofd</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/kinderpunk/">KINDERPUNK</a>
+</span>  <a href="/downloads/[mlem011] KINDERPUNK - Dino%e2%80%99s%20in%20Mijn%20Hoofd.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem010</b> <a href="https://mlemrecords.com/mlem010/" class="catalogue-item-name">Juiced Out Trakz</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/mlem/">Mlem</a>
+</span>  <a href="/downloads/[mlem010] Mlem - Juiced%20Out%20Trakz.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem009</b> <a href="https://mlemrecords.com/mlem009/" class="catalogue-item-name">WTR (Runnin’)</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/m2nd/">M2ND</a>
+</span>  <a href="/downloads/[mlem009] M2ND - WTR%20%28Runnin%e2%80%99%29.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem008</b> <a href="https://mlemrecords.com/mlem008/" class="catalogue-item-name">All my best friends don’t pass the turing test (AlmabuenA Remix)</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/love-sella/">love sella</a> / <a href="https://mlemrecords.com/artists/almabuena/">AlmabuenA</a>
+</span>  <a href="/downloads/[mlem008] love%20sella%20x%20AlmabuenA - All%20my%20best%20friends%20don%e2%80%99t%20pass%20the%20turing%20test%20%28AlmabuenA%20Remix%29.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem007</b> <a href="https://mlemrecords.com/mlem007/" class="catalogue-item-name">The Alan Watts Theme (love sella Remix)</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/almabuena/">AlmabuenA</a> / <a href="https://mlemrecords.com/artists/love-sella/">love sella</a>
+</span>  <a href="/downloads/[mlem007] AlmabuenA%20x%20love%20sella - The%20Alan%20Watts%20Theme%20%28love%20sella%20Remix%29.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem006</b> <a href="https://mlemrecords.com/mlem006/" class="catalogue-item-name">indigo chamber</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/indigo-chamber/">indigo chamber</a>
+</span>  <a href="/downloads/[mlem006] indigo%20chamber - indigo%20chamber.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem005</b> <a href="https://mlemrecords.com/mlem005/" class="catalogue-item-name">Denken Aan Een Ander Is Niet Van Deze Tijd</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/ulf-ten-aar/">Ulf Ten Aar</a>
+</span>  <a href="/downloads/[mlem005] Ulf%20Ten%20Aar - Denken%20Aan%20Een%20Ander%20Is%20Niet%20Van%20Deze%20Tijd.zip">⤓</a>
+          
+        </span>
+      
     
-    <li>
+      <hr style="margin-top: 2em;">
+      <h2 style="margin: 0;">2024 <span style="font-weight: normal;">(5)</span></h2>
       
-      <span class="time">
-        <i>
-          <time datetime='2024-11-02' pubdate>
-            02 Nov, 2024
-          </time>
-        </i>
-      </span>
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem004</b> <a href="https://mlemrecords.com/mlem004/" class="catalogue-item-name">Wacko_</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/cage.log/">Cage.Log</a>
+</span>  <a href="/downloads/[mlem004] Cage.Log - Wacko_.zip">⤓</a>
+          
+        </span>
       
-      <a class="page-title" href="https://mlemrecords.com/mlem002/">Up in Flames</a>
-      <i><hr>
-<p>Two &ldquo;tape jams&rdquo;, performed on my bedroom floor, captured towards the end of summer 2024.</p>
-<hr>
-<h2 id="credits">Credits</h2>
-<ul>
-<li>Mastering, mixing, performance, photography, production, sampling by Aching Hands.</li>
-<li>Artwork by Lucas Veerkamp.</li>
-<li>Additional mastering provided by Robin van Ulft.</li>
-<li>Additional samples provided by Tim Kahn.</li>
-</ul>
-<h2 id="much-much-love-alphabetical">Much, much love (alphabetical)</h2>
-<p>Damian Been, Puk Bruinsma, Benjamin Burger, Dylan Hokstam, Max for Live, Mlem Records (and everyone involved), Midas Munsterman, Robin van Ulft, Lucas Veerkamp, Geart Vledder.</p></i>
-    </li>
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem003</b> <a href="https://mlemrecords.com/mlem003/" class="catalogue-item-name">Pieces of Peace</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/j%C3%B8rgen-valdemar/">Jørgen Valdemar</a>
+</span>  <a href="/downloads/[mlem003] J%c3%b8rgen%20Valdemar - Pieces%20of%20Peace.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem002</b> <a href="https://mlemrecords.com/mlem002/" class="catalogue-item-name">Up in Flames</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/aching-hands/">Aching Hands</a>
+</span>  <a href="/downloads/[mlem002] Aching%20Hands - Up%20in%20Flames.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem001</b> <a href="https://mlemrecords.com/mlem001/" class="catalogue-item-name">Amersfoort Tracks</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/dj-zitwerk/">DJ ZITwerK</a>
+</span>  <a href="/downloads/[mlem001] DJ%20ZITwerK - Amersfoort%20Tracks.zip">⤓</a>
+          
+        </span>
+      
+        <span class="catalogue-item">
+          
+            <b class="catalogue-item-no">mlem000</b> <a href="https://mlemrecords.com/mlem000/" class="catalogue-item-name">slob life nu dada</a> <span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/love-sella/">love sella</a>
+</span>  <a href="/downloads/[mlem000] love%20sella - slob%20life%20nu%20dada.zip">⤓</a>
+          
+        </span>
+      
     
-    <li>
-      
-      <span class="time">
-        <i>
-          <time datetime='2024-11-21' pubdate>
-            21 Nov, 2024
-          </time>
-        </i>
-      </span>
-      
-      <a class="page-title" href="https://mlemrecords.com/mlem003/">Pieces of Peace</a>
-      <i><hr>
-<p>17 pieces of peace written between the chaotic ages of 14-19.</p>
-<p>One day my sibling called me up while I was pondering, lying on my brand new mattress after I’d just moved out. Saying: “Hey chef, remember those songs we recorded?” And of course I did, that’s what had been on my mind. That’s what I was lying there for.</p>
-<hr>
-<h2 id="credits">Credits</h2>
-<ul>
-<li>Songwriting, lyrics, artwork and iPhone recording engineering by Jørgen Valdemar.</li>
-<li>Production and engineering by Puk Bruinsma.</li>
-<li>Visual design by Jan de Rooij.</li>
-<li>Additional artwork by Inne Bruinsma.</li>
-<li>Cello on the track &ldquo;Three words&rdquo; by Jordan van der Maas.</li>
-<li>Photography by Wike Bruinsma.</li>
-</ul>
-<h2 id="special-thanks-to">Special thanks to</h2>
-<ul>
-<li>Mare and Rian — for being great bandmates in my little ghost.</li>
-<li>Teun — for giving me my first recording experience and being a great friend.</li>
-<li>Auktje — for telling me I should quit her piano lessons to pursue music creatively.</li>
-<li>Joep and Jornt — for listening to my music and giving great feedback.</li>
-<li>Jan — for all the patience in making the artwork together.</li>
-<li>Puk — I couldn’t have made this album without you, thanks for the tea.</li>
-<li>Samira — for giving me a feel for rhythm.</li>
-<li>Eric Luth — for introducing me to the wonderful world of music.</li>
-<li>Carla de Bruine — for listening to my songs and working on my vocals together.</li>
-<li>Lieke.</li>
-</ul></i>
-    </li>
-    
-    <li>
-      
-      <span class="time">
-        <i>
-          <time datetime='2024-11-29' pubdate>
-            29 Nov, 2024
-          </time>
-        </i>
-      </span>
-      
-      <a class="page-title" href="https://mlemrecords.com/mlem004/">Wacko_</a>
-      <i><hr>
-<p>Wacko_ follows a narrative of “weirdifaction” —a bright sonic world that gradually unveils a creeping sense of absurdity. The album is the first album written, and recorded, by Cage.log. It is an IndieTronica/Art-pop album that blends Jazz, Funk, IDM, and Ambient influences.</p>
-<hr>
-<h2 id="credits">Credits</h2>
-<ul>
-<li>Written by Cage.Log.</li>
-<li>Recorded by Cage.Log.</li>
-<li>Conceptualised by Dylan Hokstam.</li>
-<li>Electric bass played by Cage.log.</li>
-<li>Drum Tracks bitten through by Cage.log.</li>
-<li>Electronic elements produced by CDL.</li>
-<li>Lyrics by Cage.log.</li>
-<li>Vocals by Dylan Hokstam.</li>
-<li>Repetitively mixed by CDL.</li>
-<li>Mastered by Robin van Ulft</li>
-<li>Album cover painted by Dylan Hokstam.</li>
-</ul>
-<h2 id="special-thanks-to">Special thanks to</h2>
-<ul>
-<li>Robin van Ulft — for helping with mastering the Album.</li>
-<li>Damian Been.</li>
-<li>Puk Bruinsma.</li>
-<li>Sytse Jan Vledder.</li>
-<li>Elza Thio.</li>
-<li>Everyone at Mlem Records — for helping with mixing, mastering and genuine interest.</li>
-</ul></i>
-    </li>
-    
-    <li>
-      
-      <span class="time">
-        <i>
-          <time datetime='2025-02-21' pubdate>
-            21 Feb, 2025
-          </time>
-        </i>
-      </span>
-      
-      <a class="page-title" href="https://mlemrecords.com/mlem005/">Denken Aan Een Ander Is Niet Van Deze Tijd</a>
-      <i><hr>
-<p><strong>NL</strong><br>
-Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegieerd persoon in de 21e eeuw is? Hoe blijf je jezelf in een wereld die steeds groter en enger wordt? Dat vraagt Ulf Ten Aar zich al een tijdlang af.</p>
-<p>In diens album &ldquo;Denken Aan Een Ander Is Niet Van Deze Tijd&rdquo; is die met beeldende, maatschappijkritische woorden en een stapel zelfspot een stuk dichterbij het antwoord gekomen.</p></i>
-    </li>
-    
-    <li>
-      
-      <span class="time">
-        <i>
-          <time datetime='2025-04-18' pubdate>
-            18 Apr, 2025
-          </time>
-        </i>
-      </span>
-      
-      <a class="page-title" href="https://mlemrecords.com/mlem006/">indigo chamber</a>
-      <i><hr>
-<p>on the debut ep of indigo chamber, a tension reigns between the urge for escapism and pressing wake-up calls from the real world, which seems to grow more imminent and frightening every day.</p>
-<p>finding their retreat in hooky, hypnotic dreampop, the crystalline organs, oceanic synths, waltzy drum machines and languid falsetto vocals don’t seem to disturb the idyllic daydream.</p>
-<p>but from under the perfect surface a threat of increasing frustration and dissatisfaction looms, and the ever so safe glass bubble is slowly starting to crack&hellip;</p></i>
-    </li>
-    
-  </ul>
-  
-  
+  </div>
+</content>
 
-  </content>
+<footer><a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated Apr 9, 2026.</small></a></footer>
+
 
   </main>
   <footer></footer>
