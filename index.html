@@ -36,7 +36,7 @@
 
   <meta itemprop="name" content="Mlem Records">
   <meta itemprop="description" content="Mlem Records is a netlabel and artist collective run by aliens in cyberspace.">
-  <meta itemprop="datePublished" content="2026-03-14T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2026-04-09T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-04-09T00:00:00+00:00">
   <meta itemprop="wordCount" content="13">
   <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
@@ -1171,6 +1171,38 @@
                     
                 
             
+                
+                    
+                        "Robin van Ulft", 
+                    
+                        "Sytse Vledder", 
+                    
+                        "Pieter Vonk", 
+                    
+                        "Zoë de Boer", 
+                    
+                        "Morris Enno van Weel", 
+                    
+                        "Damian", 
+                    
+                        "Dylan", 
+                    
+                        "Midas", 
+                    
+                        "Lucas", 
+                    
+                        "Alba", 
+                    
+                        "Ivan", 
+                    
+                        "Josefien", 
+                    
+                        "Leon", 
+                    
+                        "Linde", 
+                    
+                
+            
             ];
             var prefixes = [
                 "Shoutout",
@@ -1213,6 +1245,128 @@
 
     <div class="release-container">
         
+    
+    
+
+    <div class="release">
+        <small class="release-header">
+            mlem017<i> Album</i>
+        </small>
+        
+            <a href="https://mlemrecords.com/mlem017/">
+                
+                <img src="/mlem017/cover_hu_1d08ac57fd3d4549.png" loading="lazy" alt="The cover for Alle Opgedroogde Tranen.">
+                
+            </a>
+        
+        <h2 class="release-title-small">
+            <a href="https://mlemrecords.com/mlem017/">Alle Opgedroogde Tranen</a>
+        </h2>by 
+     <a href="https://mlemrecords.com/artists/ulf-ten-aar/">Ulf Ten Aar</a>
+<br>
+        <span id="mlem017-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "\/downloads\/[mlem017] Ulf Ten Aar - Alle Opgedroogde Tranen";
+            var audioSrcs = [
+                "1. zeg dan niet dat je nog van me houdt", 
+                "2. kast", 
+                "3. 24 nov 25", 
+                "4. slaap zacht", 
+                "5. landen", 
+                "6. hoe het was om van je te houden", 
+                "7. blauw", 
+                "8. als we samen beter zijn", 
+                "9. vaarwel", 
+                "Bonus. vis op het droge", 
+                
+            ];
+
+            var currentAudio = parseInt("4") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem017-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem017-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem017-play" class="audio-preview-button"></a>
+    </span>
+    
+</span> 
+        
+            <a href="https://mlemrecords.com/mlem017/">More...</a>
+        
+    </div>
+
     
     
 
