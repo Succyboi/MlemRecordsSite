@@ -193,6 +193,10 @@
     justify-content: center;
   }
 
+  iframe {
+    border: 0px;
+  }
+
   .helptext {
     color: var(--semiTextColor);
     font-size: small;
@@ -439,6 +443,15 @@
     color: var(--backgroundColor);
   }
 
+  .radio-container {
+    display: grid;
+    grid-template-columns: calc(40% - 10px) calc(60% - 10px);
+    margin-top: 0em;
+    margin-bottom: 1em;
+    gap: 1em;
+    align-items: end;
+  }
+
   @media only screen and (max-width: 768px) {
     .release-container {
       display: grid;
@@ -471,6 +484,15 @@
       margin-top: 0em;
       margin-bottom: 1em;
       gap: 3em;
+    }
+
+    .radio-container {
+      display: grid;
+      grid-template-columns: repeat(1, 100%);
+      margin-top: 0em;
+      margin-bottom: 1em;
+      gap: 1em;
+      align-items: end;
     }
   }
 
@@ -506,13 +528,14 @@
       <source id="page-audio-source"></source>
   </audio>
 
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="stylesheet" href="/inter/inter.css">
 </head>
 
 <body id="body">
   <header><a href="/" class="title">
-  <h1>
+  <h1 id="header">
     <span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span>
   </h1>
 </a>
@@ -529,7 +552,10 @@
 
 
 
-</nav></header>
+</nav>
+
+
+</header>
   <main><h1>Indigo Chamber &#43; Cage.Log &#43; La Bruja @ Wolpop</h1>
 
 <p>
