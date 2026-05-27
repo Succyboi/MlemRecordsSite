@@ -12,7 +12,7 @@
   <title>Mlem Records</title>
 <meta name="title" content="Mlem Records" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/">
@@ -36,7 +36,7 @@
 
   <meta itemprop="name" content="Mlem Records">
   <meta itemprop="description" content="Mlem Records is a netlabel and artist collective run by aliens in cyberspace.">
-  <meta itemprop="datePublished" content="2026-05-15T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2026-05-27T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-05-27T00:00:00+00:00">
   <meta itemprop="wordCount" content="13">
   <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
@@ -1237,6 +1237,22 @@
                     
                 
             
+                
+                    
+                        "cdl", 
+                    
+                        "Sytse Jan Vledder", 
+                    
+                        "Robin van Ulft", 
+                    
+                        "WivWav", 
+                    
+                        "Tivoli Vredenburg", 
+                    
+                        "love sella", 
+                    
+                
+            
             ];
             var prefixes = [
                 "Shoutout",
@@ -1279,6 +1295,127 @@
 
     <div class="release-container">
         
+    
+    
+
+    <div class="release">
+        <small class="release-header">
+            mlem019<i> EP</i>
+        </small>
+        
+            <a href="https://mlemrecords.com/mlem019/">
+                
+                <img src="/mlem019/cover_hu_d10a1fe9ffcf80b3.png" loading="lazy" alt="The cover for It likes green..">
+                
+            </a>
+        
+        <h2 class="release-title">
+            <a href="https://mlemrecords.com/mlem019/">It likes green.</a>
+        </h2>by 
+     <a href="https://mlemrecords.com/artists/cdl/">cdl</a>
+<br>
+        <span id="mlem019-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "\/downloads\/[mlem019] cdl - It likes green.";
+            var audioSrcs = [
+                "1. prelude, sstv and story.r.mp", 
+                "2. tracks headed north.r.mp", 
+                "3. papapap.r", 
+                "4. a story behind every door.e", 
+                "5. ray's spf40.r", 
+                "6. alles in de hoek (cdl\u003eUTA^rmx).rm", 
+                "7. zero crossings.r", 
+                "8. rotary device.r", 
+                "9. inReferenceToItLikesGreen,aPostludeAndStoryAboutALadyIveMet.r.mp", 
+                
+            ];
+
+            var currentAudio = parseInt("8") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem019-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem019-play');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+                } else {
+                    playButton.textContent = '► Preview';
+                }
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem019-play" class="audio-preview-button"></a>
+    </span>
+    
+</span> 
+        
+            <a href="https://mlemrecords.com/mlem019/">More...</a>
+        
+    </div>
+
     
     
 
@@ -3691,7 +3828,7 @@
 <footer>
     <p><a href="/secret" style="color: var(--textColor); text-decoration: none;">.</a></p>
 
-<a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated May 27, 2026. (1778868807)</small></a></footer>
+<a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated May 27, 2026. (1779878493)</small></a></footer>
 
 
   </main>
