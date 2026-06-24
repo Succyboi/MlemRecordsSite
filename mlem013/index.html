@@ -11,30 +11,30 @@
   <title>Bird Sounds Vol. 1 | Mlem Records</title>
 <meta name="title" content="Bird Sounds Vol. 1" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,enno,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/mlem013/">
-  <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="Bird Sounds Vol. 1">
-  <meta property="og:description" content="→ Bandcamp
+	<meta property="og:site_name" content="Mlem Records">
+	<meta property="og:title" content="Bird Sounds Vol. 1">
+	<meta property="og:description" content="→ Bandcamp
 → Youtube
 → Tidal
 → Spotify
 → Tidal
 → Archive
 ⤓ Download Thanks for downloading! If you liked this EP please consider donating. That way Birdhouse Emporium can make more! Hey look! Or don’t look, you should do whatever you like. You’re here anyways, so read about my first EP! 😺">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-    <meta property="og:image" content="https://mlemrecords.com/mlem013/cover.png">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+		<meta property="og:image" content="https://mlemrecords.com/mlem013/cover.png">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://mlemrecords.com/mlem013/cover.png">
-  <meta name="twitter:title" content="Bird Sounds Vol. 1">
-  <meta name="twitter:description" content="→ Bandcamp
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://mlemrecords.com/mlem013/cover.png">
+	<meta name="twitter:title" content="Bird Sounds Vol. 1">
+	<meta name="twitter:description" content="→ Bandcamp
 → Youtube
 → Tidal
 → Spotify
@@ -45,19 +45,19 @@
 
 
 
-  <meta itemprop="name" content="Bird Sounds Vol. 1">
-  <meta itemprop="description" content="→ Bandcamp
+	<meta itemprop="name" content="Bird Sounds Vol. 1">
+	<meta itemprop="description" content="→ Bandcamp
 → Youtube
 → Tidal
 → Spotify
 → Tidal
 → Archive
 ⤓ Download Thanks for downloading! If you liked this EP please consider donating. That way Birdhouse Emporium can make more! Hey look! Or don’t look, you should do whatever you like. You’re here anyways, so read about my first EP! 😺">
-  <meta itemprop="datePublished" content="2025-11-15T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-11-15T00:00:00+00:00">
-  <meta itemprop="wordCount" content="478">
-  <meta itemprop="image" content="https://mlemrecords.com/mlem013/cover.png">
-  <meta itemprop="keywords" content="Birdhouse Emporium,Pop,Music">
+	<meta itemprop="datePublished" content="2025-11-15T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2025-11-15T00:00:00+00:00">
+	<meta itemprop="wordCount" content="478">
+	<meta itemprop="image" content="https://mlemrecords.com/mlem013/cover.png">
+	<meta itemprop="keywords" content="Birdhouse Emporium,Pop,Music">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/mlem013/index.xml" title="Mlem Records" />
@@ -69,6 +69,11 @@
     --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   body {
@@ -291,6 +296,14 @@
   .release img {
     display: block;
     margin: auto;
+  }
+
+  .release.playing img {
+    border-radius: 50%;
+    transform: rotate(calc(360deg * 100));
+
+    transition: transform calc(60s * 100);
+    transition-timing-function: ease;
   }
 
   .events-container {

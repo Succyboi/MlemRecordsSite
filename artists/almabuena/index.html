@@ -11,33 +11,33 @@
   <title>AlmabuenA | Mlem Records</title>
 <meta name="title" content="AlmabuenA" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,enno,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/artists/almabuena/">
-  <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="AlmabuenA">
-  <meta property="og:description" content="Mlem Records is a netlabel in cyberspace.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-    <meta property="og:image" content="https://mlemrecords.com/images/share.png">
+	<meta property="og:site_name" content="Mlem Records">
+	<meta property="og:title" content="AlmabuenA">
+	<meta property="og:description" content="Mlem Records is a netlabel in cyberspace.">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+		<meta property="og:image" content="https://mlemrecords.com/images/share.png">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
-  <meta name="twitter:title" content="AlmabuenA">
-  <meta name="twitter:description" content="Mlem Records is a netlabel in cyberspace.">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
+	<meta name="twitter:title" content="AlmabuenA">
+	<meta name="twitter:description" content="Mlem Records is a netlabel in cyberspace.">
 
 
 
 
-  <meta itemprop="name" content="AlmabuenA">
-  <meta itemprop="description" content="Mlem Records is a netlabel in cyberspace.">
-  <meta itemprop="datePublished" content="2025-05-12T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-05-12T00:00:00+00:00">
-  <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
+	<meta itemprop="name" content="AlmabuenA">
+	<meta itemprop="description" content="Mlem Records is a netlabel in cyberspace.">
+	<meta itemprop="datePublished" content="2025-05-12T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2025-05-12T00:00:00+00:00">
+	<meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/artists/almabuena/index.xml" title="Mlem Records" />
@@ -49,6 +49,11 @@
     --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   body {
@@ -271,6 +276,14 @@
   .release img {
     display: block;
     margin: auto;
+  }
+
+  .release.playing img {
+    border-radius: 50%;
+    transform: rotate(calc(360deg * 100));
+
+    transition: transform calc(60s * 100);
+    transition-timing-function: ease;
   }
 
   .events-container {
@@ -565,7 +578,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem008" class="release">
         <small class="release-header">
             mlem008<i> Single</i>
         </small>
@@ -597,6 +610,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem008-play');
+            var releaseParent = document.getElementById('mlem008');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -642,9 +656,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -679,7 +702,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem007" class="release">
         <small class="release-header">
             mlem007<i> Single</i>
         </small>
@@ -710,6 +733,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem007-play');
+            var releaseParent = document.getElementById('mlem007');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -755,9 +779,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -794,7 +827,7 @@
 
 <footer>
   <p>
-    Last updated May 27, 2026.
+    Last updated Jul 2, 2026.
   </p>
 </footer>
 

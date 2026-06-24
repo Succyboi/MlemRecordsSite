@@ -11,30 +11,30 @@
   <title>Denken Aan Een Ander Is Niet Van Deze Tijd | Mlem Records</title>
 <meta name="title" content="Denken Aan Een Ander Is Niet Van Deze Tijd" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,enno,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/mlem005/">
-  <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="Denken Aan Een Ander Is Niet Van Deze Tijd">
-  <meta property="og:description" content="→ Bandcamp
+	<meta property="og:site_name" content="Mlem Records">
+	<meta property="og:title" content="Denken Aan Een Ander Is Niet Van Deze Tijd">
+	<meta property="og:description" content="→ Bandcamp
 → Spotify
 → Apple
 → Tidal
 → Archive
 ⤓ Download Thanks for downloading! If you liked this Album please consider donating. That way Ulf Ten Aar can make more! NL
 Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegieerd persoon in de 21e eeuw is? Hoe blijf je jezelf in een wereld die steeds groter en enger wordt? Dat vraagt Ulf Ten Aar zich al een tijdlang af.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-    <meta property="og:image" content="https://mlemrecords.com/mlem005/cover.jpg">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+		<meta property="og:image" content="https://mlemrecords.com/mlem005/cover.jpg">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://mlemrecords.com/mlem005/cover.jpg">
-  <meta name="twitter:title" content="Denken Aan Een Ander Is Niet Van Deze Tijd">
-  <meta name="twitter:description" content="→ Bandcamp
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://mlemrecords.com/mlem005/cover.jpg">
+	<meta name="twitter:title" content="Denken Aan Een Ander Is Niet Van Deze Tijd">
+	<meta name="twitter:description" content="→ Bandcamp
 → Spotify
 → Apple
 → Tidal
@@ -45,19 +45,19 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
 
 
 
-  <meta itemprop="name" content="Denken Aan Een Ander Is Niet Van Deze Tijd">
-  <meta itemprop="description" content="→ Bandcamp
+	<meta itemprop="name" content="Denken Aan Een Ander Is Niet Van Deze Tijd">
+	<meta itemprop="description" content="→ Bandcamp
 → Spotify
 → Apple
 → Tidal
 → Archive
 ⤓ Download Thanks for downloading! If you liked this Album please consider donating. That way Ulf Ten Aar can make more! NL
 Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegieerd persoon in de 21e eeuw is? Hoe blijf je jezelf in een wereld die steeds groter en enger wordt? Dat vraagt Ulf Ten Aar zich al een tijdlang af.">
-  <meta itemprop="datePublished" content="2025-02-21T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-02-21T00:00:00+00:00">
-  <meta itemprop="wordCount" content="333">
-  <meta itemprop="image" content="https://mlemrecords.com/mlem005/cover.jpg">
-  <meta itemprop="keywords" content="Ulf Ten Aar,Folk,Music">
+	<meta itemprop="datePublished" content="2025-02-21T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2025-02-21T00:00:00+00:00">
+	<meta itemprop="wordCount" content="333">
+	<meta itemprop="image" content="https://mlemrecords.com/mlem005/cover.jpg">
+	<meta itemprop="keywords" content="Ulf Ten Aar,Folk,Music">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/mlem005/index.xml" title="Mlem Records" />
@@ -69,6 +69,11 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
     --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   body {
@@ -291,6 +296,14 @@ Hoe ga je om met de verschrikkelijke tragedie dat het leven van een geprivilegie
   .release img {
     display: block;
     margin: auto;
+  }
+
+  .release.playing img {
+    border-radius: 50%;
+    transform: rotate(calc(360deg * 100));
+
+    transition: transform calc(60s * 100);
+    transition-timing-function: ease;
   }
 
   .events-container {

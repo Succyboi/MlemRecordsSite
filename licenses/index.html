@@ -11,31 +11,31 @@
   <title>Licenses | Mlem Records</title>
 <meta name="title" content="Licenses" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,enno,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/licenses/">
-  <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="Licenses">
-  <meta property="og:description" content="Mlem Records is a netlabel in cyberspace.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-    <meta property="og:image" content="https://mlemrecords.com/images/share.png">
+	<meta property="og:site_name" content="Mlem Records">
+	<meta property="og:title" content="Licenses">
+	<meta property="og:description" content="Mlem Records is a netlabel in cyberspace.">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+		<meta property="og:image" content="https://mlemrecords.com/images/share.png">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
-  <meta name="twitter:title" content="Licenses">
-  <meta name="twitter:description" content="Mlem Records is a netlabel in cyberspace.">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
+	<meta name="twitter:title" content="Licenses">
+	<meta name="twitter:description" content="Mlem Records is a netlabel in cyberspace.">
 
 
 
 
-  <meta itemprop="name" content="Licenses">
-  <meta itemprop="description" content="Mlem Records is a netlabel in cyberspace.">
-  <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
+	<meta itemprop="name" content="Licenses">
+	<meta itemprop="description" content="Mlem Records is a netlabel in cyberspace.">
+	<meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/licenses/index.xml" title="Mlem Records" />
@@ -47,6 +47,11 @@
     --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   body {
@@ -269,6 +274,14 @@
   .release img {
     display: block;
     margin: auto;
+  }
+
+  .release.playing img {
+    border-radius: 50%;
+    transform: rotate(calc(360deg * 100));
+
+    transition: transform calc(60s * 100);
+    transition-timing-function: ease;
   }
 
   .events-container {

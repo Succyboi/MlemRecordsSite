@@ -25,29 +25,29 @@ If you want the exact legalities, read below. If you would like to license the m
 
 
 <meta property="og:url" content="https://mlemrecords.com/licenses/anticapitalist-software/">
-  <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="Anti-Capitalist Software">
-  <meta property="og:description" content="You are free to: Share — Copy and redistribute the material in any medium or format for any purpose, even commercially. Adapt — Remix, transform, and build upon the material for any purpose, even commercially. Mlem Records cannot revoke these freedoms as long as you follow the license terms. Under the following terms: NonCapitalist — You may not use the material as an entity that operates by capitalist principles, otherwise commercial use is allowed. If you want the exact legalities, read below. If you would like to license the material under different terms, please get in touch.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="licenses">
-    <meta property="og:image" content="https://mlemrecords.com/images/share.png">
+	<meta property="og:site_name" content="Mlem Records">
+	<meta property="og:title" content="Anti-Capitalist Software">
+	<meta property="og:description" content="You are free to: Share — Copy and redistribute the material in any medium or format for any purpose, even commercially. Adapt — Remix, transform, and build upon the material for any purpose, even commercially. Mlem Records cannot revoke these freedoms as long as you follow the license terms. Under the following terms: NonCapitalist — You may not use the material as an entity that operates by capitalist principles, otherwise commercial use is allowed. If you want the exact legalities, read below. If you would like to license the material under different terms, please get in touch.">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="licenses">
+		<meta property="og:image" content="https://mlemrecords.com/images/share.png">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
-  <meta name="twitter:title" content="Anti-Capitalist Software">
-  <meta name="twitter:description" content="You are free to: Share — Copy and redistribute the material in any medium or format for any purpose, even commercially. Adapt — Remix, transform, and build upon the material for any purpose, even commercially. Mlem Records cannot revoke these freedoms as long as you follow the license terms. Under the following terms: NonCapitalist — You may not use the material as an entity that operates by capitalist principles, otherwise commercial use is allowed. If you want the exact legalities, read below. If you would like to license the material under different terms, please get in touch.">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
+	<meta name="twitter:title" content="Anti-Capitalist Software">
+	<meta name="twitter:description" content="You are free to: Share — Copy and redistribute the material in any medium or format for any purpose, even commercially. Adapt — Remix, transform, and build upon the material for any purpose, even commercially. Mlem Records cannot revoke these freedoms as long as you follow the license terms. Under the following terms: NonCapitalist — You may not use the material as an entity that operates by capitalist principles, otherwise commercial use is allowed. If you want the exact legalities, read below. If you would like to license the material under different terms, please get in touch.">
 
 
 
 
-  <meta itemprop="name" content="Anti-Capitalist Software">
-  <meta itemprop="description" content="You are free to: Share — Copy and redistribute the material in any medium or format for any purpose, even commercially. Adapt — Remix, transform, and build upon the material for any purpose, even commercially. Mlem Records cannot revoke these freedoms as long as you follow the license terms. Under the following terms: NonCapitalist — You may not use the material as an entity that operates by capitalist principles, otherwise commercial use is allowed. If you want the exact legalities, read below. If you would like to license the material under different terms, please get in touch.">
-  <meta itemprop="wordCount" content="346">
-  <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
+	<meta itemprop="name" content="Anti-Capitalist Software">
+	<meta itemprop="description" content="You are free to: Share — Copy and redistribute the material in any medium or format for any purpose, even commercially. Adapt — Remix, transform, and build upon the material for any purpose, even commercially. Mlem Records cannot revoke these freedoms as long as you follow the license terms. Under the following terms: NonCapitalist — You may not use the material as an entity that operates by capitalist principles, otherwise commercial use is allowed. If you want the exact legalities, read below. If you would like to license the material under different terms, please get in touch.">
+	<meta itemprop="wordCount" content="346">
+	<meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -58,6 +58,11 @@ If you want the exact legalities, read below. If you would like to license the m
     --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   body {
@@ -280,6 +285,14 @@ If you want the exact legalities, read below. If you would like to license the m
   .release img {
     display: block;
     margin: auto;
+  }
+
+  .release.playing img {
+    border-radius: 50%;
+    transform: rotate(calc(360deg * 100));
+
+    transition: transform calc(60s * 100);
+    transition-timing-function: ease;
   }
 
   .events-container {

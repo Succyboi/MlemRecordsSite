@@ -11,13 +11,13 @@
   <title>Dino’s in Mijn Hoofd | Mlem Records</title>
 <meta name="title" content="Dino’s in Mijn Hoofd" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,enno,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/mlem011/">
-  <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="Dino’s in Mijn Hoofd">
-  <meta property="og:description" content="→ Bandcamp
+	<meta property="og:site_name" content="Mlem Records">
+	<meta property="og:title" content="Dino’s in Mijn Hoofd">
+	<meta property="og:description" content="→ Bandcamp
 → Youtube
 → Spotify
 → Apple
@@ -25,17 +25,17 @@
 → Archive
 ⤓ Download Thanks for downloading! If you liked this EP please consider donating. That way KINDERPUNK can make more! NL
 “Dino’s in Mijn Hoofd” is een autobiografische EP over de jeugdervaringen van KINDERPUNK. Op speelse wijze worden de lusten, maar vooral de lasten, van het opgroeien bezongen. Precaire thema’s als depressie, angst en het gevoel nergens bij te horen blijven niet onaangeraakt, maar worden benaderd met een flinke dosis humor.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-    <meta property="og:image" content="https://mlemrecords.com/mlem011/cover.jpg">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+		<meta property="og:image" content="https://mlemrecords.com/mlem011/cover.jpg">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://mlemrecords.com/mlem011/cover.jpg">
-  <meta name="twitter:title" content="Dino’s in Mijn Hoofd">
-  <meta name="twitter:description" content="→ Bandcamp
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://mlemrecords.com/mlem011/cover.jpg">
+	<meta name="twitter:title" content="Dino’s in Mijn Hoofd">
+	<meta name="twitter:description" content="→ Bandcamp
 → Youtube
 → Spotify
 → Apple
@@ -47,8 +47,8 @@
 
 
 
-  <meta itemprop="name" content="Dino’s in Mijn Hoofd">
-  <meta itemprop="description" content="→ Bandcamp
+	<meta itemprop="name" content="Dino’s in Mijn Hoofd">
+	<meta itemprop="description" content="→ Bandcamp
 → Youtube
 → Spotify
 → Apple
@@ -56,11 +56,11 @@
 → Archive
 ⤓ Download Thanks for downloading! If you liked this EP please consider donating. That way KINDERPUNK can make more! NL
 “Dino’s in Mijn Hoofd” is een autobiografische EP over de jeugdervaringen van KINDERPUNK. Op speelse wijze worden de lusten, maar vooral de lasten, van het opgroeien bezongen. Precaire thema’s als depressie, angst en het gevoel nergens bij te horen blijven niet onaangeraakt, maar worden benaderd met een flinke dosis humor.">
-  <meta itemprop="datePublished" content="2025-09-12T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-09-12T00:00:00+00:00">
-  <meta itemprop="wordCount" content="292">
-  <meta itemprop="image" content="https://mlemrecords.com/mlem011/cover.jpg">
-  <meta itemprop="keywords" content="KINDERPUNK,Punk,Music">
+	<meta itemprop="datePublished" content="2025-09-12T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2025-09-12T00:00:00+00:00">
+	<meta itemprop="wordCount" content="292">
+	<meta itemprop="image" content="https://mlemrecords.com/mlem011/cover.jpg">
+	<meta itemprop="keywords" content="KINDERPUNK,Punk,Music">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/mlem011/index.xml" title="Mlem Records" />
@@ -72,6 +72,11 @@
     --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   body {
@@ -294,6 +299,14 @@
   .release img {
     display: block;
     margin: auto;
+  }
+
+  .release.playing img {
+    border-radius: 50%;
+    transform: rotate(calc(360deg * 100));
+
+    transition: transform calc(60s * 100);
+    transition-timing-function: ease;
   }
 
   .events-container {

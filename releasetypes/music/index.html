@@ -11,33 +11,33 @@
   <title>Music | Mlem Records</title>
 <meta name="title" content="Music" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,enno,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/releasetypes/music/">
-  <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="Music">
-  <meta property="og:description" content="Mlem Records is a netlabel in cyberspace.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-    <meta property="og:image" content="https://mlemrecords.com/images/share.png">
+	<meta property="og:site_name" content="Mlem Records">
+	<meta property="og:title" content="Music">
+	<meta property="og:description" content="Mlem Records is a netlabel in cyberspace.">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+		<meta property="og:image" content="https://mlemrecords.com/images/share.png">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
-  <meta name="twitter:title" content="Music">
-  <meta name="twitter:description" content="Mlem Records is a netlabel in cyberspace.">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
+	<meta name="twitter:title" content="Music">
+	<meta name="twitter:description" content="Mlem Records is a netlabel in cyberspace.">
 
 
 
 
-  <meta itemprop="name" content="Music">
-  <meta itemprop="description" content="Mlem Records is a netlabel in cyberspace.">
-  <meta itemprop="datePublished" content="2026-05-27T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-05-27T00:00:00+00:00">
-  <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
+	<meta itemprop="name" content="Music">
+	<meta itemprop="description" content="Mlem Records is a netlabel in cyberspace.">
+	<meta itemprop="datePublished" content="2026-06-24T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2026-06-24T00:00:00+00:00">
+	<meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/releasetypes/music/index.xml" title="Mlem Records" />
@@ -49,6 +49,11 @@
     --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   body {
@@ -271,6 +276,14 @@
   .release img {
     display: block;
     margin: auto;
+  }
+
+  .release.playing img {
+    border-radius: 50%;
+    transform: rotate(calc(360deg * 100));
+
+    transition: transform calc(60s * 100);
+    transition-timing-function: ease;
   }
 
   .events-container {
@@ -563,7 +576,134 @@
     
     
 
-    <div class="release">
+    <div id="mlem020" class="release">
+        <small class="release-header">
+            mlem020<i> EP</i>
+        </small>
+        
+            <a href="https://mlemrecords.com/mlem020/">
+                
+                <img src="/mlem020/cover_hu_cbbc0c7a055b9bc8.png" loading="lazy" alt="The cover for Groeipijntjes.">
+                
+            </a>
+        
+        <h2 class="release-title">
+            <a href="https://mlemrecords.com/mlem020/">Groeipijntjes</a>
+        </h2>by 
+     <a href="https://mlemrecords.com/artists/enno/">ENNO</a>
+<br>
+        <span id="mlem020-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "\/downloads\/[mlem020] ENNO - Groeipijntjes";
+            var audioSrcs = [
+                "1. Egmond chalet 3", 
+                "2. constellaties", 
+                "3. in duigen interludium", 
+                "4. stil staan", 
+                "5. iets over missen \u0026 thuiskomen", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem020-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem020-play');
+            var releaseParent = document.getElementById('mlem020');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
+                } else {
+                    playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
+                }
+
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem020-play" class="audio-preview-button"></a>
+    </span>
+    
+</span> 
+        
+            <a href="https://mlemrecords.com/mlem020/">More...</a>
+        
+    </div>
+
+    
+    
+
+    <div id="mlem019" class="release">
         <small class="release-header">
             mlem019<i> EP</i>
         </small>
@@ -602,6 +742,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem019-play');
+            var releaseParent = document.getElementById('mlem019');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -647,9 +788,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -684,7 +834,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem018" class="release">
         <small class="release-header">
             mlem018<i> EP</i>
         </small>
@@ -722,6 +872,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem018-play');
+            var releaseParent = document.getElementById('mlem018');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -767,9 +918,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -804,7 +964,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem017" class="release">
         <small class="release-header">
             mlem017<i> Album</i>
         </small>
@@ -844,6 +1004,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem017-play');
+            var releaseParent = document.getElementById('mlem017');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -889,9 +1050,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -926,7 +1096,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem016" class="release">
         <small class="release-header">
             mlem016<i> EP</i>
         </small>
@@ -964,6 +1134,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem016-play');
+            var releaseParent = document.getElementById('mlem016');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1009,9 +1180,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1046,7 +1226,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem015" class="release">
         <small class="release-header">
             mlem015<i> EP</i>
         </small>
@@ -1080,6 +1260,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem015-play');
+            var releaseParent = document.getElementById('mlem015');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1125,9 +1306,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1162,7 +1352,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem014" class="release">
         <small class="release-header">
             mlem014<i> Compilation</i>
         </small>
@@ -1206,6 +1396,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem014-play');
+            var releaseParent = document.getElementById('mlem014');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1251,9 +1442,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1288,7 +1488,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem013" class="release">
         <small class="release-header">
             mlem013<i> EP</i>
         </small>
@@ -1325,6 +1525,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem013-play');
+            var releaseParent = document.getElementById('mlem013');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1370,9 +1571,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1407,7 +1617,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem012" class="release">
         <small class="release-header">
             mlem012<i> Album</i>
         </small>
@@ -1448,6 +1658,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem012-play');
+            var releaseParent = document.getElementById('mlem012');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1493,9 +1704,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1530,7 +1750,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem011" class="release">
         <small class="release-header">
             mlem011<i> EP</i>
         </small>
@@ -1565,6 +1785,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem011-play');
+            var releaseParent = document.getElementById('mlem011');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1610,9 +1831,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1647,7 +1877,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem010" class="release">
         <small class="release-header">
             mlem010<i> Compilation</i>
         </small>
@@ -1691,6 +1921,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem010-play');
+            var releaseParent = document.getElementById('mlem010');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1736,9 +1967,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1773,7 +2013,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem009" class="release">
         <small class="release-header">
             mlem009<i> Single</i>
         </small>
@@ -1804,6 +2044,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem009-play');
+            var releaseParent = document.getElementById('mlem009');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1849,9 +2090,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1886,7 +2136,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem008" class="release">
         <small class="release-header">
             mlem008<i> Single</i>
         </small>
@@ -1918,6 +2168,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem008-play');
+            var releaseParent = document.getElementById('mlem008');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1963,9 +2214,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2000,7 +2260,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem007" class="release">
         <small class="release-header">
             mlem007<i> Single</i>
         </small>
@@ -2031,6 +2291,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem007-play');
+            var releaseParent = document.getElementById('mlem007');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2076,9 +2337,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2113,7 +2383,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem006" class="release">
         <small class="release-header">
             mlem006<i> EP</i>
         </small>
@@ -2151,6 +2421,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem006-play');
+            var releaseParent = document.getElementById('mlem006');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2196,9 +2467,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2233,7 +2513,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem005" class="release">
         <small class="release-header">
             mlem005<i> Album</i>
         </small>
@@ -2279,6 +2559,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem005-play');
+            var releaseParent = document.getElementById('mlem005');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2324,9 +2605,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2361,7 +2651,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem004" class="release">
         <small class="release-header">
             mlem004<i> Album</i>
         </small>
@@ -2398,6 +2688,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem004-play');
+            var releaseParent = document.getElementById('mlem004');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2443,9 +2734,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2480,7 +2780,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem003" class="release">
         <small class="release-header">
             mlem003<i> Album</i>
         </small>
@@ -2527,6 +2827,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem003-play');
+            var releaseParent = document.getElementById('mlem003');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2572,9 +2873,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2609,7 +2919,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem002" class="release">
         <small class="release-header">
             mlem002<i> EP</i>
         </small>
@@ -2641,6 +2951,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem002-play');
+            var releaseParent = document.getElementById('mlem002');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2686,9 +2997,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2723,7 +3043,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem001" class="release">
         <small class="release-header">
             mlem001<i> EP</i>
         </small>
@@ -2759,6 +3079,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem001-play');
+            var releaseParent = document.getElementById('mlem001');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2804,9 +3125,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2841,7 +3171,7 @@
     
     
 
-    <div class="release">
+    <div id="mlem000" class="release">
         <small class="release-header">
             mlem000<i> EP</i>
         </small>
@@ -2876,6 +3206,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem000-play');
+            var releaseParent = document.getElementById('mlem000');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2921,9 +3252,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2960,7 +3300,7 @@
 
 <footer>
   <p>
-    Last updated May 27, 2026.
+    Last updated Jul 2, 2026.
   </p>
 </footer>
 

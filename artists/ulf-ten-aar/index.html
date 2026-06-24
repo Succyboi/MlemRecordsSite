@@ -11,27 +11,27 @@
   <title>Ulf Ten Aar | Mlem Records</title>
 <meta name="title" content="Ulf Ten Aar" />
 <meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,enno,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/artists/ulf-ten-aar/">
-  <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="Ulf Ten Aar">
-  <meta property="og:description" content="NL
+	<meta property="og:site_name" content="Mlem Records">
+	<meta property="og:title" content="Ulf Ten Aar">
+	<meta property="og:description" content="NL
 Ulf Ten Aar is het muziekproject van Robin van Ulft. Als cynische obersvator beweegt die zich door de dagen en bespaart hun medemensen van ondraagelijk klaagzang door de onuitputtelijke gedachten in muziek te verwerken.
 EN
 Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they bide their time and save their fellow human beings unbearable complaintive wailing by weaving these bottomless thoughts into their music.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-    <meta property="og:image" content="https://mlemrecords.com/images/share.png">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+		<meta property="og:image" content="https://mlemrecords.com/images/share.png">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
-  <meta name="twitter:title" content="Ulf Ten Aar">
-  <meta name="twitter:description" content="NL
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
+	<meta name="twitter:title" content="Ulf Ten Aar">
+	<meta name="twitter:description" content="NL
 Ulf Ten Aar is het muziekproject van Robin van Ulft. Als cynische obersvator beweegt die zich door de dagen en bespaart hun medemensen van ondraagelijk klaagzang door de onuitputtelijke gedachten in muziek te verwerken.
 EN
 Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they bide their time and save their fellow human beings unbearable complaintive wailing by weaving these bottomless thoughts into their music.">
@@ -39,15 +39,15 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
 
 
 
-  <meta itemprop="name" content="Ulf Ten Aar">
-  <meta itemprop="description" content="NL
+	<meta itemprop="name" content="Ulf Ten Aar">
+	<meta itemprop="description" content="NL
 Ulf Ten Aar is het muziekproject van Robin van Ulft. Als cynische obersvator beweegt die zich door de dagen en bespaart hun medemensen van ondraagelijk klaagzang door de onuitputtelijke gedachten in muziek te verwerken.
 EN
 Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they bide their time and save their fellow human beings unbearable complaintive wailing by weaving these bottomless thoughts into their music.">
-  <meta itemprop="datePublished" content="2026-04-09T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-04-09T00:00:00+00:00">
-  <meta itemprop="wordCount" content="72">
-  <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
+	<meta itemprop="datePublished" content="2026-04-09T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2026-04-09T00:00:00+00:00">
+	<meta itemprop="wordCount" content="72">
+	<meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/artists/ulf-ten-aar/index.xml" title="Mlem Records" />
@@ -59,6 +59,11 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
     --semiLinkColor: #8E8E93;
     --backgroundColor: #F8F7F7;
     --semiBackgroundColor: #F8F7F7;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   body {
@@ -281,6 +286,14 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
   .release img {
     display: block;
     margin: auto;
+  }
+
+  .release.playing img {
+    border-radius: 50%;
+    transform: rotate(calc(360deg * 100));
+
+    transition: transform calc(60s * 100);
+    transition-timing-function: ease;
   }
 
   .events-container {
@@ -579,7 +592,7 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
     
     
 
-    <div class="release">
+    <div id="mlem017" class="release">
         <small class="release-header">
             mlem017<i> Album</i>
         </small>
@@ -619,6 +632,7 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem017-play');
+            var releaseParent = document.getElementById('mlem017');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -664,9 +678,18 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -701,7 +724,7 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
     
     
 
-    <div class="release">
+    <div id="mlem005" class="release">
         <small class="release-header">
             mlem005<i> Album</i>
         </small>
@@ -747,6 +770,7 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem005-play');
+            var releaseParent = document.getElementById('mlem005');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -792,9 +816,18 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -831,7 +864,7 @@ Ulf Ten Aar is the musical project by Robin van Ulft. As a cynical observer they
 
 <footer>
   <p>
-    Last updated May 27, 2026.
+    Last updated Jul 2, 2026.
   </p>
 </footer>
 
