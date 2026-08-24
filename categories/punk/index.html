@@ -42,253 +42,603 @@
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/categories/punk/index.xml" title="Mlem Records" />
   <style>
-  :root {
-    --textColor: #2b2b26;
-    --semiTextColor: #2b2b26;
-    --linkColor: #8E8E93;
-    --semiLinkColor: #8E8E93;
-    --backgroundColor: #F8F7F7;
-    --semiBackgroundColor: #F8F7F7;
-  }
+:root {
+  --noiseSeed: 0.1337deg;
 
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+  --dropShadowSize: 0.5em;
 
-  body {
-    font-family: Inter, sans-serif;
-    font-size: 1.5em;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: var(--backgroundColor);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: var(--textColor);
-  }
+  --textColor: #2b2b26;
+  --semiTextColor: #2b2b26;
+  --linkColor: #8E8E93;
+  --semiLinkColor: #8E8E93;
+  --backgroundColor: #F8F7F7;
+  --semiBackgroundColor: #F8F7F7;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: var(--semiTextColor);
-  }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-  h1 > em,
-  h2 > em,
-  h3 > em,
-  h4 > em,
-  h5 > em,
-  h6 > em {
-    font-weight: normal;
-  }
+body {
+  font-family: Inter, sans-serif;
+  font-size: 1.5em;
+  margin: auto;
+  padding: 20px;
+  max-width: 720px;
+  text-align: left;
+  background-color: var(--backgroundColor);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: var(--textColor);
+}
 
-  h1 > a,
-  h2 > a,
-  h3 > a,
-  h4 > a,
-  h5 > a,
-  h6 > a {
-    color: var(--semiTextColor);
-    text-decoration: none;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  color: var(--semiTextColor);
+}
 
-  a {
-    color: var(--linkColor);
-  }
+h1 > em,
+h2 > em,
+h3 > em,
+h4 > em,
+h5 > em,
+h6 > em {
+  font-weight: normal;
+}
 
-  .title {
-    text-decoration: none;
-  }
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+  color: var(--semiTextColor);
+  text-decoration: none;
+}
 
-  .title span {
-    font-weight: 400;
-  }
+a {
+  color: var(--linkColor);
+}
 
-  nav a {
-    margin-right: 1ch;
-  }
+.title {
+  text-decoration: none;
+}
 
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
+.title span {
+  font-weight: 400;
+}
 
-  input {
-    font-size: 16px;
-  }
+nav a {
+  margin-right: 1ch;
+}
 
-  content {
-    line-height: 1.6;
-  }
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
 
-  table {
-    width: 100%;
-  }
+input {
+  font-size: 16px;
+}
 
-  img {
-    max-width: 100%;
-  }
+content {
+  line-height: 1.6;
+}
 
-  p {
-    margin: 1em 0;
-  }
+table {
+  width: 100%;
+}
 
-  p > em img {
-    display: block;
-    max-width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+img {
+  max-width: 100%;
+}
 
-  code {
-    padding: 2px;
-    background-color: var(--semiBackgroundColor);
-  }
+p {
+  margin: 1em 0;
+}
 
-  pre code {
-    color: var(--semiTextColor);
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-    overflow-x: auto;
-  }
+p > em img {
+  display: block;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  hr {
-    color: var(--textColor);
-    background-color: var(--textColor);
-    border-top: 1px solid var(--textColor);
-  }
+code {
+  padding: 2px;
+  background-color: var(--semiBackgroundColor);
+}
 
-  footer {
-    text-align: center;
-  }
+pre code {
+  color: var(--semiTextColor);
+  padding: 20px;
+  white-space: pre-wrap;
+  font-size: 14px;
+  overflow-x: auto;
+}
 
-  div.highlight pre {
-    background-color: initial;
-    color: initial;
-  }
+hr {
+  color: var(--textColor);
+  background-color: var(--textColor);
+  border-top: 1px solid var(--textColor);
+}
 
-  div.highlight code {
-    background-color: unset;
-    color: unset;
-  }
+footer {
+  text-align: center;
+}
 
-  blockquote {
-    border-left: 2px solid var(--semiLinkColor);
-    color: var(--semiTextColor);
-    padding-left: 20px;
-    font-style: italic;
-  }
+div.highlight pre {
+  background-color: initial;
+  color: initial;
+}
 
-  footer {
-    padding: 25px;
-    justify-content: center;
-  }
+div.highlight code {
+  background-color: unset;
+  color: unset;
+}
 
-  iframe {
-    border: 0px;
-  }
+blockquote {
+  border-left: 2px solid var(--semiLinkColor);
+  color: var(--semiTextColor);
+  padding-left: 20px;
+  font-style: italic;
+}
 
-  .helptext {
-    color: var(--semiTextColor);
-    font-size: small;
-  }
+footer {
+  padding: 25px;
+  justify-content: center;
+}
 
-  .errorlist {
-    color: var(--linkColor);
-    font-size: small;
-  }
+iframe {
+  border: 0px;
+}
 
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1ch;
+}
 
-  ul.blog-posts li {
-    display: flex;
-  }
+.helptext {
+  color: var(--semiTextColor);
+  font-size: small;
+}
 
-  ul.blog-posts li .time {
-    min-width: 11ch;
-  }
+.errorlist {
+  color: var(--linkColor);
+  font-size: small;
+}
 
-  ul.blog-posts li a {
-    margin-right: 1ch;
-  }
+ 
+ul.blog-posts {
+  list-style-type: none;
+  padding: unset;
+}
 
-  .inline {
-    height: 1em;
-    vertical-align: baseline;
-  }
+ul.blog-posts li {
+  display: flex;
+}
 
+ul.blog-posts li .time {
+  min-width: 11ch;
+}
+
+ul.blog-posts li a {
+  margin-right: 1ch;
+}
+
+.inline {
+  height: 1em;
+  vertical-align: baseline;
+}
+
+.release-container {
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fill, 
+     minmax(clamp(100%/3 + 0.1%,(50% - 100%)*1000,100%/2 + 0.1%),1fr));
+  justify-items: right;
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.release {
+  margin: auto;
+  justify-self: stretch;
+  max-width: 100%;
+}
+
+.release.big {
+  max-width: 100%;
+}
+
+.release-single {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 4em;
+  margin-right: 4em;
+}
+
+.release-header {
+  text-transform: lowercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: inherit;
+  display: block;
+}
+
+.release-title {
+  margin: 0;
+}
+
+.release-title-small {
+  margin: 0;
+  font-size: 1.25em;
+}
+
+.release-title-smaller {
+  margin: 0;
+  font-size: 1em;
+}
+
+.release-single img {
+  display: block;
+  margin: auto;
+}
+
+.release.playing img.release-cd-cover {
+  border-radius: 50%;
+  transform: rotate(calc(360deg * 100));
+
+  transition: transform calc(60s * 100);
+  transition-timing-function: ease;
+}
+
+.release-cd {
+  width: 100%;
+  height: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.release-cd-back {
+  position: fixed;
+  top: inherit;
+  left: 0;
+  width: 102%;
+  max-width: 1000%;
+  aspect-ratio: 1 / 0.92;
+  object-fit: fill;
+  
+  pointer-events: none;
+  z-index: -1;
+}
+
+.release-cd-front {
+  position: fixed;
+  left: 0;
+  width: 102%;
+  max-width: 1000%;
+  aspect-ratio: 1 / 0.92;
+  object-fit: fill;
+  opacity: 25%;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.release-cd-cover {
+  display: block;
+  padding-top: 2%;
+  padding-left: 10%;
+  width: 90%;
+  z-index: 0;
+}
+
+.shadow {
+  filter: drop-shadow(0px 0px calc(var(--dropShadowSize) * 0.5) var(--textColor));
+}
+
+.halfshadow {
+  filter: drop-shadow(0px 0px calc(var(--dropShadowSize) * 0.25) var(--textColor));
+}
+
+.release-cd-back.shadow {
+  filter: drop-shadow(0px 0px calc(var(--dropShadowSize) * 0.5) var(--textColor));
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.events-archive-container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.catalogue-container {
+  font-size: smaller;
+  list-style-type: none;
+}
+
+.catalogue-item {
+  display: flex;
+  gap: 1ch;
+}
+
+.catalogue-item-no {
+  min-width: 7ch;
+}
+
+.catalogue-item-name {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.catalogue-item-artist {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.audio {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 1em;
+  background-color: var(--backgroundColor);
+  z-index: 1;
+}
+
+.audio-controls {
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1ch;
+}
+
+.audio-button {
+  width: 2ch;
+  min-width: 2ch;
+  max-width: 2ch;
+  padding: 0;
+  font-size: 1.5em;
+  color: var(--linkColor);
+  background: none;
+
+  border: none;
+  cursor: pointer;
+}
+
+.audio-title {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-grow: 1;
+  font-style: italic;
+}
+
+.audio-time {
+  min-width: 4.5ch;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.audio-position {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0px;
+  background: none;
+  padding: 1em;
+  padding-top: 2.5em;
+  margin: -1em;
+  margin-bottom: 0em;
+}
+
+.audio-position::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+}
+
+.audio-position::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+}
+
+ 
+.audio-position::-webkit-slider-runnable-track {
+  height: 1px;
+  -webkit-appearance: none;
+  background-color: var(--linkColor);
+  margin-top: -1px;
+}
+
+ 
+.audio-position::-moz-range-progress {
+  background-color: var(--linkColor);
+}
+.audio-position::-moz-range-track {  
+  background-color: var(--textColor);
+}
+ 
+.audio-position::-ms-fill-lower {
+  background-color: var(--linkColor);
+}
+.audio-position::-ms-fill-upper {  
+  background-color: var(--textColor);
+}
+
+.audio-preview {
+  position: relative;
+  padding: 0;
+  width: 9ch;
+  margin-right: 1ch;
+}
+
+.audio-preview-controls {
+  display: inline-block;
+  background-color: var(--textColor);
+  min-width: 7.5ch;
+}
+
+.audio-preview-button {
+  user-select: none;
+  padding: 0 0.5ch;
+  font-size: 1em;
+  color: var(--backgroundColor);
+  background: none;
+
+  border: none;
+  cursor: pointer;
+}
+
+.shop-button-container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--textColor);
+}
+
+.button-text {
+  padding: 0 0.5ch;
+  color: var(--backgroundColor);
+  background: none;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.audio-preview-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--backgroundColor);
+}
+
+.radio-container {
+  display: grid;
+  grid-template-columns: calc(40% - 10px) calc(60% - 10px);
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+  align-items: end;
+}
+
+.ransom_text {
+  pointer-events: none;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  margin-right: 0em;
+}
+
+.ransom_letter {
+  display: inline-block;
+
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+
+  height: 2em;
+}
+
+@media only screen and (max-width: 768px) {
   .release-container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
   }
 
+  .release {
+    grid-column-end: span 1;
+  }
+
+  .release.big {
+    grid-column-end: span 1;
+  }
+
   .release-single {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 4em;
-    margin-right: 4em;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .release-header {
-    text-transform: lowercase;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: inherit;
+  .catalogue-item-artist {
+    display: none;
+  }
+
+  .release-cd {
+    width: 100%;
+    height: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .release-cd-back {
+    position: fixed;
+    top: inherit;
+    left: 0;
+    width: 102%;
+    max-width: 1000%;
+    aspect-ratio: 1 / 0.92;
+    object-fit: fill;
+    
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .release-cd-front {
+    position: fixed;
+    left: 0;
+    width: 102%;
+    max-width: 1000%;
+    aspect-ratio: 1 / 0.92;
+    object-fit: fill;
+    opacity: 25%;
+
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .release-cd-cover {
     display: block;
-  }
-
-  .release-title {
-    margin: 0;
-  }
-
-  .release-title-small {
-    margin: 0;
-    font-size: 1.25em;
-  }
-
-  .release-title-smaller {
-    margin: 0;
-    font-size: 1em;
-  }
-
-  .release-single img {
-    display: block;
-    margin: auto;
-  }
-
-  .release img {
-    display: block;
-    margin: auto;
-  }
-
-  .release.playing img {
-    border-radius: 50%;
-    transform: rotate(calc(360deg * 100));
-
-    transition: transform calc(60s * 100);
-    transition-timing-function: ease;
+    padding-top: 2%;
+    padding-left: 10%;
+    width: 90%;
+    z-index: 0;
   }
 
   .events-container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
@@ -296,224 +646,1428 @@
 
   .events-archive-container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
-    gap: 1em;
-  }
-
-  .catalogue-container {
-    font-size: smaller;
-    list-style-type: none;
-  }
-
-  .catalogue-item {
-    display: flex;
-    gap: 1ch;
-  }
-  
-  .catalogue-item-no {
-    min-width: 7ch;
-  }
-
-  .catalogue-item-name {
-    display: block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    flex-grow: 1;
-  }
-
-  .catalogue-item-artist {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .audio {
-    position: sticky;
-    top: 0;
-    text-align: center;
-    padding-top: 0;
-    padding-bottom: 1em;
-    background-color: var(--backgroundColor);
-  }
-
-  .audio-controls {
-    height: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 1ch;
-  }
-
-  .audio-button {
-    width: 2ch;
-    min-width: 2ch;
-    max-width: 2ch;
-    padding: 0;
-    font-size: 1.5em;
-    color: var(--linkColor);
-    background: none;
-
-    border: none;
-    cursor: pointer;
-  }
-
-  .audio-title {
-    display: block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    flex-grow: 1;
-    font-style: italic;
-  }
-
-  .audio-time {
-    min-width: 4.5ch;
-    text-align: left;
-    white-space: nowrap;
-  }
-
-  .audio-position {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 0px;
-    background: none;
-    padding: 1em;
-    padding-top: 2.5em;
-    margin: -1em;
-    margin-bottom: 0em;
-  }
-
-  .audio-position::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    opacity: 0;
-  }
-
-  .audio-position::-moz-range-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    opacity: 0;
-  }
-
-   
-  .audio-position::-webkit-slider-runnable-track {
-    height: 1px;
-    -webkit-appearance: none;
-    background-color: var(--linkColor);
-    margin-top: -1px;
-  }
-
-   
-  .audio-position::-moz-range-progress {
-    background-color: var(--linkColor);
-  }
-  .audio-position::-moz-range-track {  
-    background-color: var(--textColor);
-  }
-   
-  .audio-position::-ms-fill-lower {
-    background-color: var(--linkColor);
-  }
-  .audio-position::-ms-fill-upper {  
-    background-color: var(--textColor);
-  }
-
-  .audio-preview {
-    position: relative;
-    padding: 0;
-    width: 9ch;
-    margin-right: 1ch;
-  }
-
-  .audio-preview-controls {
-    display: inline-block;
-    background-color: var(--textColor);
-    min-width: 7.5ch;
-  }
-
-  .audio-preview-button {
-    user-select: none;
-    padding: 0 0.5ch;
-    font-size: 1em;
-    color: var(--backgroundColor);
-    background: none;
-
-    border: none;
-    cursor: pointer;
-  }
-
-  .audio-preview-title {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: var(--backgroundColor);
+    gap: 3em;
   }
 
   .radio-container {
     display: grid;
-    grid-template-columns: calc(40% - 10px) calc(60% - 10px);
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
     align-items: end;
   }
+}
 
-  @media only screen and (max-width: 768px) {
-    .release-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 1em;
-    }
-
-    .release-single {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .catalogue-item-artist {
-      display: none;
-    }
-
-    .events-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 1em;
-    }
-
-    .events-archive-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 3em;
-    }
-
-    .radio-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 1em;
-      align-items: end;
-    }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --textColor: #C6C6C8;
+    --semiTextColor: #C6C6C8;
+    --linkColor: #636366;
+    --semiLinkColor: #636366;
+    --backgroundColor: #1C1C1E;
+    --semiBackgroundColor: #1C1C1E;
   }
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --textColor: #C6C6C8;
-      --semiTextColor: #C6C6C8;
-      --linkColor: #636366;
-      --semiLinkColor: #636366;
-      --backgroundColor: #1C1C1E;
-      --semiBackgroundColor: #1C1C1E;
+ 
+
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.989314047641787deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
     }
-  }
+  
+    
+
+    h2:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.01610053687414229deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.014491015480690688deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.666692441895102deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.15275909520518735deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.359275860916256deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.08239693612888709deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.47334615392099205deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.6239021297308746deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.9919777257070774deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.11617457311528862deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.17598648721926138deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.35432078022719576deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.11721361889027669deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.0276105825650268deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.3477232782573641deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.9939259731382095deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.912190551635769deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.25604166890123065deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.11727146005820344deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.46278722933797284deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.44115028400282996deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.15074211199168264deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.046366568591249845deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.38104872861184536deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.10712159309964227deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.334427200271073deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.5262011658136604deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.6400208663972544deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.12936460804115507deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.1450637484775927deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.8051764642831376deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.3750471232986045deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.7506342988171323deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.25956786906284207deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.7964030931117758deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.6114535329613845deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.27959224421803547deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.6185783836593302deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.5632284004139965deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.8573274868076549deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.45655945351372934deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.18083653806956926deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.8194977431660925deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.7786567067985525deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.5677807119409745deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.983475355930594deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.8372177540544925deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.3640697747193439deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.2865728420272958deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.03647531226593663deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.41620201714614175deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.3312345741698166deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.8847339968487359deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.9024789891170827deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.11768005850843741deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.08817076698440493deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.5802172705707166deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.7082151894959174deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.27969246977167694deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.0745976375497185deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.7929310139479234deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.9736711401369406deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.17975597256376488deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.9285679834881386deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.6934742533329497deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.33226699035920026deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.16185784501923453deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.4566730608449759deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.4217365854778072deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.48576965679857453deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.05052376281772122deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.6562280147199141deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.497762157451497deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.45569968757991125deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.1613640943886877deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.7326077945858558deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.03458927504769305deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.8758320007468198deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.37397817435709746deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.24109269627459307deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.02199688390988283deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.4572961538330273deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.631311613275117deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.43405117778894875deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.03492768645782938deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.4353190545271186deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.5719971025968589deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.2610966971013685deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.6039717960819077deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.2703854022869003deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.6983515202361764deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.21401368568986248deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.49670493135336646deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.6009195018658601deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.44283877553827483deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.9778223860325479deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.7670008169349278deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.8425569780209714deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.6187187181135744deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.5769477003069631deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.15778254486226684deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.8528016283103734deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.49757917921236666deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.1463199077423829deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.9462699572127223deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.6115848853945861deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.7726825705161748deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.7003262570673604deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.5151619504095152deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.9184107071487748deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.27699515665317126deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.8452312582689512deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.5761860499429737deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.3508332846169515deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.3090196210578039deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.9784279803423742deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.5484277107747553deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.13670363041597508deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.9213382322388005deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.31777721460472014deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.40260890681572803deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.2988037272560901deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.29445845280787364deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.9166393971584589deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.6285708991742284deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.5822971915560107deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.8325858071233395deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.2158540106319106deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.5976688403486967deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.06756664277069736deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.4094565283450306deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.8676874327447384deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.35847186713868756deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.8357175023226258deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.16805391920695287deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.6624030108907326deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.8682931963596816deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.20795962993995246deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.5459083186334565deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.9726044642968747deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.5492755233728779deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.23809097666288484deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.9507492359681118deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.23126034003190707deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.057412091640453126deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.30045396954337156deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.42215080108955666deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.21636016414787515deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.9954918274005852deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.94148623064145deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.785283866134235deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.9124255303295215deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.8031775083929049deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.04894086740791438deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.4796095461160768deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.846472440125756deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.7888217411694155deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.4649983742865507deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.07023479783335175deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.0747959429582095deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.24210965215689817deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.9280173406226057deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.1357471743921863deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.9660512635259082deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.7764023936557165deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.3775594019093125deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.6892206794150875deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.45063488495044784deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.48683796836096654deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.526453090665296deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.518654682354538deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.7382942519175703deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.7361661010070526deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.2096816255841113deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.1664620620012177deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.9214364515663694deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.9090591325253348deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.36402806365610596deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.7054053741319316deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.2853784357624253deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.8248336335512063deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.09495299027376965deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.9927272354940808deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.5162650121871245deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.30573093003159774deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.7520626305462691deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.842683117643449deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.7928592506927107deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.22026599961146678deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.6239051777095688deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.8533681288103804deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.9343727221601151deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.7064134627963644deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.8229223431971464deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.5170507067938442deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.36805856686450944deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.478887792311487deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.8815554732270086deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.18733774423384153deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.16702725611515953deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.2461091006753707deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.09662202311258508deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.8565200730753004deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.3083716661714842deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.410031420677249deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.4183825839235109deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.9746943179736187deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
 
 </style>
 
@@ -527,6 +2081,11 @@
       specific_release_to_redirect = url_params.get("release");
       window.location.replace(`/${specific_release_to_redirect}`);
     }
+  </script>
+
+  
+  <script type="text/javascript">
+    document.documentElement.style.setProperty("--noiseSeed", `${Math.random()}deg`);
   </script>
 
   
@@ -553,7 +2112,10 @@
 </head>
 
 <body id="body">
-  <header><a href="/" class="title">
+  <header>
+<a href="/" class="title">
+
+
   <h1 id="header">
     <span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span>
   </h1>
@@ -562,8 +2124,8 @@
     <a href="/">Releases</a>
 
 
-<a href="https://mlemrecords.bandcamp.com/merch">Merch</a>
 
+    <a href="/shop/">Shop</a>
 
     <a href="/events/">Events</a>
 
@@ -578,7 +2140,17 @@
   <main>
 
 <content>
-  <h1>Punk Releases</h1>
+  
+  <h1>
+
+
+    
+
+
+
+<span class="ransom_text halfshadow">
+    <img class="ransom_letter fulltilt" style="z-index: 6.19455994831598;" src="/resources/images/ransom_letters/p/0001.png"><img class="ransom_letter fulltilt" style="z-index: 1.9771492424254877;" src="/resources/images/ransom_letters/u/0003.png"><img class="ransom_letter fulltilt" style="z-index: 5.0342816398612245;" src="/resources/images/ransom_letters/n/0002.png"><img class="ransom_letter fulltilt" style="z-index: 2.06074435250262;" src="/resources/images/ransom_letters/k/0001.png">
+</span><span style="vertical-align: center;">Releases</span></h1>
 
   
 
@@ -611,7 +2183,7 @@
 
 <footer>
 
-<a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated Jun 24, 2026. (1784671589)</small></a></footer>
+<a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated Jun 24, 2026. (1787593543)</small></a></footer>
 
 
   </main>

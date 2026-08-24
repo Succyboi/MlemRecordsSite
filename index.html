@@ -44,253 +44,603 @@
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/index.xml" title="Mlem Records" />
   <style>
-  :root {
-    --textColor: #2b2b26;
-    --semiTextColor: #2b2b26;
-    --linkColor: #8E8E93;
-    --semiLinkColor: #8E8E93;
-    --backgroundColor: #F8F7F7;
-    --semiBackgroundColor: #F8F7F7;
-  }
+:root {
+  --noiseSeed: 0.1337deg;
 
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+  --dropShadowSize: 0.5em;
 
-  body {
-    font-family: Inter, sans-serif;
-    font-size: 1.5em;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: var(--backgroundColor);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: var(--textColor);
-  }
+  --textColor: #2b2b26;
+  --semiTextColor: #2b2b26;
+  --linkColor: #8E8E93;
+  --semiLinkColor: #8E8E93;
+  --backgroundColor: #F8F7F7;
+  --semiBackgroundColor: #F8F7F7;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: var(--semiTextColor);
-  }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-  h1 > em,
-  h2 > em,
-  h3 > em,
-  h4 > em,
-  h5 > em,
-  h6 > em {
-    font-weight: normal;
-  }
+body {
+  font-family: Inter, sans-serif;
+  font-size: 1.5em;
+  margin: auto;
+  padding: 20px;
+  max-width: 720px;
+  text-align: left;
+  background-color: var(--backgroundColor);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: var(--textColor);
+}
 
-  h1 > a,
-  h2 > a,
-  h3 > a,
-  h4 > a,
-  h5 > a,
-  h6 > a {
-    color: var(--semiTextColor);
-    text-decoration: none;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  color: var(--semiTextColor);
+}
 
-  a {
-    color: var(--linkColor);
-  }
+h1 > em,
+h2 > em,
+h3 > em,
+h4 > em,
+h5 > em,
+h6 > em {
+  font-weight: normal;
+}
 
-  .title {
-    text-decoration: none;
-  }
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+  color: var(--semiTextColor);
+  text-decoration: none;
+}
 
-  .title span {
-    font-weight: 400;
-  }
+a {
+  color: var(--linkColor);
+}
 
-  nav a {
-    margin-right: 1ch;
-  }
+.title {
+  text-decoration: none;
+}
 
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
+.title span {
+  font-weight: 400;
+}
 
-  input {
-    font-size: 16px;
-  }
+nav a {
+  margin-right: 1ch;
+}
 
-  content {
-    line-height: 1.6;
-  }
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
 
-  table {
-    width: 100%;
-  }
+input {
+  font-size: 16px;
+}
 
-  img {
-    max-width: 100%;
-  }
+content {
+  line-height: 1.6;
+}
 
-  p {
-    margin: 1em 0;
-  }
+table {
+  width: 100%;
+}
 
-  p > em img {
-    display: block;
-    max-width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+img {
+  max-width: 100%;
+}
 
-  code {
-    padding: 2px;
-    background-color: var(--semiBackgroundColor);
-  }
+p {
+  margin: 1em 0;
+}
 
-  pre code {
-    color: var(--semiTextColor);
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-    overflow-x: auto;
-  }
+p > em img {
+  display: block;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  hr {
-    color: var(--textColor);
-    background-color: var(--textColor);
-    border-top: 1px solid var(--textColor);
-  }
+code {
+  padding: 2px;
+  background-color: var(--semiBackgroundColor);
+}
 
-  footer {
-    text-align: center;
-  }
+pre code {
+  color: var(--semiTextColor);
+  padding: 20px;
+  white-space: pre-wrap;
+  font-size: 14px;
+  overflow-x: auto;
+}
 
-  div.highlight pre {
-    background-color: initial;
-    color: initial;
-  }
+hr {
+  color: var(--textColor);
+  background-color: var(--textColor);
+  border-top: 1px solid var(--textColor);
+}
 
-  div.highlight code {
-    background-color: unset;
-    color: unset;
-  }
+footer {
+  text-align: center;
+}
 
-  blockquote {
-    border-left: 2px solid var(--semiLinkColor);
-    color: var(--semiTextColor);
-    padding-left: 20px;
-    font-style: italic;
-  }
+div.highlight pre {
+  background-color: initial;
+  color: initial;
+}
 
-  footer {
-    padding: 25px;
-    justify-content: center;
-  }
+div.highlight code {
+  background-color: unset;
+  color: unset;
+}
 
-  iframe {
-    border: 0px;
-  }
+blockquote {
+  border-left: 2px solid var(--semiLinkColor);
+  color: var(--semiTextColor);
+  padding-left: 20px;
+  font-style: italic;
+}
 
-  .helptext {
-    color: var(--semiTextColor);
-    font-size: small;
-  }
+footer {
+  padding: 25px;
+  justify-content: center;
+}
 
-  .errorlist {
-    color: var(--linkColor);
-    font-size: small;
-  }
+iframe {
+  border: 0px;
+}
 
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1ch;
+}
 
-  ul.blog-posts li {
-    display: flex;
-  }
+.helptext {
+  color: var(--semiTextColor);
+  font-size: small;
+}
 
-  ul.blog-posts li .time {
-    min-width: 11ch;
-  }
+.errorlist {
+  color: var(--linkColor);
+  font-size: small;
+}
 
-  ul.blog-posts li a {
-    margin-right: 1ch;
-  }
+ 
+ul.blog-posts {
+  list-style-type: none;
+  padding: unset;
+}
 
-  .inline {
-    height: 1em;
-    vertical-align: baseline;
-  }
+ul.blog-posts li {
+  display: flex;
+}
 
+ul.blog-posts li .time {
+  min-width: 11ch;
+}
+
+ul.blog-posts li a {
+  margin-right: 1ch;
+}
+
+.inline {
+  height: 1em;
+  vertical-align: baseline;
+}
+
+.release-container {
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fill, 
+     minmax(clamp(100%/3 + 0.1%,(50% - 100%)*1000,100%/2 + 0.1%),1fr));
+  justify-items: right;
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.release {
+  margin: auto;
+  justify-self: stretch;
+  max-width: 100%;
+}
+
+.release.big {
+  max-width: 100%;
+}
+
+.release-single {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 4em;
+  margin-right: 4em;
+}
+
+.release-header {
+  text-transform: lowercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: inherit;
+  display: block;
+}
+
+.release-title {
+  margin: 0;
+}
+
+.release-title-small {
+  margin: 0;
+  font-size: 1.25em;
+}
+
+.release-title-smaller {
+  margin: 0;
+  font-size: 1em;
+}
+
+.release-single img {
+  display: block;
+  margin: auto;
+}
+
+.release.playing img.release-cd-cover {
+  border-radius: 50%;
+  transform: rotate(calc(360deg * 100));
+
+  transition: transform calc(60s * 100);
+  transition-timing-function: ease;
+}
+
+.release-cd {
+  width: 100%;
+  height: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.release-cd-back {
+  position: fixed;
+  top: inherit;
+  left: 0;
+  width: 102%;
+  max-width: 1000%;
+  aspect-ratio: 1 / 0.92;
+  object-fit: fill;
+  
+  pointer-events: none;
+  z-index: -1;
+}
+
+.release-cd-front {
+  position: fixed;
+  left: 0;
+  width: 102%;
+  max-width: 1000%;
+  aspect-ratio: 1 / 0.92;
+  object-fit: fill;
+  opacity: 25%;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.release-cd-cover {
+  display: block;
+  padding-top: 2%;
+  padding-left: 10%;
+  width: 90%;
+  z-index: 0;
+}
+
+.shadow {
+  filter: drop-shadow(0px 0px calc(var(--dropShadowSize) * 0.5) var(--textColor));
+}
+
+.halfshadow {
+  filter: drop-shadow(0px 0px calc(var(--dropShadowSize) * 0.25) var(--textColor));
+}
+
+.release-cd-back.shadow {
+  filter: drop-shadow(0px 0px calc(var(--dropShadowSize) * 0.5) var(--textColor));
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.events-archive-container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.catalogue-container {
+  font-size: smaller;
+  list-style-type: none;
+}
+
+.catalogue-item {
+  display: flex;
+  gap: 1ch;
+}
+
+.catalogue-item-no {
+  min-width: 7ch;
+}
+
+.catalogue-item-name {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.catalogue-item-artist {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.audio {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 1em;
+  background-color: var(--backgroundColor);
+  z-index: 1;
+}
+
+.audio-controls {
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1ch;
+}
+
+.audio-button {
+  width: 2ch;
+  min-width: 2ch;
+  max-width: 2ch;
+  padding: 0;
+  font-size: 1.5em;
+  color: var(--linkColor);
+  background: none;
+
+  border: none;
+  cursor: pointer;
+}
+
+.audio-title {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-grow: 1;
+  font-style: italic;
+}
+
+.audio-time {
+  min-width: 4.5ch;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.audio-position {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0px;
+  background: none;
+  padding: 1em;
+  padding-top: 2.5em;
+  margin: -1em;
+  margin-bottom: 0em;
+}
+
+.audio-position::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+}
+
+.audio-position::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+}
+
+ 
+.audio-position::-webkit-slider-runnable-track {
+  height: 1px;
+  -webkit-appearance: none;
+  background-color: var(--linkColor);
+  margin-top: -1px;
+}
+
+ 
+.audio-position::-moz-range-progress {
+  background-color: var(--linkColor);
+}
+.audio-position::-moz-range-track {  
+  background-color: var(--textColor);
+}
+ 
+.audio-position::-ms-fill-lower {
+  background-color: var(--linkColor);
+}
+.audio-position::-ms-fill-upper {  
+  background-color: var(--textColor);
+}
+
+.audio-preview {
+  position: relative;
+  padding: 0;
+  width: 9ch;
+  margin-right: 1ch;
+}
+
+.audio-preview-controls {
+  display: inline-block;
+  background-color: var(--textColor);
+  min-width: 7.5ch;
+}
+
+.audio-preview-button {
+  user-select: none;
+  padding: 0 0.5ch;
+  font-size: 1em;
+  color: var(--backgroundColor);
+  background: none;
+
+  border: none;
+  cursor: pointer;
+}
+
+.shop-button-container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--textColor);
+}
+
+.button-text {
+  padding: 0 0.5ch;
+  color: var(--backgroundColor);
+  background: none;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.audio-preview-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--backgroundColor);
+}
+
+.radio-container {
+  display: grid;
+  grid-template-columns: calc(40% - 10px) calc(60% - 10px);
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+  align-items: end;
+}
+
+.ransom_text {
+  pointer-events: none;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  margin-right: 0em;
+}
+
+.ransom_letter {
+  display: inline-block;
+
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+
+  height: 2em;
+}
+
+@media only screen and (max-width: 768px) {
   .release-container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
   }
 
+  .release {
+    grid-column-end: span 1;
+  }
+
+  .release.big {
+    grid-column-end: span 1;
+  }
+
   .release-single {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 4em;
-    margin-right: 4em;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .release-header {
-    text-transform: lowercase;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: inherit;
+  .catalogue-item-artist {
+    display: none;
+  }
+
+  .release-cd {
+    width: 100%;
+    height: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .release-cd-back {
+    position: fixed;
+    top: inherit;
+    left: 0;
+    width: 102%;
+    max-width: 1000%;
+    aspect-ratio: 1 / 0.92;
+    object-fit: fill;
+    
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .release-cd-front {
+    position: fixed;
+    left: 0;
+    width: 102%;
+    max-width: 1000%;
+    aspect-ratio: 1 / 0.92;
+    object-fit: fill;
+    opacity: 25%;
+
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .release-cd-cover {
     display: block;
-  }
-
-  .release-title {
-    margin: 0;
-  }
-
-  .release-title-small {
-    margin: 0;
-    font-size: 1.25em;
-  }
-
-  .release-title-smaller {
-    margin: 0;
-    font-size: 1em;
-  }
-
-  .release-single img {
-    display: block;
-    margin: auto;
-  }
-
-  .release img {
-    display: block;
-    margin: auto;
-  }
-
-  .release.playing img {
-    border-radius: 50%;
-    transform: rotate(calc(360deg * 100));
-
-    transition: transform calc(60s * 100);
-    transition-timing-function: ease;
+    padding-top: 2%;
+    padding-left: 10%;
+    width: 90%;
+    z-index: 0;
   }
 
   .events-container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
@@ -298,224 +648,1428 @@
 
   .events-archive-container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
-    gap: 1em;
-  }
-
-  .catalogue-container {
-    font-size: smaller;
-    list-style-type: none;
-  }
-
-  .catalogue-item {
-    display: flex;
-    gap: 1ch;
-  }
-  
-  .catalogue-item-no {
-    min-width: 7ch;
-  }
-
-  .catalogue-item-name {
-    display: block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    flex-grow: 1;
-  }
-
-  .catalogue-item-artist {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .audio {
-    position: sticky;
-    top: 0;
-    text-align: center;
-    padding-top: 0;
-    padding-bottom: 1em;
-    background-color: var(--backgroundColor);
-  }
-
-  .audio-controls {
-    height: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 1ch;
-  }
-
-  .audio-button {
-    width: 2ch;
-    min-width: 2ch;
-    max-width: 2ch;
-    padding: 0;
-    font-size: 1.5em;
-    color: var(--linkColor);
-    background: none;
-
-    border: none;
-    cursor: pointer;
-  }
-
-  .audio-title {
-    display: block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    flex-grow: 1;
-    font-style: italic;
-  }
-
-  .audio-time {
-    min-width: 4.5ch;
-    text-align: left;
-    white-space: nowrap;
-  }
-
-  .audio-position {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 0px;
-    background: none;
-    padding: 1em;
-    padding-top: 2.5em;
-    margin: -1em;
-    margin-bottom: 0em;
-  }
-
-  .audio-position::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    opacity: 0;
-  }
-
-  .audio-position::-moz-range-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    opacity: 0;
-  }
-
-   
-  .audio-position::-webkit-slider-runnable-track {
-    height: 1px;
-    -webkit-appearance: none;
-    background-color: var(--linkColor);
-    margin-top: -1px;
-  }
-
-   
-  .audio-position::-moz-range-progress {
-    background-color: var(--linkColor);
-  }
-  .audio-position::-moz-range-track {  
-    background-color: var(--textColor);
-  }
-   
-  .audio-position::-ms-fill-lower {
-    background-color: var(--linkColor);
-  }
-  .audio-position::-ms-fill-upper {  
-    background-color: var(--textColor);
-  }
-
-  .audio-preview {
-    position: relative;
-    padding: 0;
-    width: 9ch;
-    margin-right: 1ch;
-  }
-
-  .audio-preview-controls {
-    display: inline-block;
-    background-color: var(--textColor);
-    min-width: 7.5ch;
-  }
-
-  .audio-preview-button {
-    user-select: none;
-    padding: 0 0.5ch;
-    font-size: 1em;
-    color: var(--backgroundColor);
-    background: none;
-
-    border: none;
-    cursor: pointer;
-  }
-
-  .audio-preview-title {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: var(--backgroundColor);
+    gap: 3em;
   }
 
   .radio-container {
     display: grid;
-    grid-template-columns: calc(40% - 10px) calc(60% - 10px);
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
     align-items: end;
   }
+}
 
-  @media only screen and (max-width: 768px) {
-    .release-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 1em;
-    }
-
-    .release-single {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .catalogue-item-artist {
-      display: none;
-    }
-
-    .events-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 1em;
-    }
-
-    .events-archive-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 3em;
-    }
-
-    .radio-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 1em;
-      align-items: end;
-    }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --textColor: #C6C6C8;
+    --semiTextColor: #C6C6C8;
+    --linkColor: #636366;
+    --semiLinkColor: #636366;
+    --backgroundColor: #1C1C1E;
+    --semiBackgroundColor: #1C1C1E;
   }
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --textColor: #C6C6C8;
-      --semiTextColor: #C6C6C8;
-      --linkColor: #636366;
-      --semiLinkColor: #636366;
-      --backgroundColor: #1C1C1E;
-      --semiBackgroundColor: #1C1C1E;
+ 
+
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.04636084832883079deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
     }
-  }
+  
+    
+
+    h2:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.17231579513631295deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.7320652189911668deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.021184546382596234deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.21242129571838436deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.5305018817091729deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.993974742731051deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.5602194495351116deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.06549638446578322deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.5017902711798536deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.7571812649707519deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.9341531475439958deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.23959598420587883deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.7478069116779335deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.6215169925208823deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.06729471139554635deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.20666942956943454deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.7302836479087046deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.7974584536111744deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.4807117470923947deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.7513633541527103deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.22820549504207735deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.6297812441426552deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.8950141927422559deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.1811172956609915deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.23354984723325087deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.6528223534608972deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.24249733672507967deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.517908255854343deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.9692369836713488deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.2054544121552428deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.6896750511176647deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.35508714634245314deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.38469767495637036deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.1817257165966011deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.43444996810091235deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.08342936805327093deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.31931655845822354deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.7109074107337057deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.8670400050279194deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.6027074590301998deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.8601695170822042deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.5917469747686286deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.07515183756000557deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.2442220055001124deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.6828235302794108deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.39773939343507553deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.2110331020877528deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.8747853092290079deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.24404426542303198deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.3543620937826912deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.7660322293929019deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.8467962533790516deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.26234708079220964deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.2837002400345501deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.5720593240440449deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.5906807055475388deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.9296992704706422deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.6701325609657492deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.7154586215451002deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.4193984105862094deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.6147389691434653deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.9036996148383939deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.4129916541120116deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.9569363342734202deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.03450052799532285deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.6969895357868366deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.6573003257413976deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.7803536473062669deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.7867236133848355deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.8146557725288812deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.9935950790776373deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.3934140891975701deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.7384220151188118deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.46910377398602704deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.06057060984987192deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.739001179582337deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.8375012804906194deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.0616258415779511deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.6754977079336231deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.6229294814560554deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.08610322886384843deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.6921515162398651deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.15063153048883507deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.8425799811156015deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.7680766428240287deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.27250161518070976deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.6696089403709468deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.6634242773052287deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.9005790298571774deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.5106012751345423deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.4835900818849186deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.23029909185240893deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.05473763096292051deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.6236611596853014deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.9040960124440424deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.894088355214161deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.014325095632385838deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.2585365255426251deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.10052687539158435deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.1596418332298647deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.32325222140106835deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.2788038946897689deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.005111067212236101deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.5896160312999846deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.9299848565294492deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.21293806629249168deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.8348024153138615deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.45356907130990637deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.4750709569763951deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.8010206501183249deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.29771726600880377deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.9664018871659266deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.06111474999525779deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.05308253693838927deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.8434375476124678deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.22507498700353584deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.2672377912816736deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.5595414820443838deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.08288974555066315deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.3940699784754583deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.6293779449104674deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.3810395352926221deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.008338460951666286deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.5040450948738407deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.5208521816914536deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.013903101260623435deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.22436989584270647deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.20900998475633503deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.8726153720296402deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.4064208209223925deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.8950689142167689deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.20586097505051584deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.39692728590581944deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.21051914806572106deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.61481558842811deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.09419706781904756deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.36660544084988933deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.24714959091721547deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.8378687495220944deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.6892436300916592deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.6640193005044519deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.6181264832836326deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.0204846227090385deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.5540375595195155deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.5165722663446178deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.452399134001322deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.011827354499043236deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.6519729793971698deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.14763746763196106deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.9216458803181047deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.733915056426781deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.32023312945517174deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.2147037058666749deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.26369637142646046deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.5008933908807396deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.28578854839283324deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.5668801101071133deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.02735913670325716deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.23462761580711816deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.38442127356832223deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.7238749234029859deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.5913415879410439deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.4540135125268726deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.8602342390201242deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.5446139141249563deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.02086905286275004deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.181994851644273deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.579156425143328deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.1551762413357786deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.12250120638965994deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.8907395939619334deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.0343144933477939deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.08784480303232839deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.5605162380481019deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.05452935699000744deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.19101709278800622deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.7136676989053582deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.7374521142799809deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.10207011354960502deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.6246342129538854deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.3296872290202472deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.7296850415758709deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.9335077649474085deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.48953668585794363deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.8577672860608309deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.14598257462560862deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.44135426271151695deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.8755938740479712deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.9096277996715403deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.9258517533456148deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.8887552784226156deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.20752108858582485deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.11896796021340326deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.689757024500352deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.4772121788880744deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h2:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.4897323442529265deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h3:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.29594905558384715deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h4:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.44296218471846177deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h5:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.07699008574579652deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    h6:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.014095046690969606deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.06306046624943366deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.6069051559409505deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-small:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.12708605580147253deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .release-title-smaller:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.3834076284967979deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .event:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.3863851859902959deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+    
+
+    .fulltilt:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.3823992488012754deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.9022496473291788deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+    }
+  
+
 
 </style>
 
@@ -529,6 +2083,11 @@
       specific_release_to_redirect = url_params.get("release");
       window.location.replace(`/${specific_release_to_redirect}`);
     }
+  </script>
+
+  
+  <script type="text/javascript">
+    document.documentElement.style.setProperty("--noiseSeed", `${Math.random()}deg`);
   </script>
 
   
@@ -555,7 +2114,10 @@
 </head>
 
 <body id="body">
-  <header><a href="/" class="title">
+  <header>
+<a href="/" class="title">
+
+
   <h1 id="header">
     <span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span>
   </h1>
@@ -564,8 +2126,8 @@
     <a href="/releases">Catalogue</a>
 
 
-<a href="https://mlemrecords.bandcamp.com/merch">Merch</a>
 
+    <a href="/shop/">Shop</a>
 
     <a href="/events/">Events</a>
 
@@ -1343,7 +2905,17 @@
 
     <hr>
 
-    <h1 id="music" style="display: inline-block; margin-top: 0; margin-bottom: 0;">Music</h1> <a href="#mixes">↓</a>
+    
+    <h1 id="music" style="display: inline-block; margin-top: 0; margin-bottom: 0;">
+
+
+    
+
+
+
+<span class="ransom_text halfshadow">
+    <img class="ransom_letter fulltilt" style="z-index: 4.985349605944017;" src="/resources/images/ransom_letters/m/0002.png"><img class="ransom_letter fulltilt" style="z-index: 5.959222112480063;" src="/resources/images/ransom_letters/u/0001.png"><img class="ransom_letter fulltilt" style="z-index: 1.4727022186994878;" src="/resources/images/ransom_letters/s/0003.png"><img class="ransom_letter fulltilt" style="z-index: 8.30616305250671;" src="/resources/images/ransom_letters/i/0001.png"><img class="ransom_letter fulltilt" style="z-index: 5.408146115846853;" src="/resources/images/ransom_letters/c/0003.png">
+</span></h1>
 
     <p style="margin-top: 0;">
         <span>Filter by</span>
@@ -1363,17 +2935,23 @@
         
     
     
+    
 
-    <div id="mlem020" class="release">
+    <div id="mlem020" class="release big">
         <small class="release-header">
             mlem020<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem020/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem020/">
+                    
+                    <img src="/mlem020/cover_hu_cbbc0c7a055b9bc8.png" loading="lazy" alt="The cover for Groeipijntjes." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem020/cover_hu_cbbc0c7a055b9bc8.png" loading="lazy" alt="The cover for Groeipijntjes.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem020/">Groeipijntjes</a>
@@ -1490,17 +3068,23 @@
 
     
     
+    
 
-    <div id="mlem019" class="release">
+    <div id="mlem019" class="release ">
         <small class="release-header">
             mlem019<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem019/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem019/">
+                    
+                    <img src="/mlem019/cover_hu_81120b405239b716.png" loading="lazy" alt="The cover for It likes green.." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem019/cover_hu_81120b405239b716.png" loading="lazy" alt="The cover for It likes green..">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem019/">It likes green.</a>
@@ -1621,17 +3205,23 @@
 
     
     
+    
 
-    <div id="mlem018" class="release">
+    <div id="mlem018" class="release ">
         <small class="release-header">
             mlem018<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem018/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem018/">
+                    
+                    <img src="/mlem018/cover_hu_6843661e1dc21221.png" loading="lazy" alt="The cover for Collection of Bygone Days." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem018/cover_hu_6843661e1dc21221.png" loading="lazy" alt="The cover for Collection of Bygone Days.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem018/">Collection of Bygone Days</a>
@@ -1751,17 +3341,23 @@
 
     
     
+    
 
-    <div id="mlem017" class="release">
+    <div id="mlem017" class="release big">
         <small class="release-header">
             mlem017<i> Album</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem017/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem017/">
+                    
+                    <img src="/mlem017/cover_hu_1f8465ed6f472bbf.png" loading="lazy" alt="The cover for Alle Opgedroogde Tranen." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem017/cover_hu_1f8465ed6f472bbf.png" loading="lazy" alt="The cover for Alle Opgedroogde Tranen.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem017/">Alle Opgedroogde Tranen</a>
@@ -1883,17 +3479,23 @@
 
     
     
+    
 
-    <div id="mlem016" class="release">
+    <div id="mlem016" class="release big">
         <small class="release-header">
             mlem016<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem016/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem016/">
+                    
+                    <img src="/mlem016/cover_hu_e0f9bfe02612954f.png" loading="lazy" alt="The cover for Autogynephilic Lesbian Zero Forever." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem016/cover_hu_e0f9bfe02612954f.png" loading="lazy" alt="The cover for Autogynephilic Lesbian Zero Forever.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem016/">Autogynephilic Lesbian Zero Forever</a>
@@ -2013,17 +3615,23 @@
 
     
     
+    
 
-    <div id="mlem015" class="release">
+    <div id="mlem015" class="release big">
         <small class="release-header">
             mlem015<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem015/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem015/">
+                    
+                    <img src="/mlem015/cover_hu_16cc4d391f652c68.png" loading="lazy" alt="The cover for Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri / Yaoi Solidarity." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem015/cover_hu_16cc4d391f652c68.png" loading="lazy" alt="The cover for Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri / Yaoi Solidarity.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-smaller">
             <a href="https://mlemrecords.com/mlem015/">Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri / Yaoi Solidarity</a>
@@ -2139,17 +3747,23 @@
 
     
     
+    
 
-    <div id="mlem014" class="release">
+    <div id="mlem014" class="release ">
         <small class="release-header">
             mlem014<i> Compilation</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem014/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem014/">
+                    
+                    <img src="/mlem014/cover_hu_58a55c06642721a8.png" loading="lazy" alt="The cover for Pick of the Litter." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem014/cover_hu_58a55c06642721a8.png" loading="lazy" alt="The cover for Pick of the Litter.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem014/">Pick of the Litter</a>
@@ -2275,17 +3889,23 @@
 
     
     
+    
 
-    <div id="mlem013" class="release">
+    <div id="mlem013" class="release ">
         <small class="release-header">
             mlem013<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem013/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem013/">
+                    
+                    <img src="/mlem013/cover_hu_b2140fb24cf71d85.png" loading="lazy" alt="The cover for Bird Sounds Vol. 1." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem013/cover_hu_b2140fb24cf71d85.png" loading="lazy" alt="The cover for Bird Sounds Vol. 1.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem013/">Bird Sounds Vol. 1</a>
@@ -2404,17 +4024,23 @@
 
     
     
+    
 
-    <div id="mlem012" class="release">
+    <div id="mlem012" class="release big">
         <small class="release-header">
             mlem012<i> Album</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem012/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem012/">
+                    
+                    <img src="/mlem012/cover_hu_f593ff4366fe0be7.png" loading="lazy" alt="The cover for Elektronische Meuk Vol. 1." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem012/cover_hu_f593ff4366fe0be7.png" loading="lazy" alt="The cover for Elektronische Meuk Vol. 1.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem012/">Elektronische Meuk Vol. 1</a>
@@ -2537,17 +4163,23 @@
 
     
     
+    
 
-    <div id="mlem011" class="release">
+    <div id="mlem011" class="release ">
         <small class="release-header">
             mlem011<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem011/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem011/">
+                    
+                    <img src="/mlem011/cover_hu_65f14bc7fc94b206.png" loading="lazy" alt="The cover for Dino’s in Mijn Hoofd." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem011/cover_hu_65f14bc7fc94b206.png" loading="lazy" alt="The cover for Dino’s in Mijn Hoofd.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem011/">Dino’s in Mijn Hoofd</a>
@@ -2664,17 +4296,23 @@
 
     
     
+    
 
-    <div id="mlem010" class="release">
+    <div id="mlem010" class="release ">
         <small class="release-header">
             mlem010<i> Compilation</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem010/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem010/">
+                    
+                    <img src="/mlem010/cover_hu_19000735a2bab536.png" loading="lazy" alt="The cover for Juiced Out Trakz." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem010/cover_hu_19000735a2bab536.png" loading="lazy" alt="The cover for Juiced Out Trakz.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem010/">Juiced Out Trakz</a>
@@ -2800,17 +4438,23 @@
 
     
     
+    
 
-    <div id="mlem009" class="release">
+    <div id="mlem009" class="release big">
         <small class="release-header">
             mlem009<i> Single</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem009/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem009/">
+                    
+                    <img src="/mlem009/cover_hu_e999efcb1ffcf034.png" loading="lazy" alt="The cover for WTR (Runnin’)." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem009/cover_hu_e999efcb1ffcf034.png" loading="lazy" alt="The cover for WTR (Runnin’).">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem009/">WTR (Runnin’)</a>
@@ -2923,17 +4567,23 @@
 
     
     
+    
 
-    <div id="mlem008" class="release">
+    <div id="mlem008" class="release ">
         <small class="release-header">
             mlem008<i> Single</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem008/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem008/">
+                    
+                    <img src="/mlem008/cover_hu_4ef65e6f0a85d654.png" loading="lazy" alt="The cover for All my best friends don’t pass the turing test (AlmabuenA Remix)." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem008/cover_hu_4ef65e6f0a85d654.png" loading="lazy" alt="The cover for All my best friends don’t pass the turing test (AlmabuenA Remix).">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-smaller">
             <a href="https://mlemrecords.com/mlem008/">All my best friends don’t pass the turing test (AlmabuenA Remix)</a>
@@ -3047,17 +4697,23 @@
 
     
     
+    
 
-    <div id="mlem007" class="release">
+    <div id="mlem007" class="release ">
         <small class="release-header">
             mlem007<i> Single</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem007/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem007/">
+                    
+                    <img src="/mlem007/cover_hu_c58bea8030952d4c.png" loading="lazy" alt="The cover for The Alan Watts Theme (love sella Remix)." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem007/cover_hu_c58bea8030952d4c.png" loading="lazy" alt="The cover for The Alan Watts Theme (love sella Remix).">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem007/">The Alan Watts Theme (love sella Remix)</a>
@@ -3170,17 +4826,23 @@
 
     
     
+    
 
-    <div id="mlem006" class="release">
+    <div id="mlem006" class="release ">
         <small class="release-header">
             mlem006<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem006/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem006/">
+                    
+                    <img src="/mlem006/cover_hu_b8483f8763bc8e80.png" loading="lazy" alt="The cover for indigo chamber." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem006/cover_hu_b8483f8763bc8e80.png" loading="lazy" alt="The cover for indigo chamber.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem006/">indigo chamber</a>
@@ -3300,17 +4962,23 @@
 
     
     
+    
 
-    <div id="mlem005" class="release">
+    <div id="mlem005" class="release ">
         <small class="release-header">
             mlem005<i> Album</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem005/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem005/">
+                    
+                    <img src="/mlem005/cover_hu_f8538053a980f45a.png" loading="lazy" alt="The cover for Denken Aan Een Ander Is Niet Van Deze Tijd." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem005/cover_hu_f8538053a980f45a.png" loading="lazy" alt="The cover for Denken Aan Een Ander Is Niet Van Deze Tijd.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem005/">Denken Aan Een Ander Is Niet Van Deze Tijd</a>
@@ -3438,17 +5106,23 @@
 
     
     
+    
 
-    <div id="mlem004" class="release">
+    <div id="mlem004" class="release big">
         <small class="release-header">
             mlem004<i> Album</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem004/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem004/">
+                    
+                    <img src="/mlem004/cover_hu_52aa469870edf668.png" loading="lazy" alt="The cover for Wacko_." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem004/cover_hu_52aa469870edf668.png" loading="lazy" alt="The cover for Wacko_.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem004/">Wacko_</a>
@@ -3567,17 +5241,23 @@
 
     
     
+    
 
-    <div id="mlem003" class="release">
+    <div id="mlem003" class="release big">
         <small class="release-header">
             mlem003<i> Album</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem003/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem003/">
+                    
+                    <img src="/mlem003/cover_hu_a0251b67c6f2bb33.png" loading="lazy" alt="The cover for Pieces of Peace." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem003/cover_hu_a0251b67c6f2bb33.png" loading="lazy" alt="The cover for Pieces of Peace.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem003/">Pieces of Peace</a>
@@ -3706,17 +5386,23 @@
 
     
     
+    
 
-    <div id="mlem002" class="release">
+    <div id="mlem002" class="release big">
         <small class="release-header">
             mlem002<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem002/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem002/">
+                    
+                    <img src="/mlem002/cover_hu_99d65edea3f2f497.png" loading="lazy" alt="The cover for Up in Flames." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem002/cover_hu_99d65edea3f2f497.png" loading="lazy" alt="The cover for Up in Flames.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem002/">Up in Flames</a>
@@ -3830,17 +5516,23 @@
 
     
     
+    
 
-    <div id="mlem001" class="release">
+    <div id="mlem001" class="release ">
         <small class="release-header">
             mlem001<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem001/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem001/">
+                    
+                    <img src="/mlem001/cover_hu_1cab6f127ac50d78.png" loading="lazy" alt="The cover for Amersfoort Tracks." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem001/cover_hu_1cab6f127ac50d78.png" loading="lazy" alt="The cover for Amersfoort Tracks.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem001/">Amersfoort Tracks</a>
@@ -3958,17 +5650,23 @@
 
     
     
+    
 
-    <div id="mlem000" class="release">
+    <div id="mlem000" class="release big">
         <small class="release-header">
             mlem000<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem000/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/mlem000/">
+                    
+                    <img src="/mlem000/cover_hu_246c44e573010142.png" loading="lazy" alt="The cover for slob life nu dada." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/mlem000/cover_hu_246c44e573010142.png" loading="lazy" alt="The cover for slob life nu dada.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem000/">slob life nu dada</a>
@@ -4087,7 +5785,17 @@
     
     <hr>
 
-    <h1 id="mixes" style="display: inline-block; margin-bottom: 0;">Mixes</h1> <a href="#software">↓</a>
+    
+    <h1 id="mixes" style="display: inline-block; margin-bottom: 0;">
+
+
+    
+
+
+
+<span class="ransom_text halfshadow">
+    <img class="ransom_letter fulltilt" style="z-index: 8.509379687577907;" src="/resources/images/ransom_letters/m/0001.png"><img class="ransom_letter fulltilt" style="z-index: 7.309252988303639;" src="/resources/images/ransom_letters/i/0003.png"><img class="ransom_letter fulltilt" style="z-index: 6.496179187079933;" src="/resources/images/ransom_letters/x/0005.png"><img class="ransom_letter fulltilt" style="z-index: 2.8164545379991686;" src="/resources/images/ransom_letters/e/0003.png"><img class="ransom_letter fulltilt" style="z-index: 8.784613761967323;" src="/resources/images/ransom_letters/s/0003.png">
+</span></h1>
 
     <div class="catalogue-container">
         
@@ -4125,23 +5833,39 @@
     
     <hr>
 
-    <h1 id="software" style="display: inline-block; margin-bottom: 0;">Software</h1>
+    
+    <h1 id="software" style="display: inline-block; margin-bottom: 0;">
+
+
+    
+
+
+
+<span class="ransom_text halfshadow">
+    <img class="ransom_letter fulltilt" style="z-index: 9.536363883588594;" src="/resources/images/ransom_letters/s/0002.png"><img class="ransom_letter fulltilt" style="z-index: 1.119090942995484;" src="/resources/images/ransom_letters/o/0002.png"><img class="ransom_letter fulltilt" style="z-index: 7.952586269062145;" src="/resources/images/ransom_letters/f/0004.png"><img class="ransom_letter fulltilt" style="z-index: 7.169485601934786;" src="/resources/images/ransom_letters/t/0003.png"><img class="ransom_letter fulltilt" style="z-index: 9.568799440896006;" src="/resources/images/ransom_letters/w/0001.png"><img class="ransom_letter fulltilt" style="z-index: 8.807245589948892;" src="/resources/images/ransom_letters/a/0002.png"><img class="ransom_letter fulltilt" style="z-index: 2.402629053353307;" src="/resources/images/ransom_letters/r/0005.png"><img class="ransom_letter fulltilt" style="z-index: 9.803612565656275;" src="/resources/images/ransom_letters/e/0001.png">
+</span></h1>
 
     <div class="release-container">
         
     
     
+    
 
-    <div id="soft000" class="release">
+    <div id="soft000" class="release ">
         <small class="release-header">
             soft000<i> Sample Pack</i>
         </small>
         
-            <a href="https://mlemrecords.com/soft000/">
+            <div class="release-cd">
+                <img src="/resources/images/cd_front0.png" class="release-cd-back shadow">
+                <img src="/resources/images/cd_back.png" class="release-cd-back">
+                <a href="https://mlemrecords.com/soft000/">
+                    
+                    <img src="/soft000/cover_hu_f46fa00fc24d7932.png" loading="lazy" alt="The cover for Breakcore Makes You Gay Sample Pack." class="release-cd-cover">
+                    
+                </a>
                 
-                <img src="/soft000/cover_hu_f46fa00fc24d7932.png" loading="lazy" alt="The cover for Breakcore Makes You Gay Sample Pack.">
-                
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/soft000/">Breakcore Makes You Gay Sample Pack</a>
@@ -4269,7 +5993,7 @@
 <footer>
     <p><a href="/secret" style="color: var(--textColor); text-decoration: none;">.</a></p>
 
-<a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated Jun 24, 2026. (1784671590)</small></a></footer>
+<a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated Jun 24, 2026. (1787593543)</small></a></footer>
 
 
   </main>
