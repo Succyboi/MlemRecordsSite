@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-	<meta name="generator" content="Hugo 0.142.0">
+	<meta name="generator" content="Hugo 0.162.1">
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,269 +11,664 @@
 
   <title>Mlem Records</title>
 <meta name="title" content="Mlem Records" />
-<meta name="description" content="Mlem Records is a netlabel in cyberspace." />
-<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,dj zitwerk,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,music,software,after,release party,show," />
+<meta name="description" content="Mlem is an artist collective." />
+<meta name="keywords" content="aching hands,almabuena,birdhouse emporium,cage.log,cdl,dj zitwerk,enno,indigo chamber,jørgen valdemar,keepittoyourselfnexttime,kinderpunk,love sella,m2nd,mlem,peter toth,ulf ten aar,wivwav,ambient,club,folk,idm,pop,punk,mixes,music,software,after,release party,show," />
 
 
 <meta property="og:url" content="https://mlemrecords.com/">
-  <meta property="og:site_name" content="Mlem Records">
-  <meta property="og:title" content="Mlem Records">
-  <meta property="og:description" content="Mlem Records is a netlabel and artist collective run by aliens in cyberspace.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-    <meta property="og:image" content="https://mlemrecords.com/images/share.png">
+	<meta property="og:site_name" content="Mlem Records">
+	<meta property="og:title" content="Mlem Records">
+	<meta property="og:description" content="Mlem Records an artist collective run by aliens in cyberspace.">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+		<meta property="og:image" content="https://mlemrecords.com/images/share.png">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
-  <meta name="twitter:title" content="Mlem Records">
-  <meta name="twitter:description" content="Mlem Records is a netlabel and artist collective run by aliens in cyberspace.">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://mlemrecords.com/images/share.png">
+	<meta name="twitter:title" content="Mlem Records">
+	<meta name="twitter:description" content="Mlem Records an artist collective run by aliens in cyberspace.">
 
 
 
 
-  <meta itemprop="name" content="Mlem Records">
-  <meta itemprop="description" content="Mlem Records is a netlabel and artist collective run by aliens in cyberspace.">
-  <meta itemprop="datePublished" content="2026-04-09T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-04-09T00:00:00+00:00">
-  <meta itemprop="wordCount" content="13">
-  <meta itemprop="image" content="https://mlemrecords.com/images/share.png">
+	<meta itemprop="name" content="Mlem Records">
+	<meta itemprop="description" content="Mlem Records an artist collective run by aliens in cyberspace.">
+	<meta itemprop="datePublished" content="2026-06-24T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2026-10-17T00:00:00+00:00">
+	<meta itemprop="wordCount" content="10">
+	<meta itemprop="image" content="https://mlemrecords.com/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="alternate" type="application/rss+xml" href="https://mlemrecords.com/index.xml" title="Mlem Records" />
   <style>
-  :root {
-    --textColor: #2b2b26;
-    --semiTextColor: #2b2b26;
-    --linkColor: #8E8E93;
-    --semiLinkColor: #8E8E93;
-    --backgroundColor: #F8F7F7;
-    --semiBackgroundColor: #F8F7F7;
-  }
+:root {
+  --noiseSeed: 0.1337deg;
 
-  body {
-    font-family: Inter, sans-serif;
-    font-size: 1.5em;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: var(--backgroundColor);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: var(--textColor);
-  }
+  --dropShadowSize: 0.5em;
+  --tick: 0.1s;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: var(--semiTextColor);
-  }
+  --textColor: #2b2b26;
+  --semiTextColor: #2b2b26;
+  --linkColor: #8E8E93;
+  --semiLinkColor: #8E8E93;
+  --backgroundColor: #F8F7F7;
+  --semiBackgroundColor: #F8F7F7;
+}
 
-  h1 > em,
-  h2 > em,
-  h3 > em,
-  h4 > em,
-  h5 > em,
-  h6 > em {
-    font-weight: normal;
-  }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-  h1 > a,
-  h2 > a,
-  h3 > a,
-  h4 > a,
-  h5 > a,
-  h6 > a {
-    color: var(--semiTextColor);
-    text-decoration: none;
-  }
+body {
+  font-family: Inter, sans-serif;
+  font-size: 1.5em;
+  margin: auto;
+  padding: 20px;
+  max-width: 720px;
+  text-align: left;
+  background-color: var(--backgroundColor);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: var(--textColor);
+}
 
-  a {
-    color: var(--linkColor);
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  color: var(--semiTextColor);
+}
 
-  .title {
-    text-decoration: none;
-  }
+h1 > em,
+h2 > em,
+h3 > em,
+h4 > em,
+h5 > em,
+h6 > em {
+  font-weight: normal;
+}
 
-  .title span {
-    font-weight: 400;
-  }
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+  color: var(--semiTextColor);
+  text-decoration: none;
+}
 
-  nav a {
-    margin-right: 1ch;
-  }
+a {
+  color: var(--linkColor);
+}
 
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
+.title {
+  text-decoration: none;
+}
 
-  input {
-    font-size: 16px;
-  }
+.title span {
+  font-weight: 400;
+}
 
-  content {
-    line-height: 1.6;
-  }
+nav a {
+  margin-right: 1ch;
+}
 
-  table {
-    width: 100%;
-  }
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
 
-  img {
-    max-width: 100%;
-  }
+input {
+  font-size: 16px;
+}
 
-  p {
-    margin: 1em 0;
-  }
+content {
+  line-height: 1.6;
+}
 
-  p > em img {
-    display: block;
-    max-width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+table {
+  width: 100%;
+}
 
-  code {
-    padding: 2px;
-    background-color: var(--semiBackgroundColor);
-  }
+img {
+  max-width: 100%;
+}
 
-  pre code {
-    color: var(--semiTextColor);
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-    overflow-x: auto;
-  }
+p {
+  margin: 1em 0;
+}
 
-  hr {
-    color: var(--textColor);
-    background-color: var(--textColor);
-    border-top: 1px solid var(--textColor);
-  }
+p > img {
+  width: 100%;
+}
 
-  footer {
-    text-align: center;
-  }
+p > em img {
+  display: block;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  div.highlight pre {
-    background-color: initial;
-    color: initial;
-  }
+code {
+  padding: 2px;
+  background-color: var(--semiBackgroundColor);
+}
 
-  div.highlight code {
-    background-color: unset;
-    color: unset;
-  }
+pre code {
+  color: var(--semiTextColor);
+  padding: 20px;
+  white-space: pre-wrap;
+  font-size: 14px;
+  overflow-x: auto;
+}
 
-  blockquote {
-    border-left: 2px solid var(--semiLinkColor);
-    color: var(--semiTextColor);
-    padding-left: 20px;
-    font-style: italic;
-  }
+hr {
+  color: var(--textColor);
+  background-color: var(--textColor);
+  border-top: 1px solid var(--textColor);
+}
 
-  footer {
-    padding: 25px;
-    justify-content: center;
-  }
+footer {
+  text-align: center;
+}
 
-  .helptext {
-    color: var(--semiTextColor);
-    font-size: small;
-  }
+div.highlight pre {
+  background-color: initial;
+  color: initial;
+}
 
-  .errorlist {
-    color: var(--linkColor);
-    font-size: small;
-  }
+div.highlight code {
+  background-color: unset;
+  color: unset;
+}
 
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
+blockquote {
+  border-left: 2px solid var(--semiLinkColor);
+  color: var(--semiTextColor);
+  padding-left: 1em;
+  margin-left: 1em;
+  font-style: italic;
+}
 
-  ul.blog-posts li {
-    display: flex;
-  }
+footer {
+  padding: 25px;
+  justify-content: center;
+}
 
-  ul.blog-posts li .time {
-    min-width: 11ch;
-  }
+iframe {
+  border: 0px;
+}
 
-  ul.blog-posts li a {
-    margin-right: 1ch;
-  }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1ch;
+}
 
-  .inline {
-    height: 1em;
-    vertical-align: baseline;
-  }
+.helptext {
+  color: var(--semiTextColor);
+  font-size: small;
+}
 
+.errorlist {
+  color: var(--linkColor);
+  font-size: small;
+}
+
+ 
+ul.blog-posts {
+  list-style-type: none;
+  padding: unset;
+}
+
+ul.blog-posts li {
+  display: flex;
+}
+
+ul.blog-posts li .time {
+  min-width: 11ch;
+}
+
+ul.blog-posts li a {
+  margin-right: 1ch;
+}
+
+.inline {
+  height: 1em;
+  vertical-align: baseline;
+}
+
+.release-container {
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fill, 
+     minmax(clamp(100%/3 + 0.1%,(50% - 100%)*1000,100%/2 + 0.1%),1fr));
+  justify-items: right;
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.release {
+  margin: auto;
+  justify-self: stretch;
+  max-width: 100%;
+}
+
+.release.big {
+  max-width: 100%;
+}
+
+.release-single {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 4em;
+  margin-right: 4em;
+}
+
+.release-header {
+  text-transform: lowercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: inherit;
+  display: block;
+}
+
+.release-title {
+  margin: 0;
+}
+
+.release-title-small {
+  margin: 0;
+  font-size: 1.25em;
+}
+
+.release-title-smaller {
+  margin: 0;
+  font-size: 1em;
+}
+
+.release-single img {
+  display: block;
+  margin: auto;
+}
+
+.release.playing img.release-cd-cover {
+  border-radius: 50%;
+  transform: rotate(calc(360deg * 100));
+
+  transition: transform calc(60s * 100);
+  transition-timing-function: ease;
+}
+
+.release-cd {
+  width: 100%;
+  height: 100%;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+}
+
+.release-cd-back {
+  position: fixed;
+  top: inherit;
+  left: 0;
+  width: 102%;
+  max-width: 1000%;
+  aspect-ratio: 1 / 0.92;
+  object-fit: fill;
+  
+  pointer-events: none;
+  z-index: -1;
+}
+
+.release-cd-front {
+  position: fixed;
+  left: 0;
+  width: 102%;
+  max-width: 1000%;
+  aspect-ratio: 1 / 0.92;
+  object-fit: fill;
+  opacity: 25%;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.release-cd-cover {
+  display: block;
+  padding-top: 2%;
+  padding-left: 10%;
+  width: 90%;
+  z-index: 0;
+}
+
+.shadow {
+  filter: drop-shadow(0px 0px calc(var(--dropShadowSize) * 0.5) var(--textColor));
+}
+
+.halfshadow {
+  filter: drop-shadow(0px 0px calc(var(--dropShadowSize) * 0.25) var(--textColor));
+}
+
+.release-cd-back.shadow {
+  filter: drop-shadow(0px 0px calc(var(--dropShadowSize) * 0.5) var(--textColor));
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.events-archive-container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  margin-top: 0em;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+
+.catalogue-container {
+  font-size: smaller;
+  list-style-type: none;
+}
+
+.catalogue-item {
+  display: flex;
+  gap: 1ch;
+}
+
+.catalogue-item-no {
+  min-width: 7ch;
+}
+
+.catalogue-item-name {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.catalogue-item-artist {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.audio {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 1em;
+  background-color: var(--backgroundColor);
+  z-index: 1;
+}
+
+.audio-controls {
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1ch;
+}
+
+.audio-button {
+  width: 2ch;
+  min-width: 2ch;
+  max-width: 2ch;
+  padding: 0;
+  font-size: 1.5em;
+  color: var(--linkColor);
+  background: none;
+
+  border: none;
+  cursor: pointer;
+}
+
+.audio-title {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-grow: 1;
+  font-style: italic;
+}
+
+.audio-time {
+  min-width: 4.5ch;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.audio-position {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0px;
+  background: none;
+  padding: 1em;
+  padding-top: 2.5em;
+  margin: -1em;
+  margin-bottom: 0em;
+}
+
+.audio-position::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+}
+
+.audio-position::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+}
+
+ 
+.audio-position::-webkit-slider-runnable-track {
+  height: 1px;
+  -webkit-appearance: none;
+  background-color: var(--linkColor);
+  margin-top: -1px;
+}
+
+ 
+.audio-position::-moz-range-progress {
+  background-color: var(--linkColor);
+}
+.audio-position::-moz-range-track {  
+  background-color: var(--textColor);
+}
+ 
+.audio-position::-ms-fill-lower {
+  background-color: var(--linkColor);
+}
+.audio-position::-ms-fill-upper {  
+  background-color: var(--textColor);
+}
+
+.audio-preview {
+  position: relative;
+  padding: 0;
+  width: 9ch;
+  margin-right: 1ch;
+}
+
+.audio-preview-controls {
+  display: inline-block;
+  background-color: var(--textColor);
+  min-width: 7.5ch;
+}
+
+.audio-preview-button {
+  user-select: none;
+  padding: 0 0.5ch;
+  font-size: 1em;
+  color: var(--backgroundColor);
+  background: none;
+
+  border: none;
+  cursor: pointer;
+}
+
+.shop-button-container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--textColor);
+}
+
+.button-text {
+  padding: 0 0.5ch;
+  color: var(--backgroundColor);
+  background: none;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.audio-preview-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--backgroundColor);
+}
+
+.radio-container {
+  display: grid;
+  grid-template-columns: calc(40% - 10px) calc(60% - 10px);
+  margin-top: 2em;
+  margin-bottom: 2em;
+  gap: 1em;
+  align-items: end;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.video-section {
+  margin-top: 1em;
+}
+
+.video-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ransom_text {
+  pointer-events: none;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  margin-right: 0em;
+}
+
+.ransom_letter {
+  display: inline-block;
+
+  margin-top: 0.5em;
+  margin-left: -0.3em;
+  margin-right: -0.3em;
+
+  height: 1.5em;
+}
+
+@media only screen and (max-width: 768px) {
   .release-container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
   }
 
+  .release {
+    grid-column-end: span 1;
+  }
+
+  .release.big {
+    grid-column-end: span 1;
+  }
+
   .release-single {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 4em;
-    margin-right: 4em;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .release-header {
-    text-transform: lowercase;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: inherit;
+  .catalogue-item-artist {
+    display: none;
+  }
+
+  .release-cd {
+    width: 100%;
+    height: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .release-cd-back {
+    position: fixed;
+    top: inherit;
+    left: 0;
+    width: 102%;
+    max-width: 1000%;
+    aspect-ratio: 1 / 0.92;
+    object-fit: fill;
+    
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .release-cd-front {
+    position: fixed;
+    left: 0;
+    width: 102%;
+    max-width: 1000%;
+    aspect-ratio: 1 / 0.92;
+    object-fit: fill;
+    opacity: 25%;
+
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .release-cd-cover {
     display: block;
-  }
-
-  .release-title {
-    margin: 0;
-  }
-
-  .release-title-small {
-    margin: 0;
-    font-size: 1.25em;
-  }
-
-  .release-title-smaller {
-    margin: 0;
-    font-size: 1em;
-  }
-
-  .release-single img {
-    display: block;
-    margin: auto;
-  }
-
-  .release img {
-    display: block;
-    margin: auto;
+    padding-top: 2%;
+    padding-left: 10%;
+    width: 90%;
+    z-index: 0;
   }
 
   .events-container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
     gap: 1em;
@@ -281,195 +676,1748 @@
 
   .events-archive-container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-columns: repeat(1, 100%);
     margin-top: 0em;
     margin-bottom: 1em;
+    gap: 3em;
+  }
+
+  .radio-container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    margin-top: 2em;
+    margin-bottom: 3em;
     gap: 1em;
+    align-items: end;
   }
+}
 
-  .catalogue-container {
-    font-size: smaller;
-    list-style-type: none;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --textColor: #C6C6C8;
+    --semiTextColor: #C6C6C8;
+    --linkColor: #636366;
+    --semiLinkColor: #636366;
+    --backgroundColor: #1C1C1E;
+    --semiBackgroundColor: #1C1C1E;
   }
+}
 
-  .catalogue-item {
-    display: flex;
-    gap: 1ch;
-  }
+ 
+
+
   
-  .catalogue-item-no {
-    min-width: 7ch;
-  }
+  
+  
+  
+    
 
-  .catalogue-item-name {
-    display: block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    flex-grow: 1;
-  }
-
-  .catalogue-item-artist {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .audio {
-    position: sticky;
-    top: 0;
-    text-align: center;
-    padding-top: 0;
-    padding-bottom: 1em;
-    background-color: var(--backgroundColor);
-  }
-
-  .audio-controls {
-    height: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 1ch;
-  }
-
-  .audio-button {
-    width: 2ch;
-    min-width: 2ch;
-    max-width: 2ch;
-    padding: 0;
-    font-size: 1.5em;
-    color: var(--linkColor);
-    background: none;
-
-    border: none;
-    cursor: pointer;
-  }
-
-  .audio-title {
-    display: block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    flex-grow: 1;
-    font-style: italic;
-  }
-
-  .audio-time {
-    min-width: 4.5ch;
-    text-align: left;
-    white-space: nowrap;
-  }
-
-  .audio-position {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 0px;
-    background: none;
-    padding: 1em;
-    padding-top: 2.5em;
-    margin: -1em;
-    margin-bottom: 0em;
-  }
-
-  .audio-position::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    opacity: 0;
-  }
-
-  .audio-position::-moz-range-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    opacity: 0;
-  }
-
-   
-  .audio-position::-webkit-slider-runnable-track {
-    height: 1px;
-    -webkit-appearance: none;
-    background-color: var(--linkColor);
-    margin-top: -1px;
-  }
-
-   
-  .audio-position::-moz-range-progress {
-    background-color: var(--linkColor);
-  }
-  .audio-position::-moz-range-track {  
-    background-color: var(--textColor);
-  }
-   
-  .audio-position::-ms-fill-lower {
-    background-color: var(--linkColor);
-  }
-  .audio-position::-ms-fill-upper {  
-    background-color: var(--textColor);
-  }
-
-  .audio-preview {
-    position: relative;
-    padding: 0;
-    width: 9ch;
-    margin-right: 1ch;
-  }
-
-  .audio-preview-controls {
-    display: inline-block;
-    background-color: var(--textColor);
-    min-width: 7.5ch;
-  }
-
-  .audio-preview-button {
-    user-select: none;
-    padding: 0 0.5ch;
-    font-size: 1em;
-    color: var(--backgroundColor);
-    background: none;
-
-    border: none;
-    cursor: pointer;
-  }
-
-  .audio-preview-title {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: var(--backgroundColor);
-  }
-
-  @media only screen and (max-width: 768px) {
-    .release-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 1em;
+    h1:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.40774996564131283deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
     }
+  
+    
 
-    .release-single {
-      margin-left: 0;
-      margin-right: 0;
+    h2:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.031543804124449605deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
     }
+  
+    
 
-    .catalogue-item-artist {
-      display: none;
+    h3:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.38985156092988527deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
     }
+  
+    
 
-    .events-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 1em;
+    h4:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.28774842092085406deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
     }
+  
+    
 
-    .events-archive-container {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      margin-top: 0em;
-      margin-bottom: 1em;
-      gap: 3em;
+    h5:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.1704582898221422deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
     }
-  }
+  
+    
+
+    h6:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.26603871678362545deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.20695721341780834deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.5490056823516261deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.2483056825425487deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.2753770630576484deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.5483958475742213deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.9906177876966298deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.8110170262756305deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(0n) {
+        transform: rotate(calc(mod(calc(0.060390415887973885deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.922673987983083deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.1326141625684444deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.9117896749557945deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.5844613113126607deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.5988724657123223deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.7097913985991838deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.03559355451642435deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.8336135735544946deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.14819011671437005deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.468574173921687deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.11889908817700119deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.24936617948476164deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.09788478497281575deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(1n) {
+        transform: rotate(calc(mod(calc(0.7695813338211669deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.18672320210689597deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.9545618450372674deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.39519833312788405deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.07260108969829965deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.13342534083405355deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.6321279372076429deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.7706772396886461deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.007295457752789052deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.1515395134495126deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.09251887396602324deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.5320021042085653deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.5215668744139818deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.4088470342150065deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(2n) {
+        transform: rotate(calc(mod(calc(0.27751978346918016deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.15203305065357636deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.9319375337546563deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.0792044958504022deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.3317338417711009deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.3327400343015744deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.4965120700723044deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.2626821357570423deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.666485736467406deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.4360051923970844deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.5118597150629238deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.26909727347564305deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.7880686203968464deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.5970279482454325deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(3n) {
+        transform: rotate(calc(mod(calc(0.8897928734827985deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.06714226972951087deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.5672643434316252deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.33475238632495286deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.20203454760509962deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.5047503861925037deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.09826593001074235deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.9530591283965254deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.27897461215961256deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.8441247691213725deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.0329893813824704deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.7081815045420554deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.4664945863901835deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.4870173377389136deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(4n) {
+        transform: rotate(calc(mod(calc(0.03234772230729731deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.24956630184075618deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.5369658282923709deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.4016217068099795deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.6905172970249006deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.6301966629227307deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.6567576811364696deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.3888217380708165deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.994936588912203deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.8064745913062282deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.2729275659027013deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.5140168146585347deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.12666524774642324deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.6176064385310012deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(5n) {
+        transform: rotate(calc(mod(calc(0.31159841190378373deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.49162252351901115deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.009958012947899641deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.9952435548178399deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.6591309617823252deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.7196599734801757deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.25567016312640356deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.3596838500204999deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.2926363294700169deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.1991785594710876deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.01686775781259949deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.7204041217652931deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.48359380098116006deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.6929040567615667deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(6n) {
+        transform: rotate(calc(mod(calc(0.1167614018667476deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.602113763434546deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.35205761111279626deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.11187967085116231deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.6842567926388395deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.9129234286048352deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.7805689928407732deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.5862458313534175deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.9006406437227578deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.1494614993408933deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.7898808669479671deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.7507967891038481deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.6329359577614182deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.986830538304621deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(7n) {
+        transform: rotate(calc(mod(calc(0.13114765776388995deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.14306316483836945deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.18889210977401666deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.09317025888690637deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.7844292515952638deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.03829197500339448deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.3606786479052201deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.38877104275729946deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.1724890921179139deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.8945468053998649deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.38819302784909493deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.46223826690152614deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.3501443982177478deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.5461995256867644deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(8n) {
+        transform: rotate(calc(mod(calc(0.12904857909642486deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.7504156966127041deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.893000013226708deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.7241088965461345deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.4683959909064196deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.11316155041588546deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.09241641768002039deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.20603359756833806deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.8840362038227306deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.09210334320549166deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.6084847270334788deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.43101375961662214deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.5094920765853468deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.5608797075871046deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(9n) {
+        transform: rotate(calc(mod(calc(0.5018291593752009deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.05413264451483121deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.5950797445132767deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.18103651222260667deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.781542051714321deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.2122617219886157deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.6739193700297409deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.2533494491088819deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.9639912734730802deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.04912244295090544deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.3598839176244859deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.36142311570317975deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.1923936084925291deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.8969539699168785deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(10n) {
+        transform: rotate(calc(mod(calc(0.8662380412177905deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.19962076904933088deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.8511979793360396deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.0937060684049253deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.5909830429140029deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.5638179847530793deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.28452884307847914deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.6445311732336405deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.4654143546860773deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.16027889020579678deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.03198336354307665deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.70862903446449deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.9413949914719791deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.8507376113683243deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(11n) {
+        transform: rotate(calc(mod(calc(0.8195202027639625deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.6651576091266616deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.39276329426792833deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.7163005954011533deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.22651430834944206deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.4591173745130816deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.8798433290510983deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.19828086158681724deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.07798067494940786deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.6264902546072786deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.09345157577218649deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.2617964022563684deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.8846581251337856deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.7897453616621296deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(12n) {
+        transform: rotate(calc(mod(calc(0.5854533975654541deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.8285795078135173deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.7350991735881169deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.7332153034084385deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.8076652967968979deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.7713817513419426deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.129321256787871deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.22287084188227296deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.10498638968738995deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.07976174059712285deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.13895827342922126deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.5146304014607659deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.06287506521359863deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.798365385111563deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(13n) {
+        transform: rotate(calc(mod(calc(0.6758016468919115deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.3310691023111047deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.9639532140691068deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.7110252935439099deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.582282010343268deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.7754562922383259deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.16077478713981427deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.46801617293628456deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.2738122470041104deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.9983173671110864deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.7204873246700572deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.7503905156673407deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.8015530315887891deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.6879040301458133deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(14n) {
+        transform: rotate(calc(mod(calc(0.9637494484592669deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
+  
+  
+  
+  
+    
+
+    h1:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.30286648231515595deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h2:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.5485397801885853deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h3:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.38846642194056086deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h4:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.21210572221384372deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h5:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.8229565702439798deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    h6:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.17306008038997464deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.2624602795054187deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.7403267811184069deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-small:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.9487951557413358deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release-title-smaller:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.7796847695216211deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .event:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.7547935974972916deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .fulltilt:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.4274448206009316deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+    
+
+    .release:hover:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.3053005371141586deg + var(--noiseSeed)), 1deg) * 6 - 3deg));
+        transition: var(--tick);
+    }
+  
+
+  
+
+  
+    
+
+    .halftilt:nth-child(15n) {
+        transform: rotate(calc(mod(calc(0.12068673831051381deg + var(--noiseSeed)), 1deg) * 2 - 1deg));
+        transition: var(--tick);
+    }
+  
+
 
 </style>
 
@@ -483,6 +2431,11 @@
       specific_release_to_redirect = url_params.get("release");
       window.location.replace(`/${specific_release_to_redirect}`);
     }
+  </script>
+
+  
+  <script type="text/javascript">
+    document.documentElement.style.setProperty("--noiseSeed", `${Math.random()}deg`);
   </script>
 
   
@@ -503,13 +2456,17 @@
       <source id="page-audio-source"></source>
   </audio>
 
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="stylesheet" href="/inter/inter.css">
 </head>
 
 <body id="body">
-  <header><a href="/" class="title">
-  <h1>
+  <header>
+<a href="/" class="title">
+
+
+  <h1 id="header">
     <span style="font-weight: 900;">Mlem</span><span style="font-weight: normal;">Records</span>
   </h1>
 </a>
@@ -517,8 +2474,8 @@
     <a href="/releases">Catalogue</a>
 
 
-<a href="https://mlemrecords.bandcamp.com/merch">Merch</a>
 
+    <a href="/shop/">Shop</a>
 
     <a href="/events/">Events</a>
 
@@ -526,742 +2483,196 @@
 
 
 
-</nav></header>
+</nav>
+
+
+</header>
   <main>
 
 <content>
-    <p>Mlem Records is a netlabel and artist collective run by aliens in cyberspace. <span>
+    <p>Mlem Records an artist collective run by <span>
     <script type="text/javascript">
-        function reroll_highlight() {
-            var highlightContainer = document.getElementById('people-highlight');
+        function reroll_creatures_highlight() {
+            var highlightContainer = document.getElementById('creatures-highlight');
 
             if (highlightContainer == null) { return; }
 
-            var people = [
-            
-                
-                    
-                        "Damian Been", 
-                    
-                        "Ma3ke", 
-                    
-                        "Jørgen Bruinsma", 
-                    
-                
-            
-                
-                    
-                        "keepittoyourselfnexttime", 
-                    
-                        "DJ ZITwerK", 
-                    
-                
-            
-                
-                    
-                        "Bille", 
-                    
-                        "Gay Bitches", 
-                    
-                        "NS Personnel", 
-                    
-                
-            
-                
-                    
-                        "Lucas Veerkamp", 
-                    
-                        "Robin van Ulft", 
-                    
-                        "Tim Kahn", 
-                    
-                        "Damian Been", 
-                    
-                        "Puk Bruinsma", 
-                    
-                        "Benjamin Burger", 
-                    
-                        "Dylan Hokstam", 
-                    
-                        "Midas Munsterman", 
-                    
-                        "Geart Vledder", 
-                    
-                
-            
-                
-                    
-                        "Puk Bruinsma", 
-                    
-                        "Jan de Rooij", 
-                    
-                        "Inne Bruinsma", 
-                    
-                        "Jordan van der Maas", 
-                    
-                        "Wike Bruinsma", 
-                    
-                        "Mare", 
-                    
-                        "Rian", 
-                    
-                        "Teun", 
-                    
-                        "Auktje", 
-                    
-                        "Joep and Jornt", 
-                    
-                        "Samira", 
-                    
-                        "Eric Luth", 
-                    
-                        "Carla de Bruine", 
-                    
-                        "Lieke", 
-                    
-                
-            
-                
-                    
-                        "Dylan Hokstam", 
-                    
-                        "CDL", 
-                    
-                        "Robin van Ulft", 
-                    
-                        "Damian Been", 
-                    
-                        "Puk Bruinsma", 
-                    
-                        "Sytse Jan Vledder", 
-                    
-                        "Elza Thio", 
-                    
-                
-            
-                
-                    
-                        "Sytse Vledder", 
-                    
-                        "Lucas Veerkamp", 
-                    
-                        "Julia Verweij", 
-                    
-                        "Puk Bruinsma", 
-                    
-                        "Benjamin", 
-                    
-                        "Damian", 
-                    
-                        "Dylan", 
-                    
-                        "Joy", 
-                    
-                        "Lucas", 
-                    
-                        "Morris", 
-                    
-                        "Midas", 
-                    
-                        "Quinten", 
-                    
-                
-            
-                
-                    
-                        "Quinten Sol", 
-                    
-                        "Aurelia Wurfbain", 
-                    
-                        "Semuel van Leijten", 
-                    
-                        "Lucas Veerkamp", 
-                    
-                        "Robin van Ulft", 
-                    
-                        "Sytse Vledder", 
-                    
-                        "Alma Plompen", 
-                    
-                        "Benjamin Burger", 
-                    
-                        "Jhudo Arends", 
-                    
-                        "Yen", 
-                    
-                        "Vik", 
-                    
-                        "Esther", 
-                    
-                        "Omar", 
-                    
-                        "Reduan", 
-                    
-                        "Robin", 
-                    
-                        "Saskia", 
-                    
-                        "Maxime", 
-                    
-                        "Seline", 
-                    
-                        "Rune", 
-                    
-                        "Peter", 
-                    
-                        "Pim", 
-                    
-                        "Puk", 
-                    
-                        "Sytse", 
-                    
-                        "Tobias", 
-                    
-                        "Damian", 
-                    
-                        "Dylan", 
-                    
-                        "Kyarah", 
-                    
-                        "Midas", 
-                    
-                        "Sander", 
-                    
-                        "Tobias", 
-                    
-                
-            
-                
-                    
-                        "love sella", 
-                    
-                        "AlmabuenA", 
-                    
-                        "WivWav", 
-                    
-                        "Barend", 
-                    
-                        "Almudena", 
-                    
-                        "Lucas", 
-                    
-                
-            
-                
-                    
-                        "love sella", 
-                    
-                        "AlmabuenA", 
-                    
-                        "WivWav", 
-                    
-                        "Barend", 
-                    
-                        "Almudena", 
-                    
-                        "Lucas", 
-                    
-                
-            
-                
-                    
-                        "M2ND", 
-                    
-                        "Koen Sakko", 
-                    
-                        "Ruben van Wijk", 
-                    
-                        "Job van Wijk", 
-                    
-                        "Mattis van Ulft", 
-                    
-                        "Ulf Ten Aar", 
-                    
-                        "Julia Verweij", 
-                    
-                
-            
-                
-                    
-                        "Benjamin Burger", 
-                    
-                        "Damian Been", 
-                    
-                        "Dylan Hokstam", 
-                    
-                        "Lucas Veerkamp", 
-                    
-                        "Morris van Weel", 
-                    
-                        "Puk Bruinsma", 
-                    
-                        "Sytse Vledder", 
-                    
-                        "WivWav", 
-                    
-                        "DJ ZITwerK", 
-                    
-                        "Gamian", 
-                    
-                        "Clown Prinses", 
-                    
-                        "Aching Hands", 
-                    
-                        "cdl", 
-                    
-                        "shark_machine()", 
-                    
-                        "Semuel Leijten", 
-                    
-                        "ENNO", 
-                    
-                        "Benjamin", 
-                    
-                        "Ulf Ten Aar", 
-                    
-                        "Robin van Ulft", 
-                    
-                        "Zoe de Boer", 
-                    
-                        "SLSK", 
-                    
-                        "MySpace", 
-                    
-                        "Maarten Spits", 
-                    
-                        "Alex Geurink", 
-                    
-                        "Sjef", 
-                    
-                        "Ableton", 
-                    
-                        "Renoise", 
-                    
-                
-            
-                
-                    
-                        "Floor Sannes", 
-                    
-                        "Jørgen Bruinsma", 
-                    
-                        "Jornt Hendriks", 
-                    
-                        "Bo Boer", 
-                    
-                        "Kas Weima", 
-                    
-                        "Sarah Dekker", 
-                    
-                        "Hyewon Kim", 
-                    
-                        "Johanz Westerman", 
-                    
-                
-            
-                
-                    
-                        "Lucas Veerkamp", 
-                    
-                        "Midas Münstermann", 
-                    
-                        "The Snares", 
-                    
-                        "Zoë de Boer", 
-                    
-                        "Thomas", 
-                    
-                        "Nina", 
-                    
-                        "Tatiana", 
-                    
-                        "Anaka", 
-                    
-                        "Chris", 
-                    
-                        "Jack", 
-                    
-                        "Kaho", 
-                    
-                        "Peer", 
-                    
-                        "Midas", 
-                    
-                        "Sytse", 
-                    
-                        "Morris", 
-                    
-                        "Puk", 
-                    
-                        "Damian", 
-                    
-                        "Robin van Ulft", 
-                    
-                        "Sytse Vledder", 
-                    
-                        "Damian", 
-                    
-                        "Dylan", 
-                    
-                        "Quinn", 
-                    
-                        "Alma", 
-                    
-                        "Wolfer", 
-                    
-                        "Stijn", 
-                    
-                        "Benjamin", 
-                    
-                        "Max MSP", 
-                    
-                        "Ableton Live", 
-                    
-                        "Reaper", 
-                    
-                        "Moog Grandmother", 
-                    
-                        "Aphex Twin", 
-                    
-                
-            
-                
-                    
-                        "Damian Been", 
-                    
-                        "Maxx Been", 
-                    
-                        "DJ ZITwerK", 
-                    
-                        "Sytse Vledder", 
-                    
-                        "Robin van Ulft", 
-                    
-                        "Zoë de Boer", 
-                    
-                        "Dylan Hokstam", 
-                    
-                        "Puk Bruinsma", 
-                    
-                        "Benjamin Burger", 
-                    
-                        "Lucas Veerkamp", 
-                    
-                        "the birds", 
-                    
-                        "Roos", 
-                    
-                        "Fleur", 
-                    
-                        "Robert", 
-                    
-                        "Jacqueline", 
-                    
-                
-            
-                
-                    
-                        "Birdhouse Emporium", 
-                    
-                        "the normalcy", 
-                    
-                        "DJ ZITwerK", 
-                    
-                        "cdl", 
-                    
-                        "Dalmations", 
-                    
-                        "WivWav", 
-                    
-                        "mdp", 
-                    
-                        "pɔ!¡cd", 
-                    
-                        "Gamian", 
-                    
-                        "indigo chamber", 
-                    
-                        "Morris Enno", 
-                    
-                        "Blem Mie", 
-                    
-                        "niko de tovenaar", 
-                    
-                        "Ulf Ten Aar", 
-                    
-                        "Damian Been", 
-                    
-                        "Sytse Vledder", 
-                    
-                        "Puk Bruinsma", 
-                    
-                        "Dylan Hokstam", 
-                    
-                        "Lucas Veerkamp", 
-                    
-                        "Semuel Leijten", 
-                    
-                        "Maarten Spits", 
-                    
-                        "Sander Smit", 
-                    
-                        "Midas Münstermann", 
-                    
-                        "Benjamin Burger", 
-                    
-                        "Peer van Kessel", 
-                    
-                        "Robin van Ulft", 
-                    
-                        "Abtin Sadati", 
-                    
-                        "Quinn Laurènce Sol", 
-                    
-                        "Morris van Weel", 
-                    
-                        "Blem Mie", 
-                    
-                        "Zoë de Boer", 
-                    
-                        "Everyone at Mlemgatherweek", 
-                    
-                        "Solid Snake", 
-                    
-                        "My mom and dad", 
-                    
-                        "Elza", 
-                    
-                        "The french countryside", 
-                    
-                        "Roald van Dillewijn", 
-                    
-                        "George H. Heilmeier", 
-                    
-                        "Big fishes", 
-                    
-                        "Chinese sleep slants", 
-                    
-                
-            
-                
-                    
-                        "keepittoyourselfnexttime", 
-                    
-                        "DJ ZITwerK", 
-                    
-                        "Ties", 
-                    
-                        "Quinn", 
-                    
-                        "love sella", 
-                    
-                        "the normalcy", 
-                    
-                        "Memoria", 
-                    
-                        "Jesus", 
-                    
-                        "Gregory Coleman", 
-                    
-                        "Akira Yamaoka", 
-                    
-                        "Burial", 
-                    
-                        "Daniel Avery", 
-                    
-                        "Tim Hecker", 
-                    
-                        "Injury Reserve", 
-                    
-                        "Laurie Spiegel", 
-                    
-                        "Alma", 
-                    
-                        "Morris", 
-                    
-                        "Midas", 
-                    
-                        "Puk", 
-                    
-                        "Sytse", 
-                    
-                        "Damian", 
-                    
-                        "Jerma Miku Gay", 
-                    
-                        "Blu Mar Ten", 
-                    
-                        "Mia", 
-                    
-                        "Ties", 
-                    
-                        "Aaron Spectre", 
-                    
-                        "Melynda J", 
-                    
-                        "My Haters", 
-                    
-                        "ellie", 
-                    
-                        "n33r", 
-                    
-                        "^_^", 
-                    
-                        "A$A", 
-                    
-                        "KittyCherry♥", 
-                    
-                        "Saul Grim", 
-                    
-                        "GFan", 
-                    
-                        "C4TE", 
-                    
-                        "LadyTitania", 
-                    
-                        "Grognours", 
-                    
-                        "iTs LaMPi", 
-                    
-                        "Ilse", 
-                    
-                        "Erik", 
-                    
-                
-            
-                
-                    
-                        "DJ ZITwerK", 
-                    
-                        "Wolfer van Geest", 
-                    
-                        "Zoë", 
-                    
-                        "Lucas", 
-                    
-                        "Quinn", 
-                    
-                        "Ties", 
-                    
-                        "John Wayne", 
-                    
-                        "Colonel Lloydie", 
-                    
-                        "Hatsune Miku", 
-                    
-                        "Dakota Hogback", 
-                    
-                        "love sella", 
-                    
-                        "Aaron Spectre", 
-                    
-                        "Mikkel", 
-                    
-                        "Ma3ke", 
-                    
-                        "Damian", 
-                    
-                        "Sytse", 
-                    
-                        "Ilse", 
-                    
-                        "Erik", 
-                    
-                        "Vivian", 
-                    
-                
-            
-                
-                    
-                        "TODO", 
-                    
-                
-            
+            var creatures = [
+                "dogs",
+                "cats",
+                "aliens",
+                "vegans",
+                "ghouls",
+                "birds",
+                "jesters",
+                "lawyers",
+                "businesspeople",
+                "moms",
+                "scientists",
+                "professors",
+                "souls",
+                "sisters",
+                "royals",
+                "fish",
+                "dust-particles",
+                "orbs",
+                "computers",
+                "students",
+                "queers"
             ];
             var prefixes = [
-                "Shoutout",
-                "I love",
-                "Powered by",
-                "Gotta have",
-                "Oops, all",
-                "Lemme get",
-                "I can haz"
+                "hungry",
+                "rabid",
+                "magical",
+                "mushy",
+                "vegan",
+                "hyperactive",
+                "blood-sucking",
+                "old-fashioned",
+                "irritating",
+                "dazzling",
+                "motionless",
+                "lewd",
+                "unwieldy",
+                "crooked",
+                "overconfident",
+                "brawny",
+                "grimey",
+                "repulsive",
+                "ruthless",
+                "wild",
+                "psychedelic",
+                "bankrupted",
+                "malicious",
+                "acidic",
+                "slimey",
+                "mad",
+                "floating",
+                "shiny"
             ];
 
-            var highlight_person = people[Math.floor(Math.random() * people.length)];
+            var highlight_person = creatures[Math.floor(Math.random() * creatures.length)];
             var highlight_prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-            highlightContainer.style.display = "inline-block";
-            highlightContainer.innerHTML = `${highlight_prefix} ${highlight_person}!`;
+            highlightContainer.innerHTML = `${highlight_prefix} ${highlight_person}`;
         }
 
-        document.addEventListener('DOMContentLoaded', function() { reroll_highlight(); });
+        document.addEventListener('DOMContentLoaded', function() { reroll_creatures_highlight(); });
     </script>
 
-    <i id="people-highlight" style="display: none; cursor:pointer; user-select: none;" onclick="reroll_highlight()"></i>
-</span></p>
+    <span id="creatures-highlight" style="cursor:pointer; user-select: none;" onclick="reroll_creatures_highlight()">aliens</span>
+</span> in <span>
+    <script type="text/javascript">
+        function reroll_places_highlight() {
+            var highlightContainer = document.getElementById('places-highlight');
+
+            if (highlightContainer == null) { return; }
+
+            var places = [
+                "cyberspace",
+                "Utrecht",
+                "heaven",
+                "mid-life crisis",
+                "distress",
+                "pieces",
+                "disarray",
+                "bushes",
+                "a hostage situation",
+                "train stations",
+                "secret labs",
+                "pet stores",
+                "prison",
+                "kennels",
+                "your walls",
+                "government",
+                "pools",
+                "STEM"
+            ];
+
+            var highlight_places = places[Math.floor(Math.random() * places.length)];
+            highlightContainer.innerHTML = `${highlight_places}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() { reroll_places_highlight(); });
+    </script>
+
+    <span id="places-highlight" style="cursor:pointer; user-select: none;" onclick="reroll_places_highlight()">cyberspace</span></span>.</p>
 
 
     <hr>
 
-    <h1 id="music" style="display: inline-block; margin-bottom: 0;">Music</h1> <a href="#software">↓</a>
+    
+    <h1 id="music" style="display: inline-block; margin-top: 0; margin-bottom: 0;">
+
+
+    
+
+
+
+<span class="ransom_text halfshadow">
+    <img class="ransom_letter fulltilt" style="z-index: 7.208696705852676;" src="/images/ransom_letters/m/0001_hu_2793fd1e924a96b2.png"><img class="ransom_letter fulltilt" style="z-index: 8.539763356615303;" src="/images/ransom_letters/u/0001_hu_343c2b54d3daa775.png"><img class="ransom_letter fulltilt" style="z-index: 0.3118355438352;" src="/images/ransom_letters/s/0004_hu_2262ee40a9b48aae.png"><img class="ransom_letter fulltilt" style="z-index: 3.7753247084319197;" src="/images/ransom_letters/i/0002_hu_9220d62c4210de1a.png"><img class="ransom_letter fulltilt" style="z-index: 7.110269785173152;" src="/images/ransom_letters/c/0003_hu_adc0b42478a5be86.png">
+</span></h1>
 
     <p style="margin-top: 0;">
-        Filter by 
-        
-        
-            <a href="https://mlemrecords.com/categories/ambient/">Ambient</a>
+        <span>Filter by</span>
+        <span>
+            
+            
             <a href="https://mlemrecords.com/categories/club/">Club</a>
             <a href="https://mlemrecords.com/categories/folk/">Folk</a>
             <a href="https://mlemrecords.com/categories/idm/">IDM</a>
             <a href="https://mlemrecords.com/categories/pop/">Pop</a>
             <a href="https://mlemrecords.com/categories/punk/">Punk</a>
+            <a href="https://mlemrecords.com/categories/ambient/">Ambient</a>
+        </span>
     </p>
 
     <div class="release-container">
         
     
     
+    
 
-    <div class="release">
+    <div id="mlem020" class="release big">
         <small class="release-header">
-            mlem017<i> Album</i>
+            mlem020<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem017/">
+            <div class="release-cd">
                 
-                <img src="/mlem017/cover_hu_1d08ac57fd3d4549.png" loading="lazy" alt="The cover for Alle Opgedroogde Tranen.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem020/">
+                    
+                    <img src="/mlem020/cover_hu_cbbc0c7a055b9bc8.png" loading="lazy" alt="The cover for Groeipijntjes." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
-        <h2 class="release-title-small">
-            <a href="https://mlemrecords.com/mlem017/">Alle Opgedroogde Tranen</a>
+        <h2 class="release-title">
+            <a href="https://mlemrecords.com/mlem020/">Groeipijntjes</a>
         </h2>by 
-     <a href="https://mlemrecords.com/artists/ulf-ten-aar/">Ulf Ten Aar</a>
+     <a href="https://mlemrecords.com/artists/enno/">ENNO</a>
 <br>
-        <span id="mlem017-audio-container" class="audio-preview" style="display: none;">
+        <span id="mlem020-audio-container" class="audio-preview" style="display: none;">
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
-            var audioBasePath = "\/downloads\/[mlem017] Ulf Ten Aar - Alle Opgedroogde Tranen";
+            var audioBasePath = "\/downloads\/[mlem020] ENNO - Groeipijntjes";
             var audioSrcs = [
-                "1. zeg dan niet dat je nog van me houdt", 
-                "2. kast", 
-                "3. 24 nov 25", 
-                "4. slaap zacht", 
-                "5. landen", 
-                "6. hoe het was om van je te houden", 
-                "7. blauw", 
-                "8. als we samen beter zijn", 
-                "9. vaarwel", 
-                "Bonus. vis op het droge", 
+                "1. Egmond chalet 3", 
+                "2. constellaties", 
+                "3. in duigen interludium", 
+                "4. stil staan", 
+                "5. iets over missen \u0026 thuiskomen", 
                 
             ];
 
-            var currentAudio = parseInt("4") - 1;
+            var currentAudio = parseInt("1") - 1;
             var currentAudioPath = "";
-            var audioContainer = document.getElementById('mlem017-audio-container');
+            var audioContainer = document.getElementById('mlem020-audio-container');
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
-            var playButton = document.getElementById('mlem017-play');
+            var playButton = document.getElementById('mlem020-play');
+            var releaseParent = document.getElementById('mlem020');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1307,9 +2718,429 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem020-play" class="audio-preview-button"></a>
+    </span>
+    
+</span> 
+        
+            <a href="https://mlemrecords.com/mlem020/">More...</a>
+        
+    </div>
+
+    
+    
+    
+
+    <div id="mlem019" class="release ">
+        <small class="release-header">
+            mlem019<i> EP</i>
+        </small>
+        
+            <div class="release-cd">
+                
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem019/">
+                    
+                    <img src="/mlem019/cover_hu_81120b405239b716.png" loading="lazy" alt="The cover for It likes green.." class="release-cd-cover">
+                    
+                </a>
+                
+            </div>
+        
+        <h2 class="release-title">
+            <a href="https://mlemrecords.com/mlem019/">It likes green.</a>
+        </h2>by 
+     <a href="https://mlemrecords.com/artists/cdl/">cdl</a>
+<br>
+        <span id="mlem019-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "\/downloads\/[mlem019] cdl - It likes green.";
+            var audioSrcs = [
+                "1. prelude, sstv and story.r.mp", 
+                "2. tracks headed north.r.mp", 
+                "3. papapap.r", 
+                "4. a story behind every door.e", 
+                "5. ray's spf40.r", 
+                "6. alles in de hoek (cdl\u003eUTA^rmx).rm", 
+                "7. zero crossings.r", 
+                "8. rotary device.r", 
+                "9. inReferenceToItLikesGreen,aPostludeAndStoryAboutALadyIveMet.r.mp", 
+                
+            ];
+
+            var currentAudio = parseInt("8") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem019-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem019-play');
+            var releaseParent = document.getElementById('mlem019');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
+                } else {
+                    playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
+                }
+
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem019-play" class="audio-preview-button"></a>
+    </span>
+    
+</span> 
+        
+            <a href="https://mlemrecords.com/mlem019/">More...</a>
+        
+    </div>
+
+    
+    
+    
+
+    <div id="mlem018" class="release ">
+        <small class="release-header">
+            mlem018<i> EP</i>
+        </small>
+        
+            <div class="release-cd">
+                
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem018/">
+                    
+                    <img src="/mlem018/cover_hu_6843661e1dc21221.png" loading="lazy" alt="The cover for Collection of Bygone Days." class="release-cd-cover">
+                    
+                </a>
+                
+            </div>
+        
+        <h2 class="release-title-small">
+            <a href="https://mlemrecords.com/mlem018/">Collection of Bygone Days</a>
+        </h2>by 
+     <a href="https://mlemrecords.com/artists/peter-toth/">Peter Toth</a>
+<br>
+        <span id="mlem018-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "\/downloads\/[mlem018] Peter Toth - Collection of Bygone Days";
+            var audioSrcs = [
+                "1. Grotesques", 
+                "2. Third Etude", 
+                "3. Rain Nine", 
+                "4. Cube Song", 
+                "5. MO_tion", 
+                "6. Fourth Etude", 
+                "7. Fly Away", 
+                "8. Swishmora", 
+                
+            ];
+
+            var currentAudio = parseInt("1") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem018-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem018-play');
+            var releaseParent = document.getElementById('mlem018');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
+                } else {
+                    playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
+                }
+
+            }
+
+            function loadAudio() {
+                audioSource.src = currentAudioPath = encodeURI(`${audioBasePath}/${audioSrcs[currentAudio]}.mp3`);
+                audio.load();
+                audio.volume = 0.75;
+            }
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            loadAudio();
+            updateButtons();
+
+            audioContainer.style.display = "inline-block";
+        });
+    </script>
+
+    <span class="audio-preview-controls">
+        <a id="mlem018-play" class="audio-preview-button"></a>
+    </span>
+    
+</span> 
+        
+            <a href="https://mlemrecords.com/mlem018/">More...</a>
+        
+    </div>
+
+    
+    
+    
+
+    <div id="mlem017" class="release ">
+        <small class="release-header">
+            mlem017<i> Album</i>
+        </small>
+        
+            <div class="release-cd">
+                
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem017/">
+                    
+                    <img src="/mlem017/cover_hu_1f8465ed6f472bbf.png" loading="lazy" alt="The cover for Alle Opgedroogde Tranen." class="release-cd-cover">
+                    
+                </a>
+                
+            </div>
+        
+        <h2 class="release-title-small">
+            <a href="https://mlemrecords.com/mlem017/">Alle Opgedroogde Tranen</a>
+        </h2>by 
+     <a href="https://mlemrecords.com/artists/ulf-ten-aar/">Ulf Ten Aar</a>
+<br>
+        <span id="mlem017-audio-container" class="audio-preview" style="display: none;">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioBasePath = "\/downloads\/[mlem017] Ulf Ten Aar - Alle Opgedroogde Tranen";
+            var audioSrcs = [
+                "1. zeg dan niet dat je nog van me houdt", 
+                "2. kast", 
+                "3. 24 nov 25", 
+                "4. slaap zacht", 
+                "5. landen", 
+                "6. hoe het was om van je te houden", 
+                "7. blauw", 
+                "8. als we samen beter zijn", 
+                "9. vaarwel", 
+                "Bonus. vis op het droge", 
+                
+            ];
+
+            var currentAudio = parseInt("4") - 1;
+            var currentAudioPath = "";
+            var audioContainer = document.getElementById('mlem017-audio-container');
+            var audio = document.getElementById('page-audio');
+            var audioSource = document.getElementById('page-audio-source');
+            var playButton = document.getElementById('mlem017-play');
+            var releaseParent = document.getElementById('mlem017');
+            var playing = false;
+
+            playButton.addEventListener('click', function() {
+                audio.pause();
+
+                if (playing) {
+                    playing = false;
+                } else {
+                    loadAudio();
+                    audio.currentTime = 0;
+                    audio.play();
+                    playing = true;
+                }
+
+                updateButtons();
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.pause();
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('timeupdate', function() {                
+                updateButtons();
+            });
+
+            audio.addEventListener('play', function() {
+                if (audioSource.src.includes(currentAudioPath)) { return; }
+                
+                playing = false;
+                
+                updateButtons();
+            });
+
+            audio.addEventListener('pause', function() {
+                playing = false;
+                
+                updateButtons();
+            });
+
+            function updateButtons() {
+                if (playing) {
+                    playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
+                } else {
+                    playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
+                }
+
             }
 
             function loadAudio() {
@@ -1343,17 +3174,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem016" class="release big">
         <small class="release-header">
             mlem016<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem016/">
+            <div class="release-cd">
                 
-                <img src="/mlem016/cover_hu_e9df55910f3b0679.png" loading="lazy" alt="The cover for Autogynephilic Lesbian Zero Forever.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem016/">
+                    
+                    <img src="/mlem016/cover_hu_e0f9bfe02612954f.png" loading="lazy" alt="The cover for Autogynephilic Lesbian Zero Forever." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem016/">Autogynephilic Lesbian Zero Forever</a>
@@ -1382,6 +3219,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem016-play');
+            var releaseParent = document.getElementById('mlem016');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1427,9 +3265,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1463,17 +3310,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem015" class="release ">
         <small class="release-header">
             mlem015<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem015/">
+            <div class="release-cd">
                 
-                <img src="/mlem015/cover_hu_6f0f76d77d1794a.png" loading="lazy" alt="The cover for Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri / Yaoi Solidarity.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem015/">
+                    
+                    <img src="/mlem015/cover_hu_16cc4d391f652c68.png" loading="lazy" alt="The cover for Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri / Yaoi Solidarity." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title-smaller">
             <a href="https://mlemrecords.com/mlem015/">Dextroamphetamine Estradiol Valerate Sertraline Overdose Fueled Toxic Yuri / Yaoi Solidarity</a>
@@ -1498,6 +3351,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem015-play');
+            var releaseParent = document.getElementById('mlem015');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1543,9 +3397,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1579,17 +3442,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem014" class="release big">
         <small class="release-header">
             mlem014<i> Compilation</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem014/">
+            <div class="release-cd">
                 
-                <img src="/mlem014/cover_hu_dcfcdcddf29abf01.png" loading="lazy" alt="The cover for Pick of the Litter.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem014/">
+                    
+                    <img src="/mlem014/cover_hu_58a55c06642721a8.png" loading="lazy" alt="The cover for Pick of the Litter." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem014/">Pick of the Litter</a>
@@ -1624,6 +3493,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem014-play');
+            var releaseParent = document.getElementById('mlem014');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1669,9 +3539,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1705,17 +3584,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem013" class="release ">
         <small class="release-header">
             mlem013<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem013/">
+            <div class="release-cd">
                 
-                <img src="/mlem013/cover_hu_5e86d0135c71d7ca.png" loading="lazy" alt="The cover for Bird Sounds Vol. 1.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem013/">
+                    
+                    <img src="/mlem013/cover_hu_b2140fb24cf71d85.png" loading="lazy" alt="The cover for Bird Sounds Vol. 1." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem013/">Bird Sounds Vol. 1</a>
@@ -1743,6 +3628,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem013-play');
+            var releaseParent = document.getElementById('mlem013');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1788,9 +3674,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1824,17 +3719,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem012" class="release ">
         <small class="release-header">
             mlem012<i> Album</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem012/">
+            <div class="release-cd">
                 
-                <img src="/mlem012/cover_hu_a2dce3fe9b8779f6.png" loading="lazy" alt="The cover for Elektronische Meuk Vol. 1.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem012/">
+                    
+                    <img src="/mlem012/cover_hu_f593ff4366fe0be7.png" loading="lazy" alt="The cover for Elektronische Meuk Vol. 1." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem012/">Elektronische Meuk Vol. 1</a>
@@ -1866,6 +3767,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem012-play');
+            var releaseParent = document.getElementById('mlem012');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -1911,9 +3813,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -1947,17 +3858,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem011" class="release ">
         <small class="release-header">
             mlem011<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem011/">
+            <div class="release-cd">
                 
-                <img src="/mlem011/cover_hu_57dabb5e6d77fd40.png" loading="lazy" alt="The cover for Dino’s in Mijn Hoofd.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem011/">
+                    
+                    <img src="/mlem011/cover_hu_65f14bc7fc94b206.png" loading="lazy" alt="The cover for Dino’s in Mijn Hoofd." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem011/">Dino’s in Mijn Hoofd</a>
@@ -1983,6 +3900,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem011-play');
+            var releaseParent = document.getElementById('mlem011');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2028,9 +3946,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2064,17 +3991,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem010" class="release ">
         <small class="release-header">
             mlem010<i> Compilation</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem010/">
+            <div class="release-cd">
                 
-                <img src="/mlem010/cover_hu_21d7ecdf3df18e47.png" loading="lazy" alt="The cover for Juiced Out Trakz.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem010/">
+                    
+                    <img src="/mlem010/cover_hu_19000735a2bab536.png" loading="lazy" alt="The cover for Juiced Out Trakz." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem010/">Juiced Out Trakz</a>
@@ -2109,6 +4042,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem010-play');
+            var releaseParent = document.getElementById('mlem010');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2154,9 +4088,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2190,17 +4133,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem009" class="release big">
         <small class="release-header">
             mlem009<i> Single</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem009/">
+            <div class="release-cd">
                 
-                <img src="/mlem009/cover_hu_1a000b26df08c3f5.png" loading="lazy" alt="The cover for WTR (Runnin’).">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem009/">
+                    
+                    <img src="/mlem009/cover_hu_e999efcb1ffcf034.png" loading="lazy" alt="The cover for WTR (Runnin’)." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem009/">WTR (Runnin’)</a>
@@ -2222,6 +4171,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem009-play');
+            var releaseParent = document.getElementById('mlem009');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2267,9 +4217,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2303,17 +4262,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem008" class="release ">
         <small class="release-header">
             mlem008<i> Single</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem008/">
+            <div class="release-cd">
                 
-                <img src="/mlem008/cover_hu_f3f49ba265e53f2d.png" loading="lazy" alt="The cover for All my best friends don’t pass the turing test (AlmabuenA Remix).">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem008/">
+                    
+                    <img src="/mlem008/cover_hu_4ef65e6f0a85d654.png" loading="lazy" alt="The cover for All my best friends don’t pass the turing test (AlmabuenA Remix)." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title-smaller">
             <a href="https://mlemrecords.com/mlem008/">All my best friends don’t pass the turing test (AlmabuenA Remix)</a>
@@ -2336,6 +4301,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem008-play');
+            var releaseParent = document.getElementById('mlem008');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2381,9 +4347,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2417,17 +4392,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem007" class="release big">
         <small class="release-header">
             mlem007<i> Single</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem007/">
+            <div class="release-cd">
                 
-                <img src="/mlem007/cover_hu_e9569a0c911b252a.png" loading="lazy" alt="The cover for The Alan Watts Theme (love sella Remix).">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem007/">
+                    
+                    <img src="/mlem007/cover_hu_c58bea8030952d4c.png" loading="lazy" alt="The cover for The Alan Watts Theme (love sella Remix)." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem007/">The Alan Watts Theme (love sella Remix)</a>
@@ -2449,6 +4430,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem007-play');
+            var releaseParent = document.getElementById('mlem007');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2494,9 +4476,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2530,17 +4521,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem006" class="release ">
         <small class="release-header">
             mlem006<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem006/">
+            <div class="release-cd">
                 
-                <img src="/mlem006/cover_hu_d14be7a39ac51b1b.png" loading="lazy" alt="The cover for indigo chamber.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem006/">
+                    
+                    <img src="/mlem006/cover_hu_b8483f8763bc8e80.png" loading="lazy" alt="The cover for indigo chamber." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem006/">indigo chamber</a>
@@ -2569,6 +4566,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem006-play');
+            var releaseParent = document.getElementById('mlem006');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2614,9 +4612,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2650,17 +4657,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem005" class="release ">
         <small class="release-header">
             mlem005<i> Album</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem005/">
+            <div class="release-cd">
                 
-                <img src="/mlem005/cover_hu_23ce3b75430c6d10.png" loading="lazy" alt="The cover for Denken Aan Een Ander Is Niet Van Deze Tijd.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem005/">
+                    
+                    <img src="/mlem005/cover_hu_f8538053a980f45a.png" loading="lazy" alt="The cover for Denken Aan Een Ander Is Niet Van Deze Tijd." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/mlem005/">Denken Aan Een Ander Is Niet Van Deze Tijd</a>
@@ -2697,6 +4710,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem005-play');
+            var releaseParent = document.getElementById('mlem005');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2742,9 +4756,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2778,17 +4801,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem004" class="release ">
         <small class="release-header">
             mlem004<i> Album</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem004/">
+            <div class="release-cd">
                 
-                <img src="/mlem004/cover_hu_deb432a80f543613.png" loading="lazy" alt="The cover for Wacko_.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem004/">
+                    
+                    <img src="/mlem004/cover_hu_52aa469870edf668.png" loading="lazy" alt="The cover for Wacko_." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem004/">Wacko_</a>
@@ -2816,6 +4845,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem004-play');
+            var releaseParent = document.getElementById('mlem004');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2861,9 +4891,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -2897,17 +4936,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem003" class="release big">
         <small class="release-header">
             mlem003<i> Album</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem003/">
+            <div class="release-cd">
                 
-                <img src="/mlem003/cover_hu_35ca2738cd750068.png" loading="lazy" alt="The cover for Pieces of Peace.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem003/">
+                    
+                    <img src="/mlem003/cover_hu_a0251b67c6f2bb33.png" loading="lazy" alt="The cover for Pieces of Peace." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem003/">Pieces of Peace</a>
@@ -2945,6 +4990,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem003-play');
+            var releaseParent = document.getElementById('mlem003');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -2990,9 +5036,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -3026,17 +5081,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem002" class="release ">
         <small class="release-header">
             mlem002<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem002/">
+            <div class="release-cd">
                 
-                <img src="/mlem002/cover_hu_c53cb926c525f57e.png" loading="lazy" alt="The cover for Up in Flames.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem002/">
+                    
+                    <img src="/mlem002/cover_hu_99d65edea3f2f497.png" loading="lazy" alt="The cover for Up in Flames." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem002/">Up in Flames</a>
@@ -3059,6 +5120,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem002-play');
+            var releaseParent = document.getElementById('mlem002');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -3104,9 +5166,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -3140,17 +5211,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem001" class="release ">
         <small class="release-header">
             mlem001<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem001/">
+            <div class="release-cd">
                 
-                <img src="/mlem001/cover_hu_bc5531f0ee788150.png" loading="lazy" alt="The cover for Amersfoort Tracks.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem001/">
+                    
+                    <img src="/mlem001/cover_hu_1cab6f127ac50d78.png" loading="lazy" alt="The cover for Amersfoort Tracks." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem001/">Amersfoort Tracks</a>
@@ -3177,6 +5254,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem001-play');
+            var releaseParent = document.getElementById('mlem001');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -3222,9 +5300,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -3258,17 +5345,23 @@
 
     
     
+    
 
-    <div class="release">
+    <div id="mlem000" class="release ">
         <small class="release-header">
             mlem000<i> EP</i>
         </small>
         
-            <a href="https://mlemrecords.com/mlem000/">
+            <div class="release-cd">
                 
-                <img src="/mlem000/cover_hu_dfe906e3d6b0cac4.png" loading="lazy" alt="The cover for slob life nu dada.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/mlem000/">
+                    
+                    <img src="/mlem000/cover_hu_246c44e573010142.png" loading="lazy" alt="The cover for slob life nu dada." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title">
             <a href="https://mlemrecords.com/mlem000/">slob life nu dada</a>
@@ -3294,6 +5387,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('mlem000-play');
+            var releaseParent = document.getElementById('mlem000');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -3339,9 +5433,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -3377,23 +5480,87 @@
     
     <hr>
 
-    <h1 id="software" style="display: inline-block; margin-bottom: 0;">Software</h1>
+    
+    <h1 id="mixes" style="display: inline-block; margin-bottom: 0;">
+
+
+    
+
+
+
+<span class="ransom_text halfshadow">
+    <img class="ransom_letter fulltilt" style="z-index: 5.257359923139596;" src="/images/ransom_letters/m/0003_hu_9fb2f51de6896ae1.png"><img class="ransom_letter fulltilt" style="z-index: 2.2326097898604043;" src="/images/ransom_letters/i/0001_hu_acf7eae4b0c8019c.png"><img class="ransom_letter fulltilt" style="z-index: 2.4614905546070682;" src="/images/ransom_letters/x/0005_hu_21f7a4486794354f.png"><img class="ransom_letter fulltilt" style="z-index: 8.333095471460718;" src="/images/ransom_letters/e/0001_hu_3bd098804680651f.png"><img class="ransom_letter fulltilt" style="z-index: 1.7426722457366721;" src="/images/ransom_letters/s/0005_hu_72354a3d2daa6577.png">
+</span></h1>
+
+    <div class="catalogue-container">
+        
+<span class="catalogue-item">
+    <b class="catalogue-item-no">mix001</b>
+    <span class="catalogue-item-name">
+        <a href="https://mlemrecords.com/mix001/">2nd Mlemmiversary Mix @ Coffee Company</a>
+        <br><span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/keepittoyourselfnexttime/">keepittoyourselfnexttime</a> / <a href="https://mlemrecords.com/artists/dj-zitwerk/">DJ ZITwerK</a>
+</span>
+    </span>
+    <i>
+        <time datetime='2026-02-07' pubdate>
+            07 Feb, 2026
+        </time>
+    </i>
+</span>
+
+<span class="catalogue-item">
+    <b class="catalogue-item-no">mix000</b>
+    <span class="catalogue-item-name">
+        <a href="https://mlemrecords.com/mix000/">Yuri x Yaoi Solidarity @ Kabul</a>
+        <br><span class="catalogue-item-artist">by 
+     <a href="https://mlemrecords.com/artists/keepittoyourselfnexttime/">keepittoyourselfnexttime</a> / <a href="https://mlemrecords.com/artists/dj-zitwerk/">DJ ZITwerK</a>
+</span>
+    </span>
+    <i>
+        <time datetime='2026-02-07' pubdate>
+            07 Feb, 2026
+        </time>
+    </i>
+</span>
+
+    </div>
+    
+    <hr>
+
+    
+    <h1 id="software" style="display: inline-block; margin-bottom: 0;">
+
+
+    
+
+
+
+<span class="ransom_text halfshadow">
+    <img class="ransom_letter fulltilt" style="z-index: 9.52667028440772;" src="/images/ransom_letters/s/0004_hu_2262ee40a9b48aae.png"><img class="ransom_letter fulltilt" style="z-index: 2.758928570912885;" src="/images/ransom_letters/o/0004_hu_3188c3eb38496b1b.png"><img class="ransom_letter fulltilt" style="z-index: 6.847556202081217;" src="/images/ransom_letters/f/0002_hu_48aeebaabca44a97.png"><img class="ransom_letter fulltilt" style="z-index: 6.985925762605014;" src="/images/ransom_letters/t/0004_hu_579cb69618bd2170.png"><img class="ransom_letter fulltilt" style="z-index: 3.061868030322088;" src="/images/ransom_letters/w/0001_hu_31005da95a25098b.png"><img class="ransom_letter fulltilt" style="z-index: 0.13039566269877995;" src="/images/ransom_letters/a/0003_hu_bf2b4364abf076d6.png"><img class="ransom_letter fulltilt" style="z-index: 6.529796047092878;" src="/images/ransom_letters/r/0002_hu_dcd1584da57a2a33.png"><img class="ransom_letter fulltilt" style="z-index: 4.268293706901254;" src="/images/ransom_letters/e/0001_hu_3bd098804680651f.png">
+</span></h1>
 
     <div class="release-container">
         
     
     
+    
 
-    <div class="release">
+    <div id="soft000" class="release big">
         <small class="release-header">
             soft000<i> Sample Pack</i>
         </small>
         
-            <a href="https://mlemrecords.com/soft000/">
+            <div class="release-cd">
                 
-                <img src="/soft000/cover_hu_18fe41853c780dc3.png" loading="lazy" alt="The cover for Breakcore Makes You Gay Sample Pack.">
+                <img src="/images/cd_front0_hu_cd087eb5bce02621.png" class="release-cd-back shadow">
+                <img src="/images/cd_back_hu_2c3f8ab1f30608c6.png" class="release-cd-back shadow"><a href="https://mlemrecords.com/soft000/">
+                    
+                    <img src="/soft000/cover_hu_f46fa00fc24d7932.png" loading="lazy" alt="The cover for Breakcore Makes You Gay Sample Pack." class="release-cd-cover">
+                    
+                </a>
                 
-            </a>
+            </div>
         
         <h2 class="release-title-small">
             <a href="https://mlemrecords.com/soft000/">Breakcore Makes You Gay Sample Pack</a>
@@ -3425,6 +5592,7 @@
             var audio = document.getElementById('page-audio');
             var audioSource = document.getElementById('page-audio-source');
             var playButton = document.getElementById('soft000-play');
+            var releaseParent = document.getElementById('soft000');
             var playing = false;
 
             playButton.addEventListener('click', function() {
@@ -3470,9 +5638,18 @@
             function updateButtons() {
                 if (playing) {
                     playButton.textContent = `■ ${formatTime(audio.currentTime)}`;
+
+                    if (releaseParent != null) {
+                        releaseParent.classList.add("playing");
+                    }
                 } else {
                     playButton.textContent = '► Preview';
+                    
+                    if (releaseParent != null) {
+                        releaseParent.classList.remove("playing");
+                    }
                 }
+
             }
 
             function loadAudio() {
@@ -3509,7 +5686,9 @@
 </content>
 
 <footer>
-    <p><a href="/secret" style="color: var(--textColor); text-decoration: none;">.</a></p><a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated Apr 9, 2026.</small></a></footer>
+    <p><a href="/secret" style="color: var(--textColor); text-decoration: none;">.</a></p>
+
+<a href="https://status.mlemrecords.com" style="color: var(--textColor); text-decoration: none;"><small>Last updated Oct 17, 2026. (1790188253)</small></a></footer>
 
 
   </main>
